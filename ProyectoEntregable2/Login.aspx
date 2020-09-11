@@ -47,15 +47,15 @@
               <br /><br />
         </div>
           <div>
-            <b>contraseña:<b/>&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtContrasenia" runat="server" Width="317px" BackColor="#FFCCCC"></asp:TextBox>
+            <b style="font-size: medium">contraseña:<b/>&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtContrasenia" runat="server" Width="317px" BackColor="#FFCCCC"></asp:TextBox>
             <br /><br /><br />
           </div>
           <div>
-            <asp:Button ID="Button1" runat="server" Text="Continuar" Width="140px" BackColor="#CC0066" />
+            <asp:Button ID="ContLogin" runat="server" Text="Continuar" Width="140px" BackColor="#CC0066" OnClick="ContLogin_Click" />
             <br /><br />
         </div>
         <div>
-            <asp:Button ID="Button2" runat="server" Text="Registrar" Width="140px" BackColor="#CC0066" />
+            <asp:Button ID="Button2" runat="server" Text="Registrar" Width="140px" BackColor="#CC0066" OnClick="Button2_Click" />
             <br />
             <br />
             <br />

@@ -121,76 +121,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button368;
         
         /// <summary>
-        /// Button178 control.
+        /// A1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button178;
+        protected global::System.Web.UI.WebControls.ImageButton A1;
         
         /// <summary>
-        /// Button386 control.
+        /// B1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button386;
+        protected global::System.Web.UI.WebControls.ImageButton B1;
         
         /// <summary>
-        /// Button387 control.
+        /// C1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button387;
+        protected global::System.Web.UI.WebControls.ImageButton C1;
         
         /// <summary>
-        /// Button388 control.
+        /// D1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button388;
+        protected global::System.Web.UI.WebControls.ImageButton D1;
         
         /// <summary>
-        /// Button389 control.
+        /// E1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button389;
+        protected global::System.Web.UI.WebControls.ImageButton E1;
         
         /// <summary>
-        /// Button390 control.
+        /// F1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button390;
+        protected global::System.Web.UI.WebControls.ImageButton F1;
         
         /// <summary>
-        /// Button391 control.
+        /// G1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button391;
+        protected global::System.Web.UI.WebControls.ImageButton G1;
         
         /// <summary>
-        /// Button392 control.
+        /// H1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button392;
+        protected global::System.Web.UI.WebControls.ImageButton H1;
         
         /// <summary>
         /// Button338 control.
@@ -211,76 +211,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button369;
         
         /// <summary>
-        /// Button393 control.
+        /// A2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button393;
+        protected global::System.Web.UI.WebControls.ImageButton A2;
         
         /// <summary>
-        /// Button394 control.
+        /// B2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button394;
+        protected global::System.Web.UI.WebControls.ImageButton B2;
         
         /// <summary>
-        /// Button395 control.
+        /// C2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button395;
+        protected global::System.Web.UI.WebControls.ImageButton C2;
         
         /// <summary>
-        /// Button396 control.
+        /// D2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button396;
+        protected global::System.Web.UI.WebControls.ImageButton D2;
         
         /// <summary>
-        /// Button397 control.
+        /// E2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button397;
+        protected global::System.Web.UI.WebControls.ImageButton E2;
         
         /// <summary>
-        /// Button398 control.
+        /// F2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button398;
+        protected global::System.Web.UI.WebControls.ImageButton F2;
         
         /// <summary>
-        /// Button399 control.
+        /// G2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button399;
+        protected global::System.Web.UI.WebControls.ImageButton G2;
         
         /// <summary>
-        /// Button400 control.
+        /// H2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button400;
+        protected global::System.Web.UI.WebControls.ImageButton H2;
         
         /// <summary>
         /// Button339 control.
@@ -301,76 +301,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button370;
         
         /// <summary>
-        /// Button401 control.
+        /// A3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button401;
+        protected global::System.Web.UI.WebControls.ImageButton A3;
         
         /// <summary>
-        /// Button402 control.
+        /// B3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button402;
+        protected global::System.Web.UI.WebControls.ImageButton B3;
         
         /// <summary>
-        /// Button403 control.
+        /// C3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button403;
+        protected global::System.Web.UI.WebControls.ImageButton C3;
         
         /// <summary>
-        /// Button404 control.
+        /// D3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button404;
+        protected global::System.Web.UI.WebControls.ImageButton D3;
         
         /// <summary>
-        /// Button405 control.
+        /// E3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button405;
+        protected global::System.Web.UI.WebControls.ImageButton E3;
         
         /// <summary>
-        /// Button406 control.
+        /// F3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button406;
+        protected global::System.Web.UI.WebControls.ImageButton F3;
         
         /// <summary>
-        /// Button407 control.
+        /// G3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button407;
+        protected global::System.Web.UI.WebControls.ImageButton G3;
         
         /// <summary>
-        /// Button408 control.
+        /// H3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button408;
+        protected global::System.Web.UI.WebControls.ImageButton H3;
         
         /// <summary>
         /// Button340 control.
@@ -391,76 +391,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button371;
         
         /// <summary>
-        /// Button409 control.
+        /// A4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button409;
+        protected global::System.Web.UI.WebControls.ImageButton A4;
         
         /// <summary>
-        /// Button410 control.
+        /// B4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button410;
+        protected global::System.Web.UI.WebControls.ImageButton B4;
         
         /// <summary>
-        /// Button411 control.
+        /// C4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button411;
+        protected global::System.Web.UI.WebControls.ImageButton C4;
         
         /// <summary>
-        /// Button294 control.
+        /// D4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button294;
+        protected global::System.Web.UI.WebControls.ImageButton D4;
         
         /// <summary>
-        /// Button293 control.
+        /// E4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button293;
+        protected global::System.Web.UI.WebControls.ImageButton E4;
         
         /// <summary>
-        /// Button412 control.
+        /// F4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button412;
+        protected global::System.Web.UI.WebControls.ImageButton F4;
         
         /// <summary>
-        /// Button413 control.
+        /// G4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button413;
+        protected global::System.Web.UI.WebControls.ImageButton G4;
         
         /// <summary>
-        /// Button414 control.
+        /// H4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button414;
+        protected global::System.Web.UI.WebControls.ImageButton H4;
         
         /// <summary>
         /// Button341 control.
@@ -481,76 +481,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button372;
         
         /// <summary>
-        /// Button415 control.
+        /// A5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button415;
+        protected global::System.Web.UI.WebControls.ImageButton A5;
         
         /// <summary>
-        /// Button416 control.
+        /// B5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button416;
+        protected global::System.Web.UI.WebControls.ImageButton B5;
         
         /// <summary>
-        /// Button417 control.
+        /// C5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button417;
+        protected global::System.Web.UI.WebControls.ImageButton C5;
         
         /// <summary>
-        /// Button301 control.
+        /// D5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button301;
+        protected global::System.Web.UI.WebControls.ImageButton D5;
         
         /// <summary>
-        /// Button302 control.
+        /// E5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button302;
+        protected global::System.Web.UI.WebControls.ImageButton E5;
         
         /// <summary>
-        /// Button418 control.
+        /// F5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button418;
+        protected global::System.Web.UI.WebControls.ImageButton F5;
         
         /// <summary>
-        /// Button419 control.
+        /// G5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button419;
+        protected global::System.Web.UI.WebControls.ImageButton G5;
         
         /// <summary>
-        /// Button420 control.
+        /// H5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button420;
+        protected global::System.Web.UI.WebControls.ImageButton H5;
         
         /// <summary>
         /// Button342 control.
@@ -571,76 +571,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button373;
         
         /// <summary>
-        /// Button421 control.
+        /// A6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button421;
+        protected global::System.Web.UI.WebControls.ImageButton A6;
         
         /// <summary>
-        /// Button422 control.
+        /// B6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button422;
+        protected global::System.Web.UI.WebControls.ImageButton B6;
         
         /// <summary>
-        /// Button423 control.
+        /// C6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button423;
+        protected global::System.Web.UI.WebControls.ImageButton C6;
         
         /// <summary>
-        /// Button424 control.
+        /// D6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button424;
+        protected global::System.Web.UI.WebControls.ImageButton D6;
         
         /// <summary>
-        /// Button425 control.
+        /// E6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button425;
+        protected global::System.Web.UI.WebControls.ImageButton E6;
         
         /// <summary>
-        /// Button426 control.
+        /// F6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button426;
+        protected global::System.Web.UI.WebControls.ImageButton F6;
         
         /// <summary>
-        /// Button427 control.
+        /// G6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button427;
+        protected global::System.Web.UI.WebControls.ImageButton G6;
         
         /// <summary>
-        /// Button428 control.
+        /// H6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button428;
+        protected global::System.Web.UI.WebControls.ImageButton H6;
         
         /// <summary>
         /// Button362 control.
@@ -661,76 +661,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button374;
         
         /// <summary>
-        /// Button429 control.
+        /// A7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button429;
+        protected global::System.Web.UI.WebControls.ImageButton A7;
         
         /// <summary>
-        /// Button430 control.
+        /// B7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button430;
+        protected global::System.Web.UI.WebControls.ImageButton B7;
         
         /// <summary>
-        /// Button431 control.
+        /// C7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button431;
+        protected global::System.Web.UI.WebControls.ImageButton C7;
         
         /// <summary>
-        /// Button432 control.
+        /// D7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button432;
+        protected global::System.Web.UI.WebControls.ImageButton D7;
         
         /// <summary>
-        /// Button433 control.
+        /// E7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button433;
+        protected global::System.Web.UI.WebControls.ImageButton E7;
         
         /// <summary>
-        /// Button434 control.
+        /// F7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button434;
+        protected global::System.Web.UI.WebControls.ImageButton F7;
         
         /// <summary>
-        /// Button435 control.
+        /// G7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button435;
+        protected global::System.Web.UI.WebControls.ImageButton G7;
         
         /// <summary>
-        /// Button436 control.
+        /// H7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button436;
+        protected global::System.Web.UI.WebControls.ImageButton H7;
         
         /// <summary>
         /// Button363 control.
@@ -751,76 +751,76 @@ namespace ProyectoEntregable2 {
         protected global::System.Web.UI.WebControls.Button Button375;
         
         /// <summary>
-        /// Button437 control.
+        /// A8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button437;
+        protected global::System.Web.UI.WebControls.ImageButton A8;
         
         /// <summary>
-        /// Button438 control.
+        /// B8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button438;
+        protected global::System.Web.UI.WebControls.ImageButton B8;
         
         /// <summary>
-        /// Button439 control.
+        /// C8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button439;
+        protected global::System.Web.UI.WebControls.ImageButton C8;
         
         /// <summary>
-        /// Button440 control.
+        /// D8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button440;
+        protected global::System.Web.UI.WebControls.ImageButton D8;
         
         /// <summary>
-        /// Button441 control.
+        /// E8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button441;
+        protected global::System.Web.UI.WebControls.ImageButton E8;
         
         /// <summary>
-        /// Button442 control.
+        /// F8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button442;
+        protected global::System.Web.UI.WebControls.ImageButton F8;
         
         /// <summary>
-        /// Button443 control.
+        /// G8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button443;
+        protected global::System.Web.UI.WebControls.ImageButton G8;
         
         /// <summary>
-        /// Button444 control.
+        /// H8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton Button444;
+        protected global::System.Web.UI.WebControls.ImageButton H8;
         
         /// <summary>
         /// Button364 control.

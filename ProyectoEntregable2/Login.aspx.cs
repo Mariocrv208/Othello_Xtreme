@@ -13,5 +13,19 @@ namespace ProyectoEntregable2
         {
 
         }
+
+        protected void ContLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Equals("")&&txtContrasenia.Equals(""))
+            {
+
+            }
+            Response.Redirect("PaginaPrincipal.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ingreso.aspx");
+        }
     }
 }

@@ -23,13 +23,15 @@
 <body id="body">
     <form id="Login" runat="server">
       <center>
-        <br />
         <div id="nombre">
               <h3 style="height: 31px; width: 1399px">&nbsp; iGamesGT</h3>
           </div>
           </header>
           <br />
+          <br />
+          <br />
           <h1>Menu Principal</h1>
+          <p>&nbsp;</p>
           <br />
             <asp:Button ID="Button8" runat="server" Text="Cargar partida" Width="470px" Height="63px" BackColor="#CC0066" />
             <br />
@@ -49,6 +51,8 @@
               <div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
+              <br />
+              <br />
               <br />
               <br />
               <br />
