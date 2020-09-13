@@ -259,6 +259,7 @@
     <Compile Include="Torneos.aspx.designer.cs">
       <DependentUpon>Torneos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosCargar.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -39,14 +39,12 @@
           <br />
           <br />
           <br />
-          <br />
-          <br />
           <h1><b>LOGIN</b></h1>
-          <br />
-            <span style="font-size: medium"><b/>U</b>suario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b/><b style="font-size: medium"/> <asp:TextBox ID="txtUsuario" runat="server" Width="317px" BackColor="#FFCCCC"></asp:TextBox>
-    </b></b></span>
+          <br /><br />
           <div>
-              <b/><br />
+              <b>usuario:<b/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:TextBox ID="txtUsuario" runat="server" Width="317px" BackColor="#FFCCCC"></asp:TextBox>
+              <br /><br />
         </div>
           <div>
             <b style="font-size: medium">contraseña:<b/>&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtContrasenia" runat="server" Width="317px" BackColor="#FFCCCC"></asp:TextBox>
@@ -74,7 +72,7 @@
     
         
     </form>
-    </b></b></b>
+    </b></b></b></b>
     <div id="end">
         <b/>
     <p>

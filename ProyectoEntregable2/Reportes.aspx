@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Torneos.aspx.cs" Inherits="ProyectoEntregable2.Torneos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reportes.aspx.cs" Inherits="ProyectoEntregable2.Reportes" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Othello-Torneos</title>
+    <title>Othello-Reportes</title>
     <link rel="icon" href="img/I1.jpeg" />
     <style type="text/css">
         #nombre{
@@ -20,57 +20,47 @@
         }
     </style>
 </head>
-<body data-="body">
+<body id="body">
     <form id="Login" runat="server">
       <center>
-        <br />
           <div id="nombre">
               <h3 style="height: 31px; width: 1399px">&nbsp; iGamesGT</h3>
           </div>
-          <br />
-          <h1>Torneos</h1>
+          <h1>&nbsp;</h1>
+          <h1>Reportes</h1>
+          <asp:DropDownList ID="DropDownList1" runat="server" BackColor="#FFCCCC" style="margin-bottom: 1px" Width="926px">
+          </asp:DropDownList>
             <br />
-          <asp:Button ID="Button5" runat="server" Height="200px" Text="Crear Torneo" Width="450px" BackColor="#CC0066" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:Button ID="Button6" runat="server" Height="200px" Text="Unirse a un torneo" Width="450px" BackColor="#CC0066" />
           <br />
           <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-          <div id="CrearT">
-              <br />
-              <asp:Panel ID="Panel2" runat="server" Height="400px" Width="450px">
-                  <br />
-                  <br />
-                  Cantidad de participantes<br />
-                  <br />
-                  <br />
-                  <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="307px" BackColor="#FFCCCC">
-                  </asp:DropDownList>
-                  <br />
-                  <br />
-                  <br />
-                  <asp:Button ID="Button7" runat="server" Height="121px" Text="Crear Torneo" Width="281px" BackColor="#CC0066" />
-              </asp:Panel>
-              <br />
-          </div>
-          <div id="UnirT">
-              <br />
-              <asp:Panel ID="Panel3" runat="server" Height="400px" Width="450px">
-                  <br />
-                  <br />
-                  Ingresar codigo de torneo<br />
-                  <br />
-                  <br />
-                  <asp:TextBox ID="TextBox1" runat="server" Width="275px" BackColor="#FFCCCC"></asp:TextBox>
-                  <br />
-                  <br />
-                  <br />
-                  <asp:Button ID="Button8" runat="server" Height="121px" Text="Unirse a Torneo" Width="281px" BackColor="#CC0066" />
-              </asp:Panel>
-          </div>
-          &nbsp;&nbsp;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nombres&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
+          <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apellidos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br />
+          <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nickname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br />
+          <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tipo de partida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox4" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br />
+          <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Partidas ganadas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="TextBox5" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br />
+          <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Movimientos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox6" runat="server" Width="745px" BackColor="#FFCCCC"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+          <br />
+            <br />
+          <br />
+            <asp:Button ID="Button3" runat="server" Height="78px" Text="Generar PDF" Width="549px" BackColor="#CC0066" />
+          <br />
+          <br />
+            <asp:Button ID="Button2" runat="server" Text="Regresar" Width="548px" Height="72px" BackColor="#CC0066" OnClick="Button1_Click" />
+          <div>
               <br />
               <br />
               <br />

@@ -410,7 +410,10 @@
           <br />
             <br />
           <br />
-            <asp:Button ID="Button3" runat="server" Height="65px" Text="Guardar Partida" Width="234px" BackColor="#CC0066" />
+            <asp:Button ID="Button3" runat="server" Height="65px" Text="Guardar Partida" Width="234px" BackColor="#CC0066" OnClick="Button3_Click" />
+          <br />
+          <br />
+          <asp:Button ID="Button376" runat="server" BackColor="#CC0066" Height="72px" OnClick="Button376_Click" Text="Regresar a menu" Width="236px" />
           <div>
               <br />
               <br />

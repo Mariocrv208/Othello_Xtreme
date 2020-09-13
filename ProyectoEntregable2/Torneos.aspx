@@ -70,7 +70,8 @@
               </asp:Panel>
           </div>
           &nbsp;&nbsp;<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button2" runat="server" Text="Regresar" Width="458px" Height="72px" BackColor="#CC0066" OnClick="Button1_Click" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>
               <br />
               <br />
               <br />

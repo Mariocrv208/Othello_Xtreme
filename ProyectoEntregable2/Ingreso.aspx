@@ -343,7 +343,10 @@
               <br />
           </div>
           <div>
-            <asp:Button ID="Button1" runat="server" Text="Continuar" Width="458px" Height="99px" BackColor="#CC0066" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Continuar" Width="458px" Height="72px" BackColor="#CC0066" OnClick="Button1_Click" />
+              <br />
+              <br />
+            <asp:Button ID="Button2" runat="server" Text="Regresar" Width="458px" Height="72px" BackColor="#CC0066" OnClick="Button1_Click" />
               <br />
               <br />
             <br /><br />
@@ -355,7 +358,9 @@
     <div id="end">
         <b/>
     <p>
-        Universidad de San Carlos de Guatemalaa       Mario Jose Rodriguez Vasquez - 201908338</p>
+        Universidad de San Carlos de Guatemala</p>
+    <p>
+        Mario Jose Rodriguez Vasquez - 201908338</p>
     </div>
 </body>
 </html>

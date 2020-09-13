@@ -17,6 +17,10 @@ namespace ProyectoEntregable2
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if (txtnombres.Equals("")&& txtapellidos.Equals("")&& txtnickname.Equals("")&& txtcontra.Equals("") && txtfecha.Equals("") && DropDownPais.Equals("Seleccione un pais")&& txtcorreo.Equals(""))
+            {
+                Response.Redirect("Login.aspx");
+            }
             
         }
 
