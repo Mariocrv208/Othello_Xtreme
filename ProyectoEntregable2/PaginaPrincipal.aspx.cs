@@ -42,5 +42,11 @@ namespace ProyectoEntregable2
             carruta = DropDownPartidas.Text;
             Response.Redirect("PantallaJuego.aspx");
         }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            carruta = "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\Proyecto1\\ProyectoEntregable2\\XMLArchivos\\" + buscaArc.FileName;
+            Response.Redirect("PantallaJuego.aspx");
+        }
     }
 }

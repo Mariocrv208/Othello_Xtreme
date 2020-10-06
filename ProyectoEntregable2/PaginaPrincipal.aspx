@@ -32,8 +32,7 @@
           <br />
           <h1>Menu Principal</h1>
           <p>&nbsp;</p>
-          <br />
-            <asp:Button ID="Button8" runat="server" Text="Cargar partida" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button8_Click" />
+          CARGAR PARTIDA EXISTENTE<br />
             <br />
           <br />
           <asp:DropDownList ID="DropDownPartidas" runat="server" BackColor="#FF6699" DataSourceID="SqlDataSource1" DataTextField="ruta" DataValueField="ruta" Width="466px">
@@ -41,6 +40,21 @@
           </asp:DropDownList>
           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db %>" SelectCommand="SELECT [ruta] FROM [Archivo]"></asp:SqlDataSource>
             <br />
+          <br />
+            <asp:Button ID="Button8" runat="server" Text="Cargar partida" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button8_Click" />
+            <br />
+          <br />
+          <br />
+          CARGAR ARCHIVO NUEVO<br />
+          <br />
+          <asp:FileUpload ID="buscaArc" runat="server" />
+          <br />
+          <br />
+          <br />
+          <asp:Button ID="Button10" runat="server" BackColor="#CC0066" Height="63px" OnClick="Button10_Click" Text="Cargar archivo Seleccionado" Width="470px" />
+          <br />
+          <br />
+          MAS OPCIONES<br />
           <br />
             <asp:Button ID="Button4" runat="server" Text="Partida individual" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button4_Click" />
             <br />
