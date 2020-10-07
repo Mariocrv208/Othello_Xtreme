@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tablero>
+  <ficha>
+    <color>negro</color>
+    <columna>A</columna>
+    <fila>1</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>B</columna>
+    <fila>1</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>A</columna>
+    <fila>2</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>B</columna>
+    <fila>2</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>E</columna>
+    <fila>4</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>D</columna>
+    <fila>5</fila>
+  </ficha>
+</Tablero>

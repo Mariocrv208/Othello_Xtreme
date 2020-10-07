@@ -31,21 +31,9 @@
           <br />
           <br />
           <h1>Menu Principal</h1>
-          <p>&nbsp;</p>
-          CARGAR PARTIDA EXISTENTE<br />
-            <br />
-          <br />
-          <asp:DropDownList ID="DropDownPartidas" runat="server" BackColor="#FF6699" DataSourceID="SqlDataSource1" DataTextField="ruta" DataValueField="ruta" Width="466px">
-              <asp:ListItem>Escoje una partida a cargar</asp:ListItem>
-          </asp:DropDownList>
-          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db %>" SelectCommand="SELECT [ruta] FROM [Archivo]"></asp:SqlDataSource>
-            <br />
-          <br />
-            <asp:Button ID="Button8" runat="server" Text="Cargar partida" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button8_Click" />
-            <br />
           <br />
           <br />
-          CARGAR ARCHIVO NUEVO<br />
+          CARGAR PARTIDA<br />
           <br />
           <asp:FileUpload ID="buscaArc" runat="server" />
           <br />
