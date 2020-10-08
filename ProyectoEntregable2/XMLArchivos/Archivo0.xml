@@ -12,6 +12,21 @@
   </ficha>
   <ficha>
     <color>negro</color>
+    <columna>D</columna>
+    <fila>1</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>E</columna>
+    <fila>1</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
+    <columna>F</columna>
+    <fila>1</fila>
+  </ficha>
+  <ficha>
+    <color>negro</color>
     <columna>A</columna>
     <fila>2</fila>
   </ficha>
@@ -21,6 +36,21 @@
     <fila>2</fila>
   </ficha>
   <ficha>
+    <color>blanco</color>
+    <columna>E</columna>
+    <fila>2</fila>
+  </ficha>
+  <ficha>
+    <color>blanco</color>
+    <columna>F</columna>
+    <fila>2</fila>
+  </ficha>
+  <ficha>
+    <color>blanco</color>
+    <columna>D</columna>
+    <fila>4</fila>
+  </ficha>
+  <ficha>
     <color>negro</color>
     <columna>E</columna>
     <fila>4</fila>
@@ -28,6 +58,11 @@
   <ficha>
     <color>negro</color>
     <columna>D</columna>
+    <fila>5</fila>
+  </ficha>
+  <ficha>
+    <color>blanco</color>
+    <columna>E</columna>
     <fila>5</fila>
   </ficha>
 </Tablero>

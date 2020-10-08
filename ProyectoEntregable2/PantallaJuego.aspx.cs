@@ -14,11 +14,13 @@ namespace ProyectoEntregable2
     public partial class PantallaJuego : System.Web.UI.Page
     {
         conect conectar = new conect();
-        int contadornegro;
-        int contadorblanco;
         static int contadorxml = 0;
         static string [][]  matriztablero;
         static string [] contenidotablero;
+        static string identificadorGlobal = "";
+        static string nombreJug2 = "";
+        static int contadornegro = 0;
+        static int contadorblanco = 0;
         static string identificadorA1 = "";
         static string identificadorB1 = "";
         static string identificadorC1 = "";
@@ -46,7 +48,7 @@ namespace ProyectoEntregable2
         static string identificadorA4 = "";
         static string identificadorB4 = "";
         static string identificadorC4 = "";
-        static string identificadorD4 = "";
+        static string identificadorD4 = "blanco";
         static string identificadorE4 = "negro";
         static string identificadorF4 = "";
         static string identificadorG4 = "";
@@ -55,7 +57,7 @@ namespace ProyectoEntregable2
         static string identificadorB5 = "";
         static string identificadorC5 = "";
         static string identificadorD5 = "negro";
-        static string identificadorE5 = "";
+        static string identificadorE5 = "blanco";
         static string identificadorF5 = "";
         static string identificadorG5 = "";
         static string identificadorH5 = "";
@@ -83,136 +85,6 @@ namespace ProyectoEntregable2
         static string identificadorF8 = "";
         static string identificadorG8 = "";
         static string identificadorH8 = "";
-        static string columnaA1 = "A";
-        static string filaA1 = "1";
-        static string columnaB1 = "B";
-        static string filaB1 = "1";
-        static string columnaC1 = "C";
-        static string filaC1 = "1";
-        static string columnaD1 = "D";
-        static string filaD1 = "1";
-        static string columnaE1 = "E";
-        static string filaE1 = "1";
-        static string columnaF1 = "F";
-        static string filaF1 = "1";
-        static string columnaG1 = "G";
-        static string filaG1 = "1";
-        static string columnaH1 = "H";
-        static string filaH1 = "1";
-        static string columnaA2 = "A";
-        static string filaA2 = "2";
-        static string columnaB2 = "B";
-        static string filaB2 = "2";
-        static string columnaC2 = "C";
-        static string filaC2 = "2";
-        static string columnaD2 = "D";
-        static string filaD2 = "2";
-        static string columnaE2 = "E";
-        static string filaE2 = "2";
-        static string columnaF2 = "F";
-        static string filaF2 = "2";
-        static string columnaG2 = "G";
-        static string filaG2 = "2";
-        static string columnaH2 = "H";
-        static string filaH2 = "2";
-        static string columnaA3 = "A";
-        static string filaA3 = "3";
-        static string columnaB3 = "B";
-        static string filaB3 = "3";
-        static string columnaC3 = "C";
-        static string filaC3 = "3";
-        static string columnaD3 = "D";
-        static string filaD3 = "3";
-        static string columnaE3 = "E";
-        static string filaE3 = "3";
-        static string columnaF3 = "F";
-        static string filaF3 = "3";
-        static string columnaG3 = "G";
-        static string filaG3 = "3";
-        static string columnaH3 = "H";
-        static string filaH3 = "3";
-        static string columnaA4 = "A";
-        static string filaA4 = "4";
-        static string columnaB4 = "B";
-        static string filaB4 = "4";
-        static string columnaC4 = "C";
-        static string filaC4 = "4";
-        static string columnaD4 = "D";
-        static string filaD4 = "4";
-        static string columnaE4 = "E";
-        static string filaE4 = "4";
-        static string columnaF4 = "F";
-        static string filaF4 = "4";
-        static string columnaG4 = "G";
-        static string filaG4 = "4";
-        static string columnaH4 = "H";
-        static string filaH4 = "4";
-        static string columnaA5 = "A";
-        static string filaA5 = "5";
-        static string columnaB5 = "B";
-        static string filaB5 = "5";
-        static string columnaC5 = "C";
-        static string filaC5 = "5";
-        static string columnaD5 = "D";
-        static string filaD5 = "5";
-        static string columnaE5 = "E";
-        static string filaE5 = "5";
-        static string columnaF5 = "F";
-        static string filaF5 = "5";
-        static string columnaG5 = "G";
-        static string filaG5 = "5";
-        static string columnaH5 = "H";
-        static string filaH5 = "5";
-        static string columnaA6 = "A";
-        static string filaA6 = "6";
-        static string columnaB6 = "B";
-        static string filaB6 = "6";
-        static string columnaC6 = "C";
-        static string filaC6 = "6";
-        static string columnaD6 = "D";
-        static string filaD6 = "6";
-        static string columnaE6 = "E";
-        static string filaE6 = "6";
-        static string columnaF6 = "F";
-        static string filaF6 = "6";
-        static string columnaG6 = "G";
-        static string filaG6 = "6";
-        static string columnaH6 = "H";
-        static string filaH6 = "6";
-        static string columnaA7 = "A";
-        static string filaA7 = "7";
-        static string columnaB7 = "B";
-        static string filaB7 = "7";
-        static string columnaC7 = "C";
-        static string filaC7 = "7";
-        static string columnaD7 = "D";
-        static string filaD7 = "7";
-        static string columnaE7 = "E";
-        static string filaE7 = "7";
-        static string columnaF7 = "F";
-        static string filaF7 = "7";
-        static string columnaG7 = "G";
-        static string filaG7 = "7";
-        static string columnaH7 = "H";
-        static string filaH7 = "7";
-        static string columnaA8 = "A";
-        static string filaA8 = "8";
-        static string columnaB8 = "B";
-        static string filaB8 = "8";
-        static string columnaC8 = "C";
-        static string filaC8 = "8";
-        static string columnaD8 = "D";
-        static string filaD8 = "8";
-        static string columnaE8 = "E";
-        static string filaE8 = "8";
-        static string columnaF8 = "F";
-        static string filaF8 = "8";
-        static string columnaG8 = "G";
-        static string filaG8 = "8";
-        static string columnaH8 = "H";
-        static string rutabase = "";
-        static string filaH8 = "8";
-        static string idArchivo = "0";
         static string fila1 = "1";
         static string fila2 = "2";
         static string fila3 = "3";
@@ -234,12 +106,19 @@ namespace ProyectoEntregable2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            EsquemaTablero();
+            if (identificadorGlobal == "")
+            {
+                identificadorGlobal = "negro";
+            }
+            nombreJug2 = PaginaPrincipal.nombre2;
+            TextBox4.Text = nombreJug2;
+            TextBox3.Text = ProyectoEntregable2.Login.UsuarioLogeado;
             XmlDocument leer = new XmlDocument();
             if (PaginaPrincipal.carruta != "")
             {
                 if(validacion == false)
                 {
+                    EsquemaTablero();
                     leer.Load(PaginaPrincipal.carruta);
                     foreach (XmlNode xmlNode in leer.DocumentElement.ChildNodes[0].ParentNode)
                     {
@@ -2039,29 +1918,84 @@ namespace ProyectoEntregable2
                             }
                         }
                     }
+                    identificadorGlobal = "negro";
+                    PaginaPrincipal.carruta = "";
                 }
             }
+            if (identificadorGlobal == "negro")
+            {
+                Label1.Text = "blanco";
+            }
+            if (identificadorGlobal == "blanco")
+            {
+                Label1.Text = "negro";
+            }
+            if (PaginaPrincipal.carruta != "")
+            {
+                PaginaPrincipal.carruta = "";
+            }
             EsquemaTablero();
+
+        }
+
+        protected void FichasPosibles()
+        {
+            string[] guardarseparaciones;
+            for (int i = 0; i<matriztablero.Length; i++)
+            {
+                for (int j = 0; j<matriztablero[i].Length; j++)
+                {
+                    string guardarcontenido = matriztablero[i][j].ToString();
+                    guardarseparaciones = guardarcontenido.Split(',');
+                    if (identificadorGlobal.Equals("negro") && guardarseparaciones[2].ToString() == "negro" && i==0 && j==0)
+                    {
+                        contadornegro++;
+                        A1.ImageUrl = "Blanca.png";
+                        A1.Enabled = false;
+                    }
+                    else if (identificadorGlobal.Equals("blanco") && guardarseparaciones[2].ToString() == "blanco" && i == 0 && j == 0)
+                    {
+                        A1.ImageUrl = "negra.png";
+                        contenidotablero[0] = fila1;
+                        contenidotablero[1] = columnaA;
+                        contenidotablero[2] = identificadorA1;
+                        matriztablero[i][j] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+                    }
+                    else if (identificadorGlobal.Equals("") && guardarseparaciones[2].ToString() == "" && i == 0 && j == 0)
+                    {
+                        identificadorA1 = "";
+                        contadornegro++;
+                        A1.ImageUrl = "fondotransparente.png";
+
+                    }
+                    contenidotablero[0] = fila1;
+                    contenidotablero[1] = columnaA;
+                    contenidotablero[2] = identificadorA1;
+                    matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+                }
+            }
         }
 
         protected void Button178_Click(object sender, ImageClickEventArgs e)
         {
-            
-            if (identificadorA1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA1 = "blanco";
-                contadorblanco++;
-                A1.ImageUrl = "Blanca.png";
-                
-            }
-            else
-            {
-                identificadorA1 = "negro";
                 contadornegro++;
+                identificadorA1 = "negro";
+                identificadorGlobal = "blanco";
                 A1.ImageUrl = "negra.png";
-                A1.ImageUrl = "Blanca.png";
-                
+                A1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA1 = "blanco";
+                identificadorGlobal = "negro";
+                A1.ImageUrl = "Blanca.png";
+                A1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA1;
@@ -2070,18 +2004,24 @@ namespace ProyectoEntregable2
 
         protected void B1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB1 = "blanco";
-                contadorblanco++;
-                B1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB1 = "negro";
                 contadornegro++;
+                identificadorB1 = "negro";
+                identificadorGlobal = "blanco";
                 B1.ImageUrl = "negra.png";
+                B1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB1 = "blanco";
+                identificadorGlobal = "negro";
+                B1.ImageUrl = "Blanca.png";
+                B1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB1;
@@ -2090,18 +2030,24 @@ namespace ProyectoEntregable2
 
         protected void C1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC1 = "blanco";
-                contadorblanco++;
-                C1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC1 = "negro";
                 contadornegro++;
+                identificadorC1 = "negro";
+                identificadorGlobal = "blanco";
                 C1.ImageUrl = "negra.png";
+                C1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC1 = "blanco";
+                identificadorGlobal = "negro";
+                C1.ImageUrl = "Blanca.png";
+                C1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC1;
@@ -2110,18 +2056,24 @@ namespace ProyectoEntregable2
 
         protected void D1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD1 = "blanco";
-                contadorblanco++;
-                D1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD1 = "negro";
                 contadornegro++;
+                identificadorD1 = "negro";
+                identificadorGlobal = "blanco";
                 D1.ImageUrl = "negra.png";
+                D1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD1 = "blanco";
+                identificadorGlobal = "negro";
+                D1.ImageUrl = "Blanca.png";
+                D1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD1;
@@ -2130,18 +2082,24 @@ namespace ProyectoEntregable2
 
         protected void E1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE1 = "blanco";
-                contadorblanco++;
-                E1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE1 = "negro";
                 contadornegro++;
+                identificadorE1 = "negro";
+                identificadorGlobal = "blanco";
                 E1.ImageUrl = "negra.png";
+                E1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE1 = "blanco";
+                identificadorGlobal = "negro";
+                E1.ImageUrl = "Blanca.png";
+                E1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE1;
@@ -2150,18 +2108,24 @@ namespace ProyectoEntregable2
 
         protected void F1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF1 = "blanco";
-                contadorblanco++;
-                F1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF1 = "negro";
                 contadornegro++;
+                identificadorF1 = "negro";
+                identificadorGlobal = "blanco";
                 F1.ImageUrl = "negra.png";
+                F1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF1 = "blanco";
+                identificadorGlobal = "negro";
+                F1.ImageUrl = "Blanca.png";
+                F1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF1;
@@ -2170,18 +2134,24 @@ namespace ProyectoEntregable2
 
         protected void G1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG1 = "blanco";
-                contadorblanco++;
-                G1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG1 = "negro";
                 contadornegro++;
+                identificadorG1 = "negro";
+                identificadorGlobal = "blanco";
                 G1.ImageUrl = "negra.png";
+                G1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG1 = "blanco";
+                identificadorGlobal = "negro";
+                G1.ImageUrl = "Blanca.png";
+                G1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG1;
@@ -2190,18 +2160,24 @@ namespace ProyectoEntregable2
 
         protected void H1_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH1.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH1 = "blanco";
-                contadorblanco++;
-                H1.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH1 = "negro";
                 contadornegro++;
+                identificadorH1 = "negro";
+                identificadorGlobal = "blanco";
                 H1.ImageUrl = "negra.png";
+                H1.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH1 = "blanco";
+                identificadorGlobal = "negro";
+                H1.ImageUrl = "Blanca.png";
+                H1.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH1;
@@ -2210,18 +2186,24 @@ namespace ProyectoEntregable2
 
         protected void A2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA2 = "blanco";
-                contadorblanco++;
-                A2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA2 = "negro";
                 contadornegro++;
+                identificadorA2 = "negro";
+                identificadorGlobal = "blanco";
                 A2.ImageUrl = "negra.png";
+                A2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA2 = "blanco";
+                identificadorGlobal = "negro";
+                A2.ImageUrl = "Blanca.png";
+                A2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA2;
@@ -2230,18 +2212,24 @@ namespace ProyectoEntregable2
 
         protected void B2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB2 = "blanco";
-                contadorblanco++;
-                B2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB2 = "negro";
                 contadornegro++;
+                identificadorB2 = "negro";
+                identificadorGlobal = "blanco";
                 B2.ImageUrl = "negra.png";
+                B2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB2 = "blanco";
+                identificadorGlobal = "negro";
+                B2.ImageUrl = "Blanca.png";
+                B2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB2;
@@ -2250,18 +2238,24 @@ namespace ProyectoEntregable2
 
         protected void C2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC2 = "blanco";
-                contadorblanco++;
-                C2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC2 = "negro";
                 contadornegro++;
+                identificadorC2 = "negro";
+                identificadorGlobal = "blanco";
                 C2.ImageUrl = "negra.png";
+                C2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC2 = "blanco";
+                identificadorGlobal = "negro";
+                C2.ImageUrl = "Blanca.png";
+                C2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC2;
@@ -2270,18 +2264,24 @@ namespace ProyectoEntregable2
 
         protected void D2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD2 = "blanco";
-                contadorblanco++;
-                D2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD2 = "negro";
                 contadornegro++;
+                identificadorD2 = "negro";
+                identificadorGlobal = "blanco";
                 D2.ImageUrl = "negra.png";
+                D2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD2 = "blanco";
+                identificadorGlobal = "negro";
+                D2.ImageUrl = "Blanca.png";
+                D2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD2;
@@ -2291,18 +2291,24 @@ namespace ProyectoEntregable2
 
         protected void E2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE2 = "blanco";
-                contadorblanco++;
-                E2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE2 = "negro";
                 contadornegro++;
+                identificadorE2 = "negro";
+                identificadorGlobal = "blanco";
                 E2.ImageUrl = "negra.png";
+                E2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE2 = "blanco";
+                identificadorGlobal = "negro";
+                E2.ImageUrl = "Blanca.png";
+                E2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE2;
@@ -2311,18 +2317,24 @@ namespace ProyectoEntregable2
 
         protected void F2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF2 = "blanco";
-                contadorblanco++;
-                F2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF2 = "negro";
                 contadornegro++;
+                identificadorF2 = "negro";
+                identificadorGlobal = "blanco";
                 F2.ImageUrl = "negra.png";
+                F2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF2 = "blanco";
+                identificadorGlobal = "negro";
+                F2.ImageUrl = "Blanca.png";
+                F2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF2;
@@ -2331,18 +2343,24 @@ namespace ProyectoEntregable2
 
         protected void G2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG2 = "blanco";
-                contadorblanco++;
-                G2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG2 = "negro";
                 contadornegro++;
+                identificadorG2 = "negro";
+                identificadorGlobal = "blanco";
                 G2.ImageUrl = "negra.png";
+                G2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG2 = "blanco";
+                identificadorGlobal = "negro";
+                G2.ImageUrl = "Blanca.png";
+                G2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG2;
@@ -2351,18 +2369,24 @@ namespace ProyectoEntregable2
 
         protected void H2_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH2.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH2 = "blanco";
-                contadorblanco++;
-                H2.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH2 = "negro";
                 contadornegro++;
+                identificadorH2 = "negro";
+                identificadorGlobal = "blanco";
                 H2.ImageUrl = "negra.png";
+                H2.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH2 = "blanco";
+                identificadorGlobal = "negro";
+                H2.ImageUrl = "Blanca.png";
+                H2.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila2;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH2;
@@ -2371,18 +2395,24 @@ namespace ProyectoEntregable2
 
         protected void A3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA3 = "blanco";
-                contadorblanco++;
-                A3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA3 = "negro";
                 contadornegro++;
+                identificadorA3 = "negro";
+                identificadorGlobal = "blanco";
                 A3.ImageUrl = "negra.png";
+                A3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA3 = "blanco";
+                identificadorGlobal = "negro";
+                A3.ImageUrl = "Blanca.png";
+                A3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA3;
@@ -2391,18 +2421,24 @@ namespace ProyectoEntregable2
 
         protected void B3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB3 = "blanco";
-                contadorblanco++;
-                B3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB3 = "negro";
                 contadornegro++;
+                identificadorB3 = "negro";
+                identificadorGlobal = "blanco";
                 B3.ImageUrl = "negra.png";
+                B3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB3 = "blanco";
+                identificadorGlobal = "negro";
+                B3.ImageUrl = "Blanca.png";
+                B3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB3;
@@ -2411,18 +2447,24 @@ namespace ProyectoEntregable2
 
         protected void C3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC3 = "blanco";
-                contadorblanco++;
-                C3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC3 = "negro";
                 contadornegro++;
+                identificadorC3 = "negro";
+                identificadorGlobal = "blanco";
                 C3.ImageUrl = "negra.png";
+                C3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC3 = "blanco";
+                identificadorGlobal = "negro";
+                C3.ImageUrl = "Blanca.png";
+                C3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC3;
@@ -2431,18 +2473,24 @@ namespace ProyectoEntregable2
 
         protected void D3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD3 = "blanco";
-                contadorblanco++;
-                D3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD3 = "negro";
                 contadornegro++;
+                identificadorD3 = "negro";
+                identificadorGlobal = "blanco";
                 D3.ImageUrl = "negra.png";
+                D3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD3 = "blanco";
+                identificadorGlobal = "negro";
+                D3.ImageUrl = "Blanca.png";
+                D3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD3;
@@ -2451,18 +2499,24 @@ namespace ProyectoEntregable2
 
         protected void E3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE3 = "blanco";
-                contadorblanco++;
-                E3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE3 = "negro";
                 contadornegro++;
+                identificadorE3 = "negro";
+                identificadorGlobal = "blanco";
                 E3.ImageUrl = "negra.png";
+                E3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE3 = "blanco";
+                identificadorGlobal = "negro";
+                E3.ImageUrl = "Blanca.png";
+                E3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE3;
@@ -2471,18 +2525,24 @@ namespace ProyectoEntregable2
 
         protected void F3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF3 = "blanco";
-                contadorblanco++;
-                F3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF3 = "negro";
                 contadornegro++;
+                identificadorF3 = "negro";
+                identificadorGlobal = "blanco";
                 F3.ImageUrl = "negra.png";
+                F3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF3 = "blanco";
+                identificadorGlobal = "negro";
+                F3.ImageUrl = "Blanca.png";
+                F3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF3;
@@ -2491,18 +2551,24 @@ namespace ProyectoEntregable2
 
         protected void G3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG3 = "blanco";
-                contadorblanco++;
-                G3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG3 = "negro";
                 contadornegro++;
+                identificadorG3 = "negro";
+                identificadorGlobal = "blanco";
                 G3.ImageUrl = "negra.png";
+                G3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG3 = "blanco";
+                identificadorGlobal = "negro";
+                G3.ImageUrl = "Blanca.png";
+                G3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG3;
@@ -2511,18 +2577,24 @@ namespace ProyectoEntregable2
 
         protected void H3_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH3.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH3 = "blanco";
-                contadorblanco++;
-                H3.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH3 = "negro";
                 contadornegro++;
+                identificadorH3 = "negro";
+                identificadorGlobal = "blanco";
                 H3.ImageUrl = "negra.png";
+                H3.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH3 = "blanco";
+                identificadorGlobal = "negro";
+                H3.ImageUrl = "Blanca.png";
+                H3.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila3;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH3;
@@ -2531,18 +2603,24 @@ namespace ProyectoEntregable2
 
         protected void A4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA4 = "blanco";
-                contadorblanco++;
-                A4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA4 = "negro";
                 contadornegro++;
+                identificadorA4 = "negro";
+                identificadorGlobal = "blanco";
                 A4.ImageUrl = "negra.png";
+                A4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA4 = "blanco";
+                identificadorGlobal = "negro";
+                A4.ImageUrl = "Blanca.png";
+                A4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA4;
@@ -2551,18 +2629,24 @@ namespace ProyectoEntregable2
 
         protected void B4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB4 = "blanco";
-                contadorblanco++;
-                B4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB4 = "negro";
                 contadornegro++;
+                identificadorB4 = "negro";
+                identificadorGlobal = "blanco";
                 B4.ImageUrl = "negra.png";
+                B4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB4 = "blanco";
+                identificadorGlobal = "negro";
+                B4.ImageUrl = "Blanca.png";
+                B4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB4;
@@ -2571,18 +2655,24 @@ namespace ProyectoEntregable2
 
         protected void C4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC4 = "blanco";
-                contadorblanco++;
-                C4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC4 = "negro";
                 contadornegro++;
+                identificadorC4 = "negro";
+                identificadorGlobal = "blanco";
                 C4.ImageUrl = "negra.png";
+                C4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC4 = "blanco";
+                identificadorGlobal = "negro";
+                C4.ImageUrl = "Blanca.png";
+                C4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC4;
@@ -2591,18 +2681,24 @@ namespace ProyectoEntregable2
 
         protected void D4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD4 = "blanco";
-                contadorblanco++;
-                D4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD4 = "negro";
                 contadornegro++;
+                identificadorD4 = "negro";
+                identificadorGlobal = "blanco";
                 D4.ImageUrl = "negra.png";
+                D4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD4 = "blanco";
+                identificadorGlobal = "negro";
+                D4.ImageUrl = "Blanca.png";
+                D4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB4;
@@ -2611,18 +2707,24 @@ namespace ProyectoEntregable2
 
         protected void E4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE4 = "blanco";
-                contadorblanco++;
-                E4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE4 = "negro";
                 contadornegro++;
+                identificadorE4 = "negro";
+                identificadorGlobal = "blanco";
                 E4.ImageUrl = "negra.png";
+                E4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE4 = "blanco";
+                identificadorGlobal = "negro";
+                E4.ImageUrl = "Blanca.png";
+                E4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE4;
@@ -2631,18 +2733,24 @@ namespace ProyectoEntregable2
 
         protected void F4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF4 = "blanco";
-                contadorblanco++;
-                F4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF4 = "negro";
                 contadornegro++;
+                identificadorF4 = "negro";
+                identificadorGlobal = "blanco";
                 F4.ImageUrl = "negra.png";
+                F4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF4 = "blanco";
+                identificadorGlobal = "negro";
+                F4.ImageUrl = "Blanca.png";
+                F4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF4;
@@ -2651,18 +2759,24 @@ namespace ProyectoEntregable2
 
         protected void G4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG4 = "blanco";
-                contadorblanco++;
-                G4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG4 = "negro";
                 contadornegro++;
+                identificadorG4 = "negro";
+                identificadorGlobal = "blanco";
                 G4.ImageUrl = "negra.png";
+                G4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG4 = "blanco";
+                identificadorGlobal = "negro";
+                G4.ImageUrl = "Blanca.png";
+                G4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG4;
@@ -2671,18 +2785,24 @@ namespace ProyectoEntregable2
 
         protected void H4_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH4.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH4 = "blanco";
-                contadorblanco++;
-                H4.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH4 = "negro";
                 contadornegro++;
+                identificadorH4 = "negro";
+                identificadorGlobal = "blanco";
                 H4.ImageUrl = "negra.png";
+                H4.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH4 = "blanco";
+                identificadorGlobal = "negro";
+                H4.ImageUrl = "Blanca.png";
+                H4.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH4;
@@ -2691,18 +2811,24 @@ namespace ProyectoEntregable2
 
         protected void A5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA5 = "blanco";
-                contadorblanco++;
-                A5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA5 = "negro";
                 contadornegro++;
+                identificadorA5 = "negro";
+                identificadorGlobal = "blanco";
                 A5.ImageUrl = "negra.png";
+                A5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA5 = "blanco";
+                identificadorGlobal = "negro";
+                A5.ImageUrl = "Blanca.png";
+                A5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA5;
@@ -2711,18 +2837,24 @@ namespace ProyectoEntregable2
 
         protected void B5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB5 = "blanco";
-                contadorblanco++;
-                B5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB5 = "negro";
                 contadornegro++;
+                identificadorB5 = "negro";
+                identificadorGlobal = "blanco";
                 B5.ImageUrl = "negra.png";
+                B5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB5 = "blanco";
+                identificadorGlobal = "negro";
+                B5.ImageUrl = "Blanca.png";
+                B5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB5;
@@ -2731,18 +2863,24 @@ namespace ProyectoEntregable2
 
         protected void C5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC5 = "blanco";
-                contadorblanco++;
-                C5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC5 = "negro";
                 contadornegro++;
+                identificadorC5 = "negro";
+                identificadorGlobal = "blanco";
                 C5.ImageUrl = "negra.png";
+                C5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC5 = "blanco";
+                identificadorGlobal = "negro";
+                C5.ImageUrl = "Blanca.png";
+                C5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC5;
@@ -2751,18 +2889,24 @@ namespace ProyectoEntregable2
 
         protected void D5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD5 = "blanco";
-                contadorblanco++;
-                D5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD5 = "negro";
                 contadornegro++;
+                identificadorD5 = "negro";
+                identificadorGlobal = "blanco";
                 D5.ImageUrl = "negra.png";
+                D5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD5 = "blanco";
+                identificadorGlobal = "negro";
+                D5.ImageUrl = "Blanca.png";
+                D5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD5;
@@ -2771,18 +2915,24 @@ namespace ProyectoEntregable2
 
         protected void E5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE5 = "blanco";
-                contadorblanco++;
-                E5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE5 = "negro";
                 contadornegro++;
+                identificadorE5 = "negro";
+                identificadorGlobal = "blanco";
                 E5.ImageUrl = "negra.png";
+                E5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE5 = "blanco";
+                identificadorGlobal = "negro";
+                E5.ImageUrl = "Blanca.png";
+                E5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE5;
@@ -2791,18 +2941,24 @@ namespace ProyectoEntregable2
 
         protected void F5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF5 = "blanco";
-                contadorblanco++;
-                F5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF5 = "negro";
                 contadornegro++;
+                identificadorF5 = "negro";
+                identificadorGlobal = "blanco";
                 F5.ImageUrl = "negra.png";
+                F5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF5 = "blanco";
+                identificadorGlobal = "negro";
+                F5.ImageUrl = "Blanca.png";
+                F5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF5;
@@ -2811,18 +2967,24 @@ namespace ProyectoEntregable2
 
         protected void G5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG5 = "blanco";
-                contadorblanco++;
-                G5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG5 = "negro";
                 contadornegro++;
+                identificadorG5 = "negro";
+                identificadorGlobal = "blanco";
                 G5.ImageUrl = "negra.png";
+                G5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG5 = "blanco";
+                identificadorGlobal = "negro";
+                G5.ImageUrl = "Blanca.png";
+                G5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG5;
@@ -2831,18 +2993,24 @@ namespace ProyectoEntregable2
 
         protected void H5_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH5.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH5 = "blanco";
-                contadorblanco++;
-                H5.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH5 = "negro";
                 contadornegro++;
+                identificadorH5 = "negro";
+                identificadorGlobal = "blanco";
                 H5.ImageUrl = "negra.png";
+                H5.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH5 = "blanco";
+                identificadorGlobal = "negro";
+                H5.ImageUrl = "Blanca.png";
+                H5.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila5;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH5;
@@ -2851,18 +3019,24 @@ namespace ProyectoEntregable2
 
         protected void A6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA6 = "blanco";
-                contadorblanco++;
-                A6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA6 = "negro";
                 contadornegro++;
+                identificadorA6 = "negro";
+                identificadorGlobal = "blanco";
                 A6.ImageUrl = "negra.png";
+                A6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA6 = "blanco";
+                identificadorGlobal = "negro";
+                A6.ImageUrl = "Blanca.png";
+                A6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA6;
@@ -2871,18 +3045,24 @@ namespace ProyectoEntregable2
 
         protected void B6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB6 = "blanco";
-                contadorblanco++;
-                B6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB6 = "negro";
                 contadornegro++;
+                identificadorB6 = "negro";
+                identificadorGlobal = "blanco";
                 B6.ImageUrl = "negra.png";
+                B6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB6 = "blanco";
+                identificadorGlobal = "negro";
+                B6.ImageUrl = "Blanca.png";
+                B6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB6;
@@ -2891,18 +3071,24 @@ namespace ProyectoEntregable2
 
         protected void C6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC6 = "blanco";
-                contadorblanco++;
-                C6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC6 = "negro";
                 contadornegro++;
+                identificadorC6 = "negro";
+                identificadorGlobal = "blanco";
                 C6.ImageUrl = "negra.png";
+                C6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC6 = "blanco";
+                identificadorGlobal = "negro";
+                C6.ImageUrl = "Blanca.png";
+                C6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC6;
@@ -2911,18 +3097,24 @@ namespace ProyectoEntregable2
 
         protected void D6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD6 = "blanco";
-                contadorblanco++;
-                D6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD6 = "negro";
                 contadornegro++;
+                identificadorD6 = "negro";
+                identificadorGlobal = "blanco";
                 D6.ImageUrl = "negra.png";
+                D6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD6 = "blanco";
+                identificadorGlobal = "negro";
+                D6.ImageUrl = "Blanca.png";
+                D6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD6;
@@ -2931,18 +3123,24 @@ namespace ProyectoEntregable2
 
         protected void E6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE6 = "blanco";
-                contadorblanco++;
-                E6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE6 = "negro";
                 contadornegro++;
+                identificadorE6 = "negro";
+                identificadorGlobal = "blanco";
                 E6.ImageUrl = "negra.png";
+                E6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE6 = "blanco";
+                identificadorGlobal = "negro";
+                E6.ImageUrl = "Blanca.png";
+                E6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE6;
@@ -2951,18 +3149,24 @@ namespace ProyectoEntregable2
 
         protected void F6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF6 = "blanco";
-                contadorblanco++;
-                F6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF6 = "negro";
                 contadornegro++;
+                identificadorF6 = "negro";
+                identificadorGlobal = "blanco";
                 F6.ImageUrl = "negra.png";
+                F6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF6 = "blanco";
+                identificadorGlobal = "negro";
+                F6.ImageUrl = "Blanca.png";
+                F6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF6;
@@ -2971,18 +3175,24 @@ namespace ProyectoEntregable2
 
         protected void G6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG6 = "blanco";
-                contadorblanco++;
-                G6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG6 = "negro";
                 contadornegro++;
+                identificadorG6 = "negro";
+                identificadorGlobal = "blanco";
                 G6.ImageUrl = "negra.png";
+                G6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG6 = "blanco";
+                identificadorGlobal = "negro";
+                G6.ImageUrl = "Blanca.png";
+                G6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG6;
@@ -2991,18 +3201,24 @@ namespace ProyectoEntregable2
 
         protected void H6_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH6.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH6 = "blanco";
-                contadorblanco++;
-                H6.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH6 = "negro";
                 contadornegro++;
+                identificadorH6 = "negro";
+                identificadorGlobal = "blanco";
                 H6.ImageUrl = "negra.png";
+                H6.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH6 = "blanco";
+                identificadorGlobal = "negro";
+                H6.ImageUrl = "Blanca.png";
+                H6.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila6;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH6;
@@ -3011,18 +3227,24 @@ namespace ProyectoEntregable2
 
         protected void A7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA7 = "blanco";
-                contadorblanco++;
-                A7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA7 = "negro";
                 contadornegro++;
+                identificadorA7 = "negro";
+                identificadorGlobal = "blanco";
                 A7.ImageUrl = "negra.png";
+                A7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA7 = "blanco";
+                identificadorGlobal = "negro";
+                A7.ImageUrl = "Blanca.png";
+                A7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA7;
@@ -3031,18 +3253,24 @@ namespace ProyectoEntregable2
 
         protected void B7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB7 = "blanco";
-                contadorblanco++;
-                B7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB7 = "negro";
                 contadornegro++;
+                identificadorB7 = "negro";
+                identificadorGlobal = "blanco";
                 B7.ImageUrl = "negra.png";
+                B7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB7 = "blanco";
+                identificadorGlobal = "negro";
+                B7.ImageUrl = "Blanca.png";
+                B7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB7;
@@ -3051,18 +3279,24 @@ namespace ProyectoEntregable2
 
         protected void C7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC7 = "blanco";
-                contadorblanco++;
-                C7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC7 = "negro";
                 contadornegro++;
+                identificadorC7 = "negro";
+                identificadorGlobal = "blanco";
                 C7.ImageUrl = "negra.png";
+                C7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC7 = "blanco";
+                identificadorGlobal = "negro";
+                C7.ImageUrl = "Blanca.png";
+                C7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC7;
@@ -3071,18 +3305,24 @@ namespace ProyectoEntregable2
 
         protected void D7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD7 = "blanco";
-                contadorblanco++;
-                D7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD7 = "negro";
                 contadornegro++;
+                identificadorD7 = "negro";
+                identificadorGlobal = "blanco";
                 D7.ImageUrl = "negra.png";
+                D7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD7 = "blanco";
+                identificadorGlobal = "negro";
+                D7.ImageUrl = "Blanca.png";
+                D7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD7;
@@ -3091,18 +3331,24 @@ namespace ProyectoEntregable2
 
         protected void E7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE7 = "blanco";
-                contadorblanco++;
-                E7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE7 = "negro";
                 contadornegro++;
+                identificadorE7 = "negro";
+                identificadorGlobal = "blanco";
                 E7.ImageUrl = "negra.png";
+                E7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE7 = "blanco";
+                identificadorGlobal = "negro";
+                E7.ImageUrl = "Blanca.png";
+                E7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE7;
@@ -3111,18 +3357,24 @@ namespace ProyectoEntregable2
 
         protected void F7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF7 = "blanco";
-                contadorblanco++;
-                F7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF7 = "negro";
                 contadornegro++;
+                identificadorF7 = "negro";
+                identificadorGlobal = "blanco";
                 F7.ImageUrl = "negra.png";
+                F7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF7 = "blanco";
+                identificadorGlobal = "negro";
+                F7.ImageUrl = "Blanca.png";
+                F7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF7;
@@ -3131,18 +3383,24 @@ namespace ProyectoEntregable2
 
         protected void G7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG7 = "blanco";
-                contadorblanco++;
-                G7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG7 = "negro";
                 contadornegro++;
+                identificadorG7 = "negro";
+                identificadorGlobal = "blanco";
                 G7.ImageUrl = "negra.png";
+                G7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG7 = "blanco";
+                identificadorGlobal = "negro";
+                G7.ImageUrl = "Blanca.png";
+                G7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG7;
@@ -3151,18 +3409,24 @@ namespace ProyectoEntregable2
 
         protected void H7_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH7.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH7 = "blanco";
-                contadorblanco++;
-                H7.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH7 = "negro";
                 contadornegro++;
+                identificadorH7 = "negro";
+                identificadorGlobal = "blanco";
                 H7.ImageUrl = "negra.png";
+                H7.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH7 = "blanco";
+                identificadorGlobal = "negro";
+                H7.ImageUrl = "Blanca.png";
+                H7.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila7;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH7;
@@ -3171,18 +3435,24 @@ namespace ProyectoEntregable2
 
         protected void A8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorA8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorA8 = "blanco";
-                contadorblanco++;
-                A8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorA8 = "negro";
                 contadornegro++;
+                identificadorA8 = "negro";
+                identificadorGlobal = "blanco";
                 A8.ImageUrl = "negra.png";
+                A8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorA8 = "blanco";
+                identificadorGlobal = "negro";
+                A8.ImageUrl = "Blanca.png";
+                A8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA8;
@@ -3191,18 +3461,24 @@ namespace ProyectoEntregable2
 
         protected void B8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorB8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorB8 = "blanco";
-                contadorblanco++;
-                B8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorB8 = "negro";
                 contadornegro++;
+                identificadorB8 = "negro";
+                identificadorGlobal = "blanco";
                 B8.ImageUrl = "negra.png";
+                B8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorB8 = "blanco";
+                identificadorGlobal = "negro";
+                B8.ImageUrl = "Blanca.png";
+                B8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB8;
@@ -3211,18 +3487,24 @@ namespace ProyectoEntregable2
 
         protected void C8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorC8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorC8 = "blanco";
-                contadorblanco++;
-                C8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorC8 = "negro";
                 contadornegro++;
+                identificadorC8 = "negro";
+                identificadorGlobal = "blanco";
                 C8.ImageUrl = "negra.png";
+                C8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorC8 = "blanco";
+                identificadorGlobal = "negro";
+                C8.ImageUrl = "Blanca.png";
+                C8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC8;
@@ -3231,18 +3513,24 @@ namespace ProyectoEntregable2
 
         protected void D8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorD8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorD8 = "blanco";
-                contadorblanco++;
-                D8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorD8 = "negro";
                 contadornegro++;
+                identificadorD8 = "negro";
+                identificadorGlobal = "blanco";
                 D8.ImageUrl = "negra.png";
+                D8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorD8 = "blanco";
+                identificadorGlobal = "negro";
+                D8.ImageUrl = "Blanca.png";
+                D8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD8;
@@ -3251,18 +3539,24 @@ namespace ProyectoEntregable2
 
         protected void E8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorE8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorE8 = "blanco";
-                contadorblanco++;
-                E8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorE8 = "negro";
                 contadornegro++;
+                identificadorE8 = "negro";
+                identificadorGlobal = "blanco";
                 E8.ImageUrl = "negra.png";
+                E8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorE8 = "blanco";
+                identificadorGlobal = "negro";
+                E8.ImageUrl = "Blanca.png";
+                E8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE8;
@@ -3271,18 +3565,24 @@ namespace ProyectoEntregable2
 
         protected void F8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorF8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorF8 = "blanco";
-                contadorblanco++;
-                F8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorF8 = "negro";
                 contadornegro++;
+                identificadorF8 = "negro";
+                identificadorGlobal = "blanco";
                 F8.ImageUrl = "negra.png";
+                F8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorF8 = "blanco";
+                identificadorGlobal = "negro";
+                F8.ImageUrl = "Blanca.png";
+                F8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF8;
@@ -3291,18 +3591,24 @@ namespace ProyectoEntregable2
 
         protected void G8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorG8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorG8 = "blanco";
-                contadorblanco++;
-                G8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorG8 = "negro";
                 contadornegro++;
+                identificadorG8 = "negro";
+                identificadorGlobal = "blanco";
                 G8.ImageUrl = "negra.png";
+                G8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorG8 = "blanco";
+                identificadorGlobal = "negro";
+                G8.ImageUrl = "Blanca.png";
+                G8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG8;
@@ -3311,18 +3617,24 @@ namespace ProyectoEntregable2
 
         protected void H8_Click(object sender, ImageClickEventArgs e)
         {
-            if (identificadorH8.Equals("negro"))
+            if (identificadorGlobal.Equals("negro"))
             {
-                identificadorH8 = "blanco";
-                contadorblanco++;
-                H8.ImageUrl = "Blanca.png";
-            }
-            else
-            {
-                identificadorH8 = "negro";
                 contadornegro++;
+                identificadorH8 = "negro";
+                identificadorGlobal = "blanco";
                 H8.ImageUrl = "negra.png";
+                H8.Enabled = false;
             }
+            else if (identificadorGlobal.Equals("blanco"))
+            {
+                contadorblanco++;
+                identificadorH8 = "blanco";
+                identificadorGlobal = "negro";
+                H8.ImageUrl = "Blanca.png";
+                H8.Enabled = false;
+            }
+            TextBox1.Text = contadornegro.ToString();
+            TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila8;
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH8;
@@ -3804,6 +4116,70 @@ namespace ProyectoEntregable2
         protected void Button376_Click(object sender, EventArgs e)
         {
             Response.Redirect("PaginaPrincipal.aspx");
+            identificadorA1 = "";
+            identificadorB1 = "";
+            identificadorC1 = "";
+            identificadorD1 = "";
+            identificadorE1 = "";
+            identificadorF1 = "";
+            identificadorG1 = "";
+            identificadorH1 = "";
+            identificadorA2 = "";
+            identificadorB2 = "";
+            identificadorC2 = "";
+            identificadorD2 = "";
+            identificadorE2 = "";
+            identificadorF2 = "";
+            identificadorG2 = "";
+            identificadorH2 = "";
+            identificadorA3 = "";
+            identificadorB3 = "";
+            identificadorC3 = "";
+            identificadorD3 = "";
+            identificadorE3 = "";
+            identificadorF3 = "";
+            identificadorG3 = "";
+            identificadorH3 = "";
+            identificadorA4 = "";
+            identificadorB4 = "";
+            identificadorC4 = "";
+            identificadorD4 = "blanco";
+            identificadorE4 = "negro";
+            identificadorF4 = "";
+            identificadorG4 = "";
+            identificadorH4 = "";
+            identificadorA5 = "";
+            identificadorB5 = "";
+            identificadorC5 = "";
+            identificadorD5 = "negro";
+            identificadorE5 = "blanco";
+            identificadorF5 = "";
+            identificadorG5 = "";
+            identificadorH5 = "";
+            identificadorA6 = "";
+            identificadorB6 = "";
+            identificadorC6 = "";
+            identificadorD6 = "";
+            identificadorE6 = "";
+            identificadorF6 = "";
+            identificadorG6 = "";
+            identificadorH6 = "";
+            identificadorA7 = "";
+            identificadorB7 = "";
+            identificadorC7 = "";
+            identificadorD7 = "";
+            identificadorE7 = "";
+            identificadorF7 = "";
+            identificadorG7 = "";
+            identificadorH7 = "";
+            identificadorA8 = "";
+            identificadorB8 = "";
+            identificadorC8 = "";
+            identificadorD8 = "";
+            identificadorE8 = "";
+            identificadorF8 = "";
+            identificadorG8 = "";
+            identificadorH8 = "";
         }
 
 
