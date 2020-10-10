@@ -101,6 +101,71 @@ namespace ProyectoEntregable2
         static string columnaF = "F";
         static string columnaG = "G";
         static string columnaH = "H";
+        static int contadorGlobal = 0;
+        static bool validarA1 = false;
+        static bool validarB1 = false;
+        static bool validarC1 = false;
+        static bool validarD1 = false;
+        static bool validarE1 = false;
+        static bool validarF1 = false;
+        static bool validarG1 = false;
+        static bool validarH1 = false;
+        static bool validarA2 = false;
+        static bool validarB2 = false;
+        static bool validarC2 = false;
+        static bool validarD2 = false;
+        static bool validarE2 = false;
+        static bool validarF2 = false;
+        static bool validarG2 = false;
+        static bool validarH2 = false;
+        static bool validarA3 = false;
+        static bool validarB3 = false;
+        static bool validarC3 = false;
+        static bool validarD3 = false;
+        static bool validarE3 = false;
+        static bool validarF3 = false;
+        static bool validarG3 = false;
+        static bool validarH3 = false;
+        static bool validarA4 = false;
+        static bool validarB4 = false;
+        static bool validarC4 = false;
+        static bool validarD4 = false;
+        static bool validarE4 = false;
+        static bool validarF4 = false;
+        static bool validarG4 = false;
+        static bool validarH4 = false;
+        static bool validarA5 = false;
+        static bool validarB5 = false;
+        static bool validarC5 = false;
+        static bool validarD5 = false;
+        static bool validarE5 = false;
+        static bool validarF5 = false;
+        static bool validarG5 = false;
+        static bool validarH5 = false;
+        static bool validarA6 = false;
+        static bool validarB6 = false;
+        static bool validarC6 = false;
+        static bool validarD6 = false;
+        static bool validarE6 = false;
+        static bool validarF6 = false;
+        static bool validarG6 = false;
+        static bool validarH6 = false;
+        static bool validarA7 = false;
+        static bool validarB7 = false;
+        static bool validarC7 = false;
+        static bool validarD7 = false;
+        static bool validarE7 = false;
+        static bool validarF7 = false;
+        static bool validarG7 = false;
+        static bool validarH7 = false;
+        static bool validarA8 = false;
+        static bool validarB8 = false;
+        static bool validarC8 = false;
+        static bool validarD8 = false;
+        static bool validarE8 = false;
+        static bool validarF8 = false;
+        static bool validarG8 = false;
+        static bool validarH8 = false;
         public static string idUsuarioCargado = "";
         static bool validacion = false;
 
@@ -108,7 +173,7 @@ namespace ProyectoEntregable2
         {
             if (identificadorGlobal == "")
             {
-                identificadorGlobal = "negro";
+                identificadorGlobal = PaginaPrincipal.colorglobal;
             }
             nombreJug2 = PaginaPrincipal.nombre2;
             TextBox4.Text = nombreJug2;
@@ -1922,11 +1987,19 @@ namespace ProyectoEntregable2
                     PaginaPrincipal.carruta = "";
                 }
             }
-            if (identificadorGlobal == "negro")
+            if (identificadorGlobal == "negro" && PaginaPrincipal.colorglobal == "negro")
+            {
+                Label1.Text = "negro";
+            }
+            if (identificadorGlobal == "blanco" && PaginaPrincipal.colorglobal == "blanco")
             {
                 Label1.Text = "blanco";
             }
-            if (identificadorGlobal == "blanco")
+            if (identificadorGlobal == "negro" && PaginaPrincipal.colorglobal == "")
+            {
+                Label1.Text = "blanco";
+            }
+            if (identificadorGlobal == "blanco" && PaginaPrincipal.colorglobal == "")
             {
                 Label1.Text = "negro";
             }
@@ -1935,44 +2008,10850 @@ namespace ProyectoEntregable2
                 PaginaPrincipal.carruta = "";
             }
             EsquemaTablero();
-
+            validarMovimiento();
+            PaginaPrincipal.colorglobal = "";
+            cerrarPartida();
         }
 
-        protected void FichasPosibles()
+        protected void validarMovimiento()
         {
+            int columna = 0;
+            int fila = 0;
+            int columnabuscar = 0;
+            int filabuscar = 0;
+            string guardfila;
+            string guardcolu;
+            string guardestado;
+            string guardfiladerecha;
+            string guardcoluderecha;
+            string guardestadoderecha;
+            string guardfilaizquierda;
+            string guardcoluizquierda;
+            string guardestadoizquierda;
+            string guardfilaarriba;
+            string guardcoluarriba;
+            string guardestadoarriba;
+            string guardfilaabajo;
+            string guardcoluabajo;
+            string guardestadoabajo;
             string[] guardarseparaciones;
-            for (int i = 0; i<matriztablero.Length; i++)
+            string[] guardarseparacionesderecha;
+            string[] guardarseparacionesizquierda;
+            string[] guardarseparacionesarriba;
+            string[] guardarseparacionesabajo;
+            string guardarcontenidoizquierda;
+            string guardarcontenidoderecha;
+            string guardarcontenidoabajo;
+            string guardarcontenidoarriba;
+            string guardarcontenido;
+            for (fila = 0; fila < matriztablero.Length; fila++)
             {
-                for (int j = 0; j<matriztablero[i].Length; j++)
+                for (columna = 0; columna < matriztablero[fila].Length; columna++)
                 {
-                    string guardarcontenido = matriztablero[i][j].ToString();
+                    guardarcontenido = matriztablero[fila][columna].ToString();
                     guardarseparaciones = guardarcontenido.Split(',');
-                    if (identificadorGlobal.Equals("negro") && guardarseparaciones[2].ToString() == "negro" && i==0 && j==0)
+                    guardfila = guardarseparaciones[0];
+                    guardcolu = guardarseparaciones[1];
+                    guardestado = guardarseparaciones[2];
+                    if (identificadorGlobal == "negro" && PaginaPrincipal.colorglobal == "")
                     {
-                        contadornegro++;
-                        A1.ImageUrl = "Blanca.png";
-                        A1.Enabled = false;
-                    }
-                    else if (identificadorGlobal.Equals("blanco") && guardarseparaciones[2].ToString() == "blanco" && i == 0 && j == 0)
-                    {
-                        A1.ImageUrl = "negra.png";
-                        contenidotablero[0] = fila1;
-                        contenidotablero[1] = columnaA;
-                        contenidotablero[2] = identificadorA1;
-                        matriztablero[i][j] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
-                    }
-                    else if (identificadorGlobal.Equals("") && guardarseparaciones[2].ToString() == "" && i == 0 && j == 0)
-                    {
-                        identificadorA1 = "";
-                        contadornegro++;
-                        A1.ImageUrl = "fondotransparente.png";
+                        if (guardestado == "blanco")
+                        {
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                            while (columnabuscar < 8)
+                            {
+                                columnabuscar++;
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                if (guardestadoderecha == "" && guardestadoizquierda == "negro")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
 
+                            while (columnabuscar >= 0)
+                            {
+                                columnabuscar = columnabuscar - 1;
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                if (guardestadoizquierda == "" && guardestadoderecha == "negro")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8)
+                            {
+                                filabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                if (guardestadoabajo == "" && guardestadoarriba == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar >= 0)
+                            {
+                                filabuscar++;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar < 8)
+                            {
+                                filabuscar++;
+                                columnabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar < 8)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar++;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                        }
+                    } 
+
+                    if (identificadorGlobal == "blanco" && PaginaPrincipal.colorglobal == "")
+                    {
+                        if (guardestado == "negro")
+                        {
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                            while (columnabuscar < 8)
+                            {
+                                columnabuscar++;
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                if (guardestadoderecha == "" && guardestadoizquierda == "blanco")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (columnabuscar >= 0)
+                            {
+                                columnabuscar = columnabuscar - 1;
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                if (guardestadoizquierda == "" && guardestadoderecha == "blanco")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8)
+                            {
+                                filabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                if (guardestadoabajo == "" && guardestadoarriba == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2 .png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar >= 0)
+                            {
+                                filabuscar++;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar < 8)
+                            {
+                                filabuscar++;
+                                columnabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar < 8)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar++;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                        }
                     }
-                    contenidotablero[0] = fila1;
-                    contenidotablero[1] = columnaA;
-                    contenidotablero[2] = identificadorA1;
-                    matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+                    if(identificadorGlobal == "negro" && PaginaPrincipal.colorglobal == "negro")
+                    {
+                        if (guardestado == "negro")
+                        {
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                            while (columnabuscar < 8)
+                            {
+                                columnabuscar++;
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                if (guardestadoderecha == "" && guardestadoizquierda == "blanco")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (columnabuscar >= 0)
+                            {
+                                columnabuscar = columnabuscar - 1;
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                if (guardestadoizquierda == "" && guardestadoderecha == "blanco")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8)
+                            {
+                                filabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                if (guardestadoabajo == "" && guardestadoarriba == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2 .png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar >= 0)
+                            {
+                                filabuscar++;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar < 8)
+                            {
+                                filabuscar++;
+                                columnabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar < 8)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar++;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "blanco")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible2.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible2.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                        }
+                    }
+                    if (identificadorGlobal == "blanco" && PaginaPrincipal.colorglobal == "blanco")
+                    {
+                        if (guardestado == "blanco")
+                        {
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                            while (columnabuscar < 8)
+                            {
+                                columnabuscar++;
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                if (guardestadoderecha == "" && guardestadoizquierda == "negro")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (columnabuscar >= 0)
+                            {
+                                columnabuscar = columnabuscar - 1;
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
+                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
+                                guardfilaizquierda = guardarseparacionesizquierda[0];
+                                guardcoluizquierda = guardarseparacionesizquierda[1];
+                                guardestadoizquierda = guardarseparacionesizquierda[2];
+                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
+                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
+                                guardfiladerecha = guardarseparacionesderecha[0];
+                                guardcoluderecha = guardarseparacionesderecha[1];
+                                guardestadoderecha = guardarseparacionesderecha[2];
+                                if (guardestadoizquierda == "" && guardestadoderecha == "negro")
+                                {
+                                    if (fila == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (fila == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8)
+                            {
+                                filabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                if (guardestadoabajo == "" && guardestadoarriba == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columna == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columna == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar >= 0)
+                            {
+                                filabuscar++;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar < 8 || columnabuscar < 8)
+                            {
+                                filabuscar++;
+                                columnabuscar++;
+                                if (filabuscar == 8)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar < 8)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar++;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar == 8)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+
+                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            {
+                                filabuscar = filabuscar - 1;
+                                columnabuscar = columnabuscar - 1;
+                                if (filabuscar < 0)
+                                {
+                                    break;
+                                }
+                                if (columnabuscar < 0)
+                                {
+                                    break;
+                                }
+                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
+                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
+                                guardfilaarriba = guardarseparacionesarriba[0];
+                                guardcoluarriba = guardarseparacionesarriba[1];
+                                guardestadoarriba = guardarseparacionesarriba[2];
+                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
+                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
+                                guardfilaabajo = guardarseparacionesabajo[0];
+                                guardcoluabajo = guardarseparacionesabajo[1];
+                                guardestadoabajo = guardarseparacionesabajo[2];
+                                if (guardestadoarriba == "" && guardestadoabajo == "negro")
+                                {
+                                    if (filabuscar == 0)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G1.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H1.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 1)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G2.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H2.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 2)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G3.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H3.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 3)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G4.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H4.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 4)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G5.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H5.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 5)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G6.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H6.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 6)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G7.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H7.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                    if (filabuscar == 7)
+                                    {
+                                        if (columnabuscar == 0)
+                                        {
+                                            A8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 1)
+                                        {
+                                            B8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 2)
+                                        {
+                                            C8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 3)
+                                        {
+                                            D8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 4)
+                                        {
+                                            E8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 5)
+                                        {
+                                            F8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 6)
+                                        {
+                                            G8.ImageUrl = "Posible.png";
+                                        }
+                                        if (columnabuscar == 7)
+                                        {
+                                            H8.ImageUrl = "Posible.png";
+                                        }
+                                    }
+                                }
+                            }
+                            columnabuscar = columna;
+                            filabuscar = fila;
+                        }
+                    }
                 }
+            }
+        }
+
+        protected void cerrarPartida()
+        {
+            string guardarcontenido;
+            string[] guardarseparaciones;
+            string guardfila = "";
+            string guardcolu = "";
+            string guardestado = "";
+            contadorGlobal = contadorblanco + contadornegro;
+            if (contadorGlobal == 59)
+            {
+                if (contadorblanco > contadornegro)
+                {
+                    contadorblanco = contadorblanco + 1;
+                }
+                if (contadornegro > contadorblanco)
+                {
+                    contadornegro = contadornegro + 1;
+                }
+                /*Mandar datos para base de datos*/
+                Response.Redirect("PaginaPrincipal.aspx");
+            }
+            if (contadorGlobal == 58)
+            {
+                for (int i = 0; i < matriztablero.Length; i++)
+                {
+                    for (int j = 0; j < matriztablero[i].Length; j++)
+                    {
+                        guardarcontenido = matriztablero[i][j].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "")
+                        {
+                            if (i == 0)
+                            {
+                                if (j == 0)
+                                {
+                                    if(A1.ImageUrl != "Posible.png" || A1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B1.ImageUrl != "Posible.png" || B1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C1.ImageUrl != "Posible.png" || C1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D1.ImageUrl != "Posible.png" || D1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E1.ImageUrl != "Posible.png" || E1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F1.ImageUrl != "Posible.png" || F1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G1.ImageUrl != "Posible.png" || G1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H1.ImageUrl != "Posible.png" || H1.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 1)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A2.ImageUrl != "Posible.png" || A2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B2.ImageUrl != "Posible.png" || B2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C2.ImageUrl != "Posible.png" || C2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D2.ImageUrl != "Posible.png" || D2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E2.ImageUrl != "Posible.png" || E2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F2.ImageUrl != "Posible.png" || F2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G2.ImageUrl != "Posible.png" || G2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H2.ImageUrl != "Posible.png" || H2.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 2)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A3.ImageUrl != "Posible.png" || A3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B3.ImageUrl != "Posible.png" || B3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C3.ImageUrl != "Posible.png" || C3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D3.ImageUrl != "Posible.png" || D3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E3.ImageUrl != "Posible.png" || E3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F3.ImageUrl != "Posible.png" || F3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G3.ImageUrl != "Posible.png" || G3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H3.ImageUrl != "Posible.png" || H3.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 3)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A4.ImageUrl != "Posible.png" || A4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B4.ImageUrl != "Posible.png" || B4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C4.ImageUrl != "Posible.png" || C4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D4.ImageUrl != "Posible.png" || D4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E4.ImageUrl != "Posible.png" || E4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F4.ImageUrl != "Posible.png" || F4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G4.ImageUrl != "Posible.png" || G4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H4.ImageUrl != "Posible.png" || H4.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 4)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A5.ImageUrl != "Posible.png" || A5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B5.ImageUrl != "Posible.png" || B5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C5.ImageUrl != "Posible.png" || C5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D5.ImageUrl != "Posible.png" || D5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E5.ImageUrl != "Posible.png" || E5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F5.ImageUrl != "Posible.png" || F5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G5.ImageUrl != "Posible.png" || G5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H5.ImageUrl != "Posible.png" || H5.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 5)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A6.ImageUrl != "Posible.png" || A6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B6.ImageUrl != "Posible.png" || B6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C6.ImageUrl != "Posible.png" || C6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D6.ImageUrl != "Posible.png" || D6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E6.ImageUrl != "Posible.png" || E6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F6.ImageUrl != "Posible.png" || F6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G6.ImageUrl != "Posible.png" || G6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H6.ImageUrl != "Posible.png" || H6.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 0)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A7.ImageUrl != "Posible.png" || A7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B7.ImageUrl != "Posible.png" || B7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C7.ImageUrl != "Posible.png" || C7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D7.ImageUrl != "Posible.png" || D7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E7.ImageUrl != "Posible.png" || E7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F7.ImageUrl != "Posible.png" || F7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G7.ImageUrl != "Posible.png" || G7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H7.ImageUrl != "Posible.png" || H7.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                            if (i == 7)
+                            {
+                                if (j == 0)
+                                {
+                                    if (A8.ImageUrl != "Posible.png" || A8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 1)
+                                {
+                                    if (B8.ImageUrl != "Posible.png" || B8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 2)
+                                {
+                                    if (C8.ImageUrl != "Posible.png" || C8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 3)
+                                {
+                                    if (D8.ImageUrl != "Posible.png" || D8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 4)
+                                {
+                                    if (E8.ImageUrl != "Posible.png" || E8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 5)
+                                {
+                                    if (F8.ImageUrl != "Posible.png" || F8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 6)
+                                {
+                                    if (G8.ImageUrl != "Posible.png" || G8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                                if (j == 7)
+                                {
+                                    if (H8.ImageUrl != "Posible.png" || H8.ImageUrl != "Posible2.png")
+                                    {
+                                        if (contadorblanco > contadornegro)
+                                        {
+                                            contadorblanco = contadorblanco + 1;
+                                        }
+                                        if (contadornegro > contadorblanco)
+                                        {
+                                            contadornegro = contadornegro + 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Response.Redirect("PaginaPrincipal.aspx");
             }
         }
 
@@ -1994,12 +12873,14 @@ namespace ProyectoEntregable2
                 A1.ImageUrl = "Blanca.png";
                 A1.Enabled = false;
             }
+            validarA1 = true;
             TextBox1.Text = contadornegro.ToString();
             TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila1;
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA1;
             matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B1_Click(object sender, ImageClickEventArgs e)
@@ -2026,6 +12907,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB1;
             matriztablero[0][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C1_Click(object sender, ImageClickEventArgs e)
@@ -2052,6 +12934,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC1;
             matriztablero[0][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D1_Click(object sender, ImageClickEventArgs e)
@@ -2078,6 +12961,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD1;
             matriztablero[0][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E1_Click(object sender, ImageClickEventArgs e)
@@ -2104,6 +12988,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE1;
             matriztablero[0][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F1_Click(object sender, ImageClickEventArgs e)
@@ -2130,6 +13015,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF1;
             matriztablero[0][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G1_Click(object sender, ImageClickEventArgs e)
@@ -2156,6 +13042,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG1;
             matriztablero[0][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H1_Click(object sender, ImageClickEventArgs e)
@@ -2182,6 +13069,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH1;
             matriztablero[0][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A2_Click(object sender, ImageClickEventArgs e)
@@ -2208,6 +13096,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA2;
             matriztablero[1][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B2_Click(object sender, ImageClickEventArgs e)
@@ -2234,6 +13123,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB2;
             matriztablero[1][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C2_Click(object sender, ImageClickEventArgs e)
@@ -2260,6 +13150,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC2;
             matriztablero[1][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D2_Click(object sender, ImageClickEventArgs e)
@@ -2286,7 +13177,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD2;
             matriztablero[1][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
-
+            EsquemaTablero();
         }
 
         protected void E2_Click(object sender, ImageClickEventArgs e)
@@ -2313,6 +13204,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE2;
             matriztablero[1][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F2_Click(object sender, ImageClickEventArgs e)
@@ -2339,6 +13231,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF2;
             matriztablero[1][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G2_Click(object sender, ImageClickEventArgs e)
@@ -2365,6 +13258,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG2;
             matriztablero[1][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H2_Click(object sender, ImageClickEventArgs e)
@@ -2391,6 +13285,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH2;
             matriztablero[1][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A3_Click(object sender, ImageClickEventArgs e)
@@ -2417,6 +13312,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA3;
             matriztablero[2][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B3_Click(object sender, ImageClickEventArgs e)
@@ -2443,6 +13339,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB3;
             matriztablero[2][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C3_Click(object sender, ImageClickEventArgs e)
@@ -2469,6 +13366,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC3;
             matriztablero[2][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D3_Click(object sender, ImageClickEventArgs e)
@@ -2495,6 +13393,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD3;
             matriztablero[2][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E3_Click(object sender, ImageClickEventArgs e)
@@ -2521,6 +13420,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE3;
             matriztablero[2][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F3_Click(object sender, ImageClickEventArgs e)
@@ -2547,6 +13447,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF3;
             matriztablero[2][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G3_Click(object sender, ImageClickEventArgs e)
@@ -2573,6 +13474,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG3;
             matriztablero[2][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H3_Click(object sender, ImageClickEventArgs e)
@@ -2599,6 +13501,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH3;
             matriztablero[2][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A4_Click(object sender, ImageClickEventArgs e)
@@ -2625,6 +13528,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA4;
             matriztablero[3][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B4_Click(object sender, ImageClickEventArgs e)
@@ -2651,6 +13555,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB4;
             matriztablero[3][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C4_Click(object sender, ImageClickEventArgs e)
@@ -2677,6 +13582,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC4;
             matriztablero[3][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D4_Click(object sender, ImageClickEventArgs e)
@@ -2703,6 +13609,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB4;
             matriztablero[3][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E4_Click(object sender, ImageClickEventArgs e)
@@ -2729,6 +13636,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE4;
             matriztablero[3][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F4_Click(object sender, ImageClickEventArgs e)
@@ -2755,6 +13663,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF4;
             matriztablero[3][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G4_Click(object sender, ImageClickEventArgs e)
@@ -2781,6 +13690,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG4;
             matriztablero[3][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H4_Click(object sender, ImageClickEventArgs e)
@@ -2807,6 +13717,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH4;
             matriztablero[3][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A5_Click(object sender, ImageClickEventArgs e)
@@ -2833,6 +13744,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA5;
             matriztablero[4][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B5_Click(object sender, ImageClickEventArgs e)
@@ -2859,6 +13771,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB5;
             matriztablero[4][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C5_Click(object sender, ImageClickEventArgs e)
@@ -2885,6 +13798,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC5;
             matriztablero[4][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D5_Click(object sender, ImageClickEventArgs e)
@@ -2911,6 +13825,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD5;
             matriztablero[4][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E5_Click(object sender, ImageClickEventArgs e)
@@ -2937,6 +13852,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE5;
             matriztablero[4][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F5_Click(object sender, ImageClickEventArgs e)
@@ -2963,6 +13879,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF5;
             matriztablero[4][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G5_Click(object sender, ImageClickEventArgs e)
@@ -2989,6 +13906,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG5;
             matriztablero[4][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H5_Click(object sender, ImageClickEventArgs e)
@@ -3015,6 +13933,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH5;
             matriztablero[4][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A6_Click(object sender, ImageClickEventArgs e)
@@ -3041,6 +13960,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA6;
             matriztablero[5][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B6_Click(object sender, ImageClickEventArgs e)
@@ -3067,6 +13987,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB6;
             matriztablero[5][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C6_Click(object sender, ImageClickEventArgs e)
@@ -3093,6 +14014,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC6;
             matriztablero[5][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D6_Click(object sender, ImageClickEventArgs e)
@@ -3119,6 +14041,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD6;
             matriztablero[5][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E6_Click(object sender, ImageClickEventArgs e)
@@ -3145,6 +14068,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE6;
             matriztablero[5][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2]; ;
+            EsquemaTablero();
         }
 
         protected void F6_Click(object sender, ImageClickEventArgs e)
@@ -3171,6 +14095,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF6;
             matriztablero[5][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G6_Click(object sender, ImageClickEventArgs e)
@@ -3197,6 +14122,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG6;
             matriztablero[5][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H6_Click(object sender, ImageClickEventArgs e)
@@ -3223,6 +14149,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH6;
             matriztablero[5][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A7_Click(object sender, ImageClickEventArgs e)
@@ -3249,6 +14176,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA7;
             matriztablero[6][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B7_Click(object sender, ImageClickEventArgs e)
@@ -3275,6 +14203,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB7;
             matriztablero[6][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C7_Click(object sender, ImageClickEventArgs e)
@@ -3301,6 +14230,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC7;
             matriztablero[6][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D7_Click(object sender, ImageClickEventArgs e)
@@ -3327,6 +14257,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD7;
             matriztablero[6][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E7_Click(object sender, ImageClickEventArgs e)
@@ -3353,6 +14284,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE7;
             matriztablero[6][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F7_Click(object sender, ImageClickEventArgs e)
@@ -3379,6 +14311,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF7;
             matriztablero[6][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G7_Click(object sender, ImageClickEventArgs e)
@@ -3405,6 +14338,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG7;
             matriztablero[6][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H7_Click(object sender, ImageClickEventArgs e)
@@ -3431,6 +14365,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH7;
             matriztablero[6][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void A8_Click(object sender, ImageClickEventArgs e)
@@ -3457,6 +14392,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaA;
             contenidotablero[2] = identificadorA8;
             matriztablero[7][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void B8_Click(object sender, ImageClickEventArgs e)
@@ -3483,6 +14419,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaB;
             contenidotablero[2] = identificadorB8;
             matriztablero[7][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void C8_Click(object sender, ImageClickEventArgs e)
@@ -3509,6 +14446,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaC;
             contenidotablero[2] = identificadorC8;
             matriztablero[7][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void D8_Click(object sender, ImageClickEventArgs e)
@@ -3535,6 +14473,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaD;
             contenidotablero[2] = identificadorD8;
             matriztablero[7][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void E8_Click(object sender, ImageClickEventArgs e)
@@ -3561,6 +14500,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaE;
             contenidotablero[2] = identificadorE8;
             matriztablero[7][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void F8_Click(object sender, ImageClickEventArgs e)
@@ -3587,6 +14527,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaF;
             contenidotablero[2] = identificadorF8;
             matriztablero[7][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void G8_Click(object sender, ImageClickEventArgs e)
@@ -3613,6 +14554,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaG;
             contenidotablero[2] = identificadorG8;
             matriztablero[7][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void H8_Click(object sender, ImageClickEventArgs e)
@@ -3639,6 +14581,7 @@ namespace ProyectoEntregable2
             contenidotablero[1] = columnaH;
             contenidotablero[2] = identificadorH8;
             matriztablero[7][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
+            EsquemaTablero();
         }
 
         protected void Button3_Click(object sender, EventArgs e)

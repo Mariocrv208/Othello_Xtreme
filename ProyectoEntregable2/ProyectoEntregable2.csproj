@@ -133,6 +133,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PaginaPrincipal.aspx" />
     <Content Include="PantallaJuego.aspx" />
+    <Content Include="PantallaJuego2.aspx" />
     <Content Include="Reportes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="PantallaJuego.aspx.designer.cs">
       <DependentUpon>PantallaJuego.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaJuego2.aspx.cs">
+      <DependentUpon>PantallaJuego2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PantallaJuego2.aspx.designer.cs">
+      <DependentUpon>PantallaJuego2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

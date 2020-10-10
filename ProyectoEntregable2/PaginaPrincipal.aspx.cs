@@ -49,7 +49,7 @@ namespace ProyectoEntregable2
         {
             Panel1.Visible = true;
             
-            }
+        }
 
         protected void Button11_Click(object sender, EventArgs e)
         {
