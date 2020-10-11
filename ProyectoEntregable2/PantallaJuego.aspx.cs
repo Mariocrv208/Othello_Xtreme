@@ -19,8 +19,8 @@ namespace ProyectoEntregable2
         static string [] contenidotablero;
         static string identificadorGlobal = "";
         static string nombreJug2 = "";
-        static int contadornegro = 0;
-        static int contadorblanco = 0;
+        static int contadornegro = 2;
+        static int contadorblanco = 2;
         static string identificadorA1 = "";
         static string identificadorB1 = "";
         static string identificadorC1 = "";
@@ -102,6 +102,10 @@ namespace ProyectoEntregable2
         static string columnaG = "G";
         static string columnaH = "H";
         static int contadorGlobal = 0;
+        static int contadorvictorianegro = 0;
+        static int contadorvictoriablanco = 0;
+        static int contadorderrotanegro = 0;
+        static int contadorderrotablanco = 0;
         static bool validarA1 = false;
         static bool validarB1 = false;
         static bool validarC1 = false;
@@ -2007,6 +2011,10 @@ namespace ProyectoEntregable2
             {
                 PaginaPrincipal.carruta = "";
             }
+            TextBox5.Text = contadorvictorianegro.ToString();
+            TextBox6.Text = contadorvictoriablanco.ToString();
+            TextBox7.Text = contadorderrotanegro.ToString();
+            TextBox8.Text = contadorderrotablanco.ToString();
             EsquemaTablero();
             validarMovimiento();
             PaginaPrincipal.colorglobal = "";
@@ -11902,20 +11910,7 @@ namespace ProyectoEntregable2
             string guardcolu = "";
             string guardestado = "";
             contadorGlobal = contadorblanco + contadornegro;
-            if (contadorGlobal == 59)
-            {
-                if (contadorblanco > contadornegro)
-                {
-                    contadorblanco = contadorblanco + 1;
-                }
-                if (contadornegro > contadorblanco)
-                {
-                    contadornegro = contadornegro + 1;
-                }
-                /*Mandar datos para base de datos*/
-                Response.Redirect("PaginaPrincipal.aspx");
-            }
-            if (contadorGlobal == 58)
+            if (contadorGlobal == 63)
             {
                 for (int i = 0; i < matriztablero.Length; i++)
                 {
@@ -11932,113 +11927,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if(A1.ImageUrl != "Posible.png" || A1.ImageUrl != "Posible2.png")
+                                    if (A1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B1.ImageUrl != "Posible.png" || B1.ImageUrl != "Posible2.png")
+                                    if (B1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C1.ImageUrl != "Posible.png" || C1.ImageUrl != "Posible2.png")
+                                    if (C1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D1.ImageUrl != "Posible.png" || D1.ImageUrl != "Posible2.png")
+                                    if (D1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E1.ImageUrl != "Posible.png" || E1.ImageUrl != "Posible2.png")
+                                    if (E1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F1.ImageUrl != "Posible.png" || F1.ImageUrl != "Posible2.png")
+                                    if (F1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G1.ImageUrl != "Posible.png" || G1.ImageUrl != "Posible2.png")
+                                    if (G1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H1.ImageUrl != "Posible.png" || H1.ImageUrl != "Posible2.png")
+                                    if (H1.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12047,113 +12098,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A2.ImageUrl != "Posible.png" || A2.ImageUrl != "Posible2.png")
+                                    if (A2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B2.ImageUrl != "Posible.png" || B2.ImageUrl != "Posible2.png")
+                                    if (B2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C2.ImageUrl != "Posible.png" || C2.ImageUrl != "Posible2.png")
+                                    if (C2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D2.ImageUrl != "Posible.png" || D2.ImageUrl != "Posible2.png")
+                                    if (D2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E2.ImageUrl != "Posible.png" || E2.ImageUrl != "Posible2.png")
+                                    if (E2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F2.ImageUrl != "Posible.png" || F2.ImageUrl != "Posible2.png")
+                                    if (F2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G2.ImageUrl != "Posible.png" || G2.ImageUrl != "Posible2.png")
+                                    if (G2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H2.ImageUrl != "Posible.png" || H2.ImageUrl != "Posible2.png")
+                                    if (H2.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12162,113 +12269,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A3.ImageUrl != "Posible.png" || A3.ImageUrl != "Posible2.png")
+                                    if (A3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B3.ImageUrl != "Posible.png" || B3.ImageUrl != "Posible2.png")
+                                    if (B3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C3.ImageUrl != "Posible.png" || C3.ImageUrl != "Posible2.png")
+                                    if (C3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D3.ImageUrl != "Posible.png" || D3.ImageUrl != "Posible2.png")
+                                    if (D3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E3.ImageUrl != "Posible.png" || E3.ImageUrl != "Posible2.png")
+                                    if (E3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F3.ImageUrl != "Posible.png" || F3.ImageUrl != "Posible2.png")
+                                    if (F3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G3.ImageUrl != "Posible.png" || G3.ImageUrl != "Posible2.png")
+                                    if (G3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H3.ImageUrl != "Posible.png" || H3.ImageUrl != "Posible2.png")
+                                    if (H3.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12277,113 +12440,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A4.ImageUrl != "Posible.png" || A4.ImageUrl != "Posible2.png")
+                                    if (A4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B4.ImageUrl != "Posible.png" || B4.ImageUrl != "Posible2.png")
+                                    if (B4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C4.ImageUrl != "Posible.png" || C4.ImageUrl != "Posible2.png")
+                                    if (C4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D4.ImageUrl != "Posible.png" || D4.ImageUrl != "Posible2.png")
+                                    if (D4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E4.ImageUrl != "Posible.png" || E4.ImageUrl != "Posible2.png")
+                                    if (E4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F4.ImageUrl != "Posible.png" || F4.ImageUrl != "Posible2.png")
+                                    if (F4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G4.ImageUrl != "Posible.png" || G4.ImageUrl != "Posible2.png")
+                                    if (G4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H4.ImageUrl != "Posible.png" || H4.ImageUrl != "Posible2.png")
+                                    if (H4.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12392,113 +12611,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A5.ImageUrl != "Posible.png" || A5.ImageUrl != "Posible2.png")
+                                    if (A5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B5.ImageUrl != "Posible.png" || B5.ImageUrl != "Posible2.png")
+                                    if (B5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C5.ImageUrl != "Posible.png" || C5.ImageUrl != "Posible2.png")
+                                    if (C5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D5.ImageUrl != "Posible.png" || D5.ImageUrl != "Posible2.png")
+                                    if (D5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E5.ImageUrl != "Posible.png" || E5.ImageUrl != "Posible2.png")
+                                    if (E5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F5.ImageUrl != "Posible.png" || F5.ImageUrl != "Posible2.png")
+                                    if (F5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G5.ImageUrl != "Posible.png" || G5.ImageUrl != "Posible2.png")
+                                    if (G5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H5.ImageUrl != "Posible.png" || H5.ImageUrl != "Posible2.png")
+                                    if (H5.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12507,113 +12782,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A6.ImageUrl != "Posible.png" || A6.ImageUrl != "Posible2.png")
+                                    if (A6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B6.ImageUrl != "Posible.png" || B6.ImageUrl != "Posible2.png")
+                                    if (B6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C6.ImageUrl != "Posible.png" || C6.ImageUrl != "Posible2.png")
+                                    if (C6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D6.ImageUrl != "Posible.png" || D6.ImageUrl != "Posible2.png")
+                                    if (D6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E6.ImageUrl != "Posible.png" || E6.ImageUrl != "Posible2.png")
+                                    if (E6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F6.ImageUrl != "Posible.png" || F6.ImageUrl != "Posible2.png")
+                                    if (F6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G6.ImageUrl != "Posible.png" || G6.ImageUrl != "Posible2.png")
+                                    if (G6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H6.ImageUrl != "Posible.png" || H6.ImageUrl != "Posible2.png")
+                                    if (H6.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12622,113 +12953,169 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A7.ImageUrl != "Posible.png" || A7.ImageUrl != "Posible2.png")
+                                    if (A7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B7.ImageUrl != "Posible.png" || B7.ImageUrl != "Posible2.png")
+                                    if (B7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C7.ImageUrl != "Posible.png" || C7.ImageUrl != "Posible2.png")
+                                    if (C7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D7.ImageUrl != "Posible.png" || D7.ImageUrl != "Posible2.png")
+                                    if (D7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E7.ImageUrl != "Posible.png" || E7.ImageUrl != "Posible2.png")
+                                    if (E7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F7.ImageUrl != "Posible.png" || F7.ImageUrl != "Posible2.png")
+                                    if (F7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G7.ImageUrl != "Posible.png" || G7.ImageUrl != "Posible2.png")
+                                    if (G7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H7.ImageUrl != "Posible.png" || H7.ImageUrl != "Posible2.png")
+                                    if (H7.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
@@ -12737,122 +13124,371 @@ namespace ProyectoEntregable2
                             {
                                 if (j == 0)
                                 {
-                                    if (A8.ImageUrl != "Posible.png" || A8.ImageUrl != "Posible2.png")
+                                    if (A8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 1)
                                 {
-                                    if (B8.ImageUrl != "Posible.png" || B8.ImageUrl != "Posible2.png")
+                                    if (B8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        contadornegro = contadornegro + 1;
                                     }
                                 }
                                 if (j == 2)
                                 {
-                                    if (C8.ImageUrl != "Posible.png" || C8.ImageUrl != "Posible2.png")
+                                    if (C8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 3)
                                 {
-                                    if (D8.ImageUrl != "Posible.png" || D8.ImageUrl != "Posible2.png")
+                                    if (D8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 4)
                                 {
-                                    if (E8.ImageUrl != "Posible.png" || E8.ImageUrl != "Posible2.png")
+                                    if (E8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 5)
                                 {
-                                    if (F8.ImageUrl != "Posible.png" || F8.ImageUrl != "Posible2.png")
+                                    if (F8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 6)
                                 {
-                                    if (G8.ImageUrl != "Posible.png" || G8.ImageUrl != "Posible2.png")
+                                    if (G8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                                 if (j == 7)
                                 {
-                                    if (H8.ImageUrl != "Posible.png" || H8.ImageUrl != "Posible2.png")
+                                    if (H8.ImageUrl == "fondotransparente.png")
                                     {
                                         if (contadorblanco > contadornegro)
                                         {
                                             contadorblanco = contadorblanco + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                         if (contadornegro > contadorblanco)
                                         {
                                             contadornegro = contadornegro + 1;
+                                            Response.Redirect("PaginaPrincipal.aspx");
+                                        }
+                                        if (contadorblanco == contadornegro)
+                                        {
+
+                                            Response.Redirect("PaginaPrincipal.aspx");
                                         }
                                     }
                                 }
                             }
+
                         }
                     }
                 }
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    while (salida == true)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer1 = "SELECT derrotasNegro FROM PartidaMultijugador WHERE derrotasNegro=@derrotasNegro";
+                        SqlCommand traendo1 = new SqlCommand(traer1, conectar.Leer());
+                        traendo1.Parameters.AddWithValue("@derrotasNegro", contadorderrotanegro.ToString());
+                        traendo1.ExecuteNonQuery();
+                        SqlDataReader validacion1 = traendo1.ExecuteReader();
+                        if (validacion1.Read())
+                        {
+                            contadorderrotanegro = contadorderrotanegro + 1;
+                        }
+                        else if (!validacion1.Read())
+                        {
+                            salida = true;
+                        }
+                    }
+                    while (salida2 == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT victoriasNegro FROM PartidaMultijugador WHERE victoriasNegro=@victoriasNegro";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@victoriasNegro", contadorvictorianegro.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorvictorianegro = contadorvictorianegro + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida2 = true;
+                        }
+                    }
+                }
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    while (salida == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT derrotasBlanco FROM PartidaMultijugador WHERE derrotasBlanco=@derrotasBlanco";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@derrotasBlanco", contadorderrotablanco.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorderrotablanco = contadorderrotablanco + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida = true;
+                        }
+                    }
+                    while (salida2 == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT victoriasBlanco FROM PartidaMultijugador WHERE victoriasBlanco=@victoriasBlanco";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@victoriasBlanco", contadorvictoriablanco.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorvictoriablanco = contadorvictoriablanco + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida2 = true;
+                        }
+                    }
+                }
+                /*If para validar si el dato de victoria viene vacio*/
+                String mandar = "INSERT INTO PartidaMultijugador (movimientoNegro, movimientoBlanco, nicknameNegro, nicknameBlanco, derrotasNegro, derrotasBlanco, victoriasNegro, victoriasBlanco, tipoPartida) VALUES (@movimientoNegro, @movimientoBlanco, @nicknameNegro, @nicknameBlanco, @derrotasNegro, @derrotasBlanco, @victoriasNegro,  @victoriasBlanco, @tipoPartida)";
+                SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                mandando.Parameters.AddWithValue("@movimientoNegro", contadornegro.ToString());
+                mandando.Parameters.AddWithValue("@movimientoBlanco", contadorblanco.ToString());
+                mandando.Parameters.AddWithValue("@nicknameNegro", TextBox3.Text);
+                mandando.Parameters.AddWithValue("@nicknameBlanco", TextBox4.Text);
+                mandando.Parameters.AddWithValue("@derrotasNegro", contadorderrotanegro.ToString());
+                mandando.Parameters.AddWithValue("@derrotasBlanco", contadorderrotablanco.ToString());
+                mandando.Parameters.AddWithValue("@victoriasNegro", contadorvictorianegro.ToString());
+                mandando.Parameters.AddWithValue("@victoriasBlanco", contadorvictoriablanco.ToString());
+                mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.ExecuteNonQuery();
                 Response.Redirect("PaginaPrincipal.aspx");
             }
+            if (contadorGlobal == 64)
+            {
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    while (salida == true)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer1 = "SELECT derrotasNegro FROM PartidaMultijugador WHERE derrotasNegro=@derrotasNegro";
+                        SqlCommand traendo1 = new SqlCommand(traer1, conectar.Leer());
+                        traendo1.Parameters.AddWithValue("@derrotasNegro", contadorderrotanegro.ToString());
+                        traendo1.ExecuteNonQuery();
+                        SqlDataReader validacion1 = traendo1.ExecuteReader();
+                        if (validacion1.Read())
+                        {
+                            contadorderrotanegro = contadorderrotanegro + 1;
+                        }
+                        else if (!validacion1.Read())
+                        {
+                            salida = true;
+                        }
+                    }
+                    while (salida2 == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT victoriasNegro FROM PartidaMultijugador WHERE victoriasNegro=@victoriasNegro";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@victoriasNegro", contadorvictorianegro.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorvictorianegro = contadorvictorianegro + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida2 = true;
+                        }
+                    }
+                }
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    while (salida == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT derrotasBlanco FROM PartidaMultijugador WHERE derrotasBlanco=@derrotasBlanco";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@derrotasBlanco", contadorderrotablanco.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorderrotablanco = contadorderrotablanco + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida = true;
+                        }
+                    }
+                    while (salida2 == false)
+                    {
+                        /*validar datos antes de mandarlos*/
+                        String traer2 = "SELECT victoriasBlanco FROM PartidaMultijugador WHERE victoriasBlanco=@victoriasBlanco";
+                        SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                        traendo2.Parameters.AddWithValue("@victoriasBlanco", contadorvictoriablanco.ToString());
+                        traendo2.ExecuteNonQuery();
+                        SqlDataReader validacion2 = traendo2.ExecuteReader();
+                        if (validacion2.Read())
+                        {
+                            contadorvictoriablanco = contadorvictoriablanco + 1;
+                        }
+                        else if (!validacion2.Read())
+                        {
+                            salida2 = true;
+                        }
+                    }
+                }
+                /*If para validar si el dato de victoria viene vacio*/
+                String mandar = "INSERT INTO PartidaMultijugador (movimientoNegro, movimientoBlanco, nicknameNegro, nicknameBlanco, derrotasNegro, derrotasBlanco, victoriasNegro, victoriasBlanco, tipoPartida) VALUES (@movimientoNegro, @movimientoBlanco, @nicknameNegro, @nicknameBlanco, @derrotasNegro, @derrotasBlanco, @victoriasNegro,  @victoriasBlanco, @tipoPartida)";
+                SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                mandando.Parameters.AddWithValue("@movimientoNegro", contadornegro.ToString());
+                mandando.Parameters.AddWithValue("@movimientoBlanco", contadorblanco.ToString());
+                mandando.Parameters.AddWithValue("@nicknameNegro", TextBox3.Text);
+                mandando.Parameters.AddWithValue("@nicknameBlanco", TextBox4.Text);
+                mandando.Parameters.AddWithValue("@derrotasNegro", contadorderrotanegro.ToString());
+                mandando.Parameters.AddWithValue("@derrotasBlanco", contadorderrotablanco.ToString());
+                mandando.Parameters.AddWithValue("@victoriasNegro", contadorvictorianegro.ToString());
+                mandando.Parameters.AddWithValue("@victoriasBlanco", contadorvictoriablanco.ToString());
+                mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.ExecuteNonQuery();
+                Response.Redirect("PaginaPrincipal.aspx");
+            }
+        }
+
+        protected void CambioFicha()
+        {
+
         }
 
         protected void Button178_Click(object sender, ImageClickEventArgs e)
@@ -12881,6 +13517,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA1;
             matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B1_Click(object sender, ImageClickEventArgs e)
@@ -12908,6 +13546,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB1;
             matriztablero[0][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C1_Click(object sender, ImageClickEventArgs e)
@@ -12935,6 +13575,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC1;
             matriztablero[0][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D1_Click(object sender, ImageClickEventArgs e)
@@ -12962,6 +13604,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD1;
             matriztablero[0][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E1_Click(object sender, ImageClickEventArgs e)
@@ -12989,6 +13633,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE1;
             matriztablero[0][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F1_Click(object sender, ImageClickEventArgs e)
@@ -13016,6 +13662,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF1;
             matriztablero[0][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G1_Click(object sender, ImageClickEventArgs e)
@@ -13043,6 +13691,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG1;
             matriztablero[0][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H1_Click(object sender, ImageClickEventArgs e)
@@ -13070,6 +13720,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH1;
             matriztablero[0][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A2_Click(object sender, ImageClickEventArgs e)
@@ -13097,6 +13749,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA2;
             matriztablero[1][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B2_Click(object sender, ImageClickEventArgs e)
@@ -13124,6 +13778,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB2;
             matriztablero[1][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C2_Click(object sender, ImageClickEventArgs e)
@@ -13151,6 +13807,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC2;
             matriztablero[1][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D2_Click(object sender, ImageClickEventArgs e)
@@ -13178,6 +13836,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD2;
             matriztablero[1][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E2_Click(object sender, ImageClickEventArgs e)
@@ -13205,6 +13865,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE2;
             matriztablero[1][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F2_Click(object sender, ImageClickEventArgs e)
@@ -13232,6 +13894,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF2;
             matriztablero[1][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G2_Click(object sender, ImageClickEventArgs e)
@@ -13259,6 +13923,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG2;
             matriztablero[1][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H2_Click(object sender, ImageClickEventArgs e)
@@ -13286,6 +13952,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH2;
             matriztablero[1][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A3_Click(object sender, ImageClickEventArgs e)
@@ -13313,6 +13981,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA3;
             matriztablero[2][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B3_Click(object sender, ImageClickEventArgs e)
@@ -13340,6 +14010,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB3;
             matriztablero[2][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C3_Click(object sender, ImageClickEventArgs e)
@@ -13367,6 +14039,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC3;
             matriztablero[2][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D3_Click(object sender, ImageClickEventArgs e)
@@ -13394,6 +14068,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD3;
             matriztablero[2][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E3_Click(object sender, ImageClickEventArgs e)
@@ -13421,6 +14097,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE3;
             matriztablero[2][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F3_Click(object sender, ImageClickEventArgs e)
@@ -13448,6 +14126,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF3;
             matriztablero[2][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G3_Click(object sender, ImageClickEventArgs e)
@@ -13475,6 +14155,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG3;
             matriztablero[2][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H3_Click(object sender, ImageClickEventArgs e)
@@ -13502,6 +14184,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH3;
             matriztablero[2][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A4_Click(object sender, ImageClickEventArgs e)
@@ -13529,6 +14213,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA4;
             matriztablero[3][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B4_Click(object sender, ImageClickEventArgs e)
@@ -13556,6 +14242,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB4;
             matriztablero[3][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C4_Click(object sender, ImageClickEventArgs e)
@@ -13583,6 +14271,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC4;
             matriztablero[3][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D4_Click(object sender, ImageClickEventArgs e)
@@ -13610,6 +14300,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB4;
             matriztablero[3][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E4_Click(object sender, ImageClickEventArgs e)
@@ -13637,6 +14329,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE4;
             matriztablero[3][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F4_Click(object sender, ImageClickEventArgs e)
@@ -13664,6 +14358,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF4;
             matriztablero[3][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G4_Click(object sender, ImageClickEventArgs e)
@@ -13691,6 +14387,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG4;
             matriztablero[3][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H4_Click(object sender, ImageClickEventArgs e)
@@ -13718,6 +14416,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH4;
             matriztablero[3][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A5_Click(object sender, ImageClickEventArgs e)
@@ -13745,6 +14445,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA5;
             matriztablero[4][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B5_Click(object sender, ImageClickEventArgs e)
@@ -13772,6 +14474,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB5;
             matriztablero[4][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C5_Click(object sender, ImageClickEventArgs e)
@@ -13799,6 +14503,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC5;
             matriztablero[4][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D5_Click(object sender, ImageClickEventArgs e)
@@ -13826,6 +14532,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD5;
             matriztablero[4][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E5_Click(object sender, ImageClickEventArgs e)
@@ -13853,6 +14561,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE5;
             matriztablero[4][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F5_Click(object sender, ImageClickEventArgs e)
@@ -13880,6 +14590,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF5;
             matriztablero[4][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G5_Click(object sender, ImageClickEventArgs e)
@@ -13907,6 +14619,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG5;
             matriztablero[4][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H5_Click(object sender, ImageClickEventArgs e)
@@ -13934,6 +14648,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH5;
             matriztablero[4][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A6_Click(object sender, ImageClickEventArgs e)
@@ -13961,6 +14677,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA6;
             matriztablero[5][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B6_Click(object sender, ImageClickEventArgs e)
@@ -13988,6 +14706,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB6;
             matriztablero[5][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C6_Click(object sender, ImageClickEventArgs e)
@@ -14015,6 +14735,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC6;
             matriztablero[5][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D6_Click(object sender, ImageClickEventArgs e)
@@ -14042,6 +14764,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD6;
             matriztablero[5][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E6_Click(object sender, ImageClickEventArgs e)
@@ -14069,6 +14793,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE6;
             matriztablero[5][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2]; ;
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F6_Click(object sender, ImageClickEventArgs e)
@@ -14096,6 +14822,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF6;
             matriztablero[5][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G6_Click(object sender, ImageClickEventArgs e)
@@ -14123,6 +14851,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG6;
             matriztablero[5][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H6_Click(object sender, ImageClickEventArgs e)
@@ -14150,6 +14880,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH6;
             matriztablero[5][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A7_Click(object sender, ImageClickEventArgs e)
@@ -14177,6 +14909,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA7;
             matriztablero[6][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B7_Click(object sender, ImageClickEventArgs e)
@@ -14204,6 +14938,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB7;
             matriztablero[6][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C7_Click(object sender, ImageClickEventArgs e)
@@ -14231,6 +14967,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC7;
             matriztablero[6][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D7_Click(object sender, ImageClickEventArgs e)
@@ -14258,6 +14996,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD7;
             matriztablero[6][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E7_Click(object sender, ImageClickEventArgs e)
@@ -14285,6 +15025,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE7;
             matriztablero[6][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F7_Click(object sender, ImageClickEventArgs e)
@@ -14312,6 +15054,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF7;
             matriztablero[6][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G7_Click(object sender, ImageClickEventArgs e)
@@ -14339,6 +15083,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG7;
             matriztablero[6][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H7_Click(object sender, ImageClickEventArgs e)
@@ -14366,6 +15112,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH7;
             matriztablero[6][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void A8_Click(object sender, ImageClickEventArgs e)
@@ -14393,6 +15141,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA8;
             matriztablero[7][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void B8_Click(object sender, ImageClickEventArgs e)
@@ -14420,6 +15170,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB8;
             matriztablero[7][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void C8_Click(object sender, ImageClickEventArgs e)
@@ -14447,6 +15199,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC8;
             matriztablero[7][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void D8_Click(object sender, ImageClickEventArgs e)
@@ -14474,6 +15228,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD8;
             matriztablero[7][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void E8_Click(object sender, ImageClickEventArgs e)
@@ -14501,6 +15257,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE8;
             matriztablero[7][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void F8_Click(object sender, ImageClickEventArgs e)
@@ -14528,6 +15286,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF8;
             matriztablero[7][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void G8_Click(object sender, ImageClickEventArgs e)
@@ -14555,6 +15315,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG8;
             matriztablero[7][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void H8_Click(object sender, ImageClickEventArgs e)
@@ -14582,6 +15344,8 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH8;
             matriztablero[7][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            validarMovimiento();
+            cerrarPartida();
         }
 
         protected void Button3_Click(object sender, EventArgs e)
