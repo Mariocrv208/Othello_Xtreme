@@ -26,8 +26,7 @@ namespace ProyectoEntregable2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARIOPC\\SQLEXPRESS;Initial Catalog=ProyectoBD;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARIOPC\\SQLEXPRESS;Initial Catalog=BDFinal;Integrated Security=True")]
         public string db {
             get {
                 return ((string)(this["db"]));

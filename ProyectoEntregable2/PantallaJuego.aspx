@@ -50,7 +50,7 @@
     <form id="Login" runat="server">
       <center>
         <div id="nombre">
-              <h3 style="height: 31px; width: 1399px">&nbsp; iGamesGT</h3>
+              <h3 style="height: 31px; width: 1399px">`&nbsp;&nbsp;&nbsp; 1&nbsp; iGamesGT</h3>
           </div>
           <br />
           <h1>Menu Principal</h1>
