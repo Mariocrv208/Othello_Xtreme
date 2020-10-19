@@ -48,16 +48,16 @@ namespace ProyectoEntregable2
         static string identificadorA4 = "";
         static string identificadorB4 = "";
         static string identificadorC4 = "";
-        static string identificadorD4 = "blanco";
-        static string identificadorE4 = "negro";
+        static string identificadorD4 = "";
+        static string identificadorE4 = "";
         static string identificadorF4 = "";
         static string identificadorG4 = "";
         static string identificadorH4 = "";
         static string identificadorA5 = "";
         static string identificadorB5 = "";
         static string identificadorC5 = "";
-        static string identificadorD5 = "negro";
-        static string identificadorE5 = "blanco";
+        static string identificadorD5 = "";
+        static string identificadorE5 = "";
         static string identificadorF5 = "";
         static string identificadorG5 = "";
         static string identificadorH5 = "";
@@ -110,6 +110,8 @@ namespace ProyectoEntregable2
         public static string idUsuarioCargado = "";
         static bool validacion = false;
         static bool validacionazul = false;
+        static bool priemraEntrada = false;
+        static bool entradaPersonalizada = false;
         static bool validacionroja = false;
         static bool segundopermiso = false;
         protected void Page_Load(object sender, EventArgs e)
@@ -1926,26 +1928,22 @@ namespace ProyectoEntregable2
                                 }
                             }
                         }
-                    }
-                    identificadorGlobal = "negro";
+                        if (xmlNode.Name.Equals("siguienteTiro"))
+                        {
+                            if (xmlNode.ChildNodes[0].InnerText.ToString() == "negro")
+                            {
+                                identificadorGlobal = "negro";
+                                Label1.Text = "negro";
+                            }
+                            if (xmlNode.ChildNodes[0].InnerText.ToString() == "blanco")
+                            {
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                            }
+                        }
+                        }
                     PaginaPrincipal.carruta = "";
                 }
-            }
-            if (identificadorGlobal == "negro" && colorpaso == "negro")
-            {
-                Label1.Text = "negro";
-            }
-            if (identificadorGlobal == "blanco" && colorpaso == "blanco")
-            {
-                Label1.Text = "blanco";
-            }
-            if (identificadorGlobal == "negro" && colorpaso == "")
-            {
-                Label1.Text = "blanco";
-            }
-            if (identificadorGlobal == "blanco" && colorpaso == "")
-            {
-                Label1.Text = "negro";
             }
             if (PaginaPrincipal.carruta != "")
             {
@@ -1962,13 +1960,339 @@ namespace ProyectoEntregable2
                 TextBox4.Text = PaginaPrincipal.nombre2;
             }
             EsquemaTablero();
+            partidaPersonalizada();
             validarMovimiento();
             colorpaso = "";
             Actualizar();
+            SinTiroValido();
             cerrarPartida();
-      
         }
 
+        protected void partidaPersonalizada()
+        {
+            string guardarcontenido;
+            string[] guardarseparaciones;
+            string guardfila = "";
+            string guardcolu = "";
+            string guardestado = "";
+            bool salir = false;
+            bool salir2 = false;
+            if (priemraEntrada == false)
+            {
+                A1.Enabled = false;
+                A2.Enabled = false;
+                A3.Enabled = false;
+                A4.Enabled = false;
+                A5.Enabled = false;
+                A6.Enabled = false;
+                A7.Enabled = false;
+                A8.Enabled = false;
+                B1.Enabled = false;
+                B2.Enabled = false;
+                B3.Enabled = false;
+                B4.Enabled = false;
+                B5.Enabled = false;
+                B6.Enabled = false;
+                B7.Enabled = false;
+                B8.Enabled = false;
+                C1.Enabled = false;
+                C2.Enabled = false;
+                C3.Enabled = false;
+                C4.Enabled = false;
+                C5.Enabled = false;
+                C6.Enabled = false;
+                C7.Enabled = false;
+                C8.Enabled = false;
+                D1.Enabled = false;
+                D2.Enabled = false;
+                D3.Enabled = false;
+                D6.Enabled = false;
+                D7.Enabled = false;
+                D8.Enabled = false;
+                E1.Enabled = false;
+                E2.Enabled = false;
+                E3.Enabled = false;
+                E6.Enabled = false;
+                E7.Enabled = false;
+                E8.Enabled = false;
+                F1.Enabled = false;
+                F2.Enabled = false;
+                F3.Enabled = false;
+                F4.Enabled = false;
+                F5.Enabled = false;
+                F6.Enabled = false;
+                F7.Enabled = false;
+                F8.Enabled = false;
+                G1.Enabled = false;
+                G2.Enabled = false;
+                G3.Enabled = false;
+                G4.Enabled = false;
+                G5.Enabled = false;
+                G6.Enabled = false;
+                G7.Enabled = false;
+                G8.Enabled = false;
+                H1.Enabled = false;
+                H2.Enabled = false;
+                H3.Enabled = false;
+                H4.Enabled = false;
+                H5.Enabled = false;
+                H6.Enabled = false;
+                H7.Enabled = false;
+                H8.Enabled = false;
+                for (int i = 0; i< matriztablero.Length; i++)
+                {
+                    for (int j = 0; j < matriztablero.Length; j++)
+                    {
+                        guardarcontenido = matriztablero[i][j].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "")
+                        {
+                            entradaPersonalizada = false;
+                        }
+                        if (guardestado != "")
+                        {
+                            entradaPersonalizada = true;
+                            salir = true;
+                            break;
+                        }
+                    }
+                    if (salir == true)
+                    {
+                        break;
+                    }
+                }
+                if (PaginaPrincipal.partidaPersonalizada == true && entradaPersonalizada == true)
+                {
+                    for(int i = 0; i < matriztablero.Length; i++)
+                    {
+                        guardarcontenido = matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "negro")
+                        {
+                            identificadorD5 = "blanco";
+                            identificadorE4 = "blanco";
+                            identificadorE5 = "negro";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD; contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
+                            salir2 = true;
+                        }
+                        if (guardestado == "blanco")
+                        {
+                            identificadorD5 = "negro";
+                            identificadorE4 = "negro";
+                            identificadorE5 = "blanco";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
+                            salir2 = true;
+                        }
+
+                        guardarcontenido = matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "negro")
+                        {
+                            identificadorD5 = "negro";
+                            identificadorD4 = "blanco";
+                            identificadorE5 = "blanco";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
+                            salir2 = true;
+                        }
+                        if (guardestado == "blanco")
+                        {
+                            identificadorD5 = "blanco";
+                            identificadorD4 = "negro";
+                            identificadorE5 = "negro";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
+                            salir2 = true;
+                        }
+
+                        guardarcontenido = matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "negro")
+                        {
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            salir2 = true;
+                        }
+                        if (guardestado == "blanco")
+                        {
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            salir2 = true;
+                        }
+
+                        guardarcontenido = matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)].ToString();
+                        guardarseparaciones = guardarcontenido.Split(',');
+                        guardfila = guardarseparaciones[0];
+                        guardcolu = guardarseparaciones[1];
+                        guardestado = guardarseparaciones[2];
+                        if (guardestado == "negro")
+                        {
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            salir2 = true;
+                        }
+                        if (guardestado == "blanco")
+                        {
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            salir2 = true;
+                        }
+                        priemraEntrada = true;
+                        D4.Enabled = false;
+                        D5.Enabled = false;
+                        E4.Enabled = false;
+                        E5.Enabled = false;
+                        if (salir2 == true)
+                        {
+                            break;
+                        }
+                    }
+                    
+                }
+                if (PaginaPrincipal.partidaPersonalizada == false)
+                {
+                    for (int i = 0; i < matriztablero.Length; i++)
+                    {
+                        identificadorD4 = "negro";
+                        identificadorD5 = "blanco";
+                        identificadorE4 = "blanco";
+                        identificadorE5 = "negro";
+                        contenidotablero[0] = fila4;
+                        contenidotablero[1] = columnaD;
+                        contenidotablero[2] = identificadorD4;
+                        matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                        contenidotablero[0] = fila4;
+                        contenidotablero[1] = columnaE;
+                        contenidotablero[2] = identificadorE4;
+                        matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                        contenidotablero[0] = fila5;
+                        contenidotablero[1] = columnaD;
+                        contenidotablero[2] = identificadorD5;
+                        matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
+                        contenidotablero[0] = fila5;
+                        contenidotablero[1] = columnaE;
+                        contenidotablero[2] = identificadorE5;
+                        matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
+                        priemraEntrada = true;
+                        D4.Enabled = false;
+                        D5.Enabled = false;
+                        E4.Enabled = false;
+                        E5.Enabled = false;
+                    }
+                }
+            }
+            if(priemraEntrada == true)
+            {
+                A1.Enabled = true;
+                A2.Enabled = true;
+                A3.Enabled = true;
+                A4.Enabled = true;
+                A5.Enabled = true;
+                A6.Enabled = true;
+                A7.Enabled = true;
+                A8.Enabled = true;
+                B1.Enabled = true;
+                B2.Enabled = true;
+                B3.Enabled = true;
+                B4.Enabled = true;
+                B5.Enabled = true;
+                B6.Enabled = true;
+                B7.Enabled = true;
+                B8.Enabled = true;
+                C1.Enabled = true;
+                C2.Enabled = true;
+                C3.Enabled = true;
+                C4.Enabled = true;
+                C5.Enabled = true;
+                C6.Enabled = true;
+                C7.Enabled = true;
+                C8.Enabled = true;
+                D1.Enabled = true;
+                D2.Enabled = true;
+                D3.Enabled = true;
+                D6.Enabled = true;
+                D7.Enabled = true;
+                D8.Enabled = true;
+                E1.Enabled = true;
+                E2.Enabled = true;
+                E3.Enabled = true;
+                E6.Enabled = true;
+                E7.Enabled = true;
+                E8.Enabled = true;
+                F1.Enabled = true;
+                F2.Enabled = true;
+                F3.Enabled = true;
+                F4.Enabled = true;
+                F5.Enabled = true;
+                F6.Enabled = true;
+                F7.Enabled = true;
+                F8.Enabled = true;
+                G1.Enabled = true;
+                G2.Enabled = true;
+                G3.Enabled = true;
+                G4.Enabled = true;
+                G5.Enabled = true;
+                G6.Enabled = true;
+                G7.Enabled = true;
+                G8.Enabled = true;
+                H1.Enabled = true;
+                H2.Enabled = true;
+                H3.Enabled = true;
+                H4.Enabled = true;
+                H5.Enabled = true;
+                H6.Enabled = true;
+                H7.Enabled = true;
+                H8.Enabled = true;
+            }
+        }
+        
         protected void validarMovimiento()
         {
             int columna = 0;
@@ -4000,7 +4324,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar >= 0)
+                            while (filabuscar < 8 && columnabuscar >= 0)
                             {
                                 filabuscar++;
                                 columnabuscar = columnabuscar - 1;
@@ -4501,7 +4825,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar < 8)
+                            while (filabuscar < 8 && columnabuscar < 8)
                             {
                                 filabuscar++;
                                 columnabuscar++;
@@ -5002,7 +5326,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar < 8)
+                            while (filabuscar >= 0 && columnabuscar < 8)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar++;
@@ -5503,7 +5827,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            while (filabuscar >= 0 && columnabuscar >= 0)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar = columnabuscar - 1;
@@ -7996,7 +8320,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar >= 0)
+                            while (filabuscar < 8 && columnabuscar >= 0)
                             {
                                 filabuscar++;
                                 columnabuscar = columnabuscar - 1;
@@ -8497,7 +8821,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar < 8)
+                            while (filabuscar < 8 && columnabuscar < 8)
                             {
                                 filabuscar++;
                                 columnabuscar++;
@@ -8998,7 +9322,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar < 8)
+                            while (filabuscar >= 0 && columnabuscar < 8)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar++;
@@ -9499,7 +9823,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            while (filabuscar >= 0 && columnabuscar >= 0)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar = columnabuscar - 1;
@@ -11992,7 +12316,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar >= 0)
+                            while (filabuscar < 8 && columnabuscar >= 0)
                             {
                                 filabuscar++;
                                 columnabuscar = columnabuscar - 1;
@@ -12493,7 +12817,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar < 8)
+                            while (filabuscar < 8 && columnabuscar < 8)
                             {
                                 filabuscar++;
                                 columnabuscar++;
@@ -12994,7 +13318,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar < 8)
+                            while (filabuscar >= 0 && columnabuscar < 8)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar++;
@@ -13495,7 +13819,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            while (filabuscar >= 0 && columnabuscar >= 0)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar = columnabuscar - 1;
@@ -15989,7 +16313,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar >= 0)
+                            while (filabuscar < 8 && columnabuscar >= 0)
                             {
                                 filabuscar++;
                                 columnabuscar = columnabuscar - 1;
@@ -16490,7 +16814,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar < 8 || columnabuscar < 8)
+                            while (filabuscar < 8 && columnabuscar < 8)
                             {
                                 filabuscar++;
                                 columnabuscar++;
@@ -16991,7 +17315,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar < 8)
+                            while (filabuscar >= 0 && columnabuscar < 8)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar++;
@@ -17492,7 +17816,7 @@ namespace ProyectoEntregable2
                             columnabuscar = columna;
                             filabuscar = fila;
 
-                            while (filabuscar >= 0 || columnabuscar >= 0)
+                            while (filabuscar >= 0 && columnabuscar >= 0)
                             {
                                 filabuscar = filabuscar - 1;
                                 columnabuscar = columnabuscar - 1;
@@ -19233,6 +19557,23 @@ namespace ProyectoEntregable2
                     }
                 }
             }
+            if (identificadorGlobal == "negro" && colorpaso == "")
+            {
+                Label1.Text = "negro";
+            }
+            if (identificadorGlobal == "blanco" && colorpaso == "")
+            {
+                Label1.Text = "blanco";
+            }
+            if (identificadorGlobal == "negro" && colorpaso == "negro")
+            {
+                Label1.Text = "negro";
+            }
+            if (identificadorGlobal == "blanco" && colorpaso == "blanco")
+            {
+                Label1.Text = "blanco";
+            }
+
         }
 
         protected void cerrarPartida()
@@ -20494,7 +20835,7 @@ namespace ProyectoEntregable2
                     Response.Redirect("PaginaPrincipal.aspx");
                 }
             }
-            if (contadorGlobal == tamaniotablero)
+            if (contadorGlobal == tamaniotablero) 
             {
                 if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
                 {
@@ -22118,7 +22459,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >=0)
+                        while (filabuscar2 < 8 && columnabuscar2 >=0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22137,7 +22478,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >=0 || columnabuscar2 >=0)
+                        while (filabuscar2 >=0 && columnabuscar2 >=0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22156,7 +22497,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 <8)
+                        while (filabuscar2 >= 0 && columnabuscar2 <8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22297,7 +22638,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22316,7 +22657,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22335,7 +22676,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22476,7 +22817,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22495,7 +22836,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22514,7 +22855,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22655,7 +22996,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22674,7 +23015,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22693,7 +23034,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22728,7 +23069,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila + 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar < 8 || columnabuscar < 8)
+                while (filabuscar < 8 && columnabuscar < 8)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -22834,7 +23175,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22853,7 +23194,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >=0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >=0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22872,7 +23213,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -22907,7 +23248,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila - 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar >= 0  || columnabuscar < 8)
+                while (filabuscar >= 0 && columnabuscar < 8)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -23013,7 +23354,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23032,7 +23373,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23051,7 +23392,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23086,7 +23427,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila + 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar <8 || columnabuscar >=0)
+                while (filabuscar <8 && columnabuscar >=0)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -23192,7 +23533,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23211,7 +23552,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23230,7 +23571,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23265,7 +23606,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila - 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar >= 0 || columnabuscar >= 0)
+                while (filabuscar >= 0 && columnabuscar >= 0)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -23371,7 +23712,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23390,7 +23731,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23409,7 +23750,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23553,7 +23894,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23572,7 +23913,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23591,7 +23932,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23732,7 +24073,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23751,7 +24092,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23770,7 +24111,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23911,7 +24252,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23930,7 +24271,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -23949,7 +24290,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24090,7 +24431,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24109,7 +24450,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24128,7 +24469,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24163,7 +24504,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila + 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar < 8 || columnabuscar < 8)
+                while (filabuscar < 8 && columnabuscar < 8)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -24269,7 +24610,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24288,7 +24629,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24307,7 +24648,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24342,7 +24683,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila - 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar >= 0 || columnabuscar < 8)
+                while (filabuscar >= 0 && columnabuscar < 8)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -24448,7 +24789,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24467,7 +24808,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24486,7 +24827,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24521,7 +24862,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila + 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar < 8 || columnabuscar >= 0)
+                while (filabuscar < 8 && columnabuscar >= 0)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -24627,7 +24968,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24646,7 +24987,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24665,7 +25006,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24700,7 +25041,7 @@ namespace ProyectoEntregable2
                 filabuscar = fila - 1;
                 contadorpasoblanco = 0;
                 contadorpasonegro = 0;
-                while (filabuscar >= 0 || columnabuscar >= 0)
+                while (filabuscar >= 0 && columnabuscar >= 0)
                 {
                     guardarcontenidoderecha = matriztablero[filabuscar][columnabuscar].ToString();
                     guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
@@ -24806,7 +25147,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar + 1;
-                        while (filabuscar2 < 8 || columnabuscar2 >= 0)
+                        while (filabuscar2 < 8 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24825,7 +25166,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar - 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 >= 0)
+                        while (filabuscar2 >= 0 && columnabuscar2 >= 0)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24844,7 +25185,7 @@ namespace ProyectoEntregable2
                         }
                         columnabuscar2 = columnabuscar + 1;
                         filabuscar2 = filabuscar - 1;
-                        while (filabuscar2 >= 0 || columnabuscar2 < 8)
+                        while (filabuscar2 >= 0 && columnabuscar2 < 8)
                         {
                             guardarcontenidoarriba2 = matriztablero[filabuscar2][columnabuscar2].ToString();
                             guardarseparacionesarriba2 = guardarcontenidoarriba2.Split(',');
@@ -24885,37 +25226,13 @@ namespace ProyectoEntregable2
         {
             int columna = 0;
             int fila = 0;
-            int columnabuscar = 0;
-            int filabuscar = 0;
             string guardfila;
             string guardcolu;
             string guardestado;
-            string guardfiladerecha;
-            string guardcoluderecha;
-            string guardestadoderecha;
-            string guardfilaizquierda;
-            string guardcoluizquierda;
-            string guardestadoizquierda;
-            string guardfilaarriba;
-            string guardcoluarriba;
-            string guardestadoarriba;
-            string guardfilaabajo;
-            string guardcoluabajo;
-            string guardestadoabajo;
             string[] guardarseparaciones;
-            string[] guardarseparacionesderecha;
-            string[] guardarseparacionesizquierda;
-            string[] guardarseparacionesarriba;
-            string[] guardarseparacionesabajo;
-            string guardarcontenidoizquierda;
-            string guardarcontenidoderecha;
-            string guardarcontenidoabajo;
-            string guardarcontenidoarriba;
             string guardarcontenido;
-            bool salir1 = false;
-            bool salir2 = false;
-            bool salir3 = false;
-            bool salir4 = false;
+            bool validacionroja = false;
+            bool validacionazul = false;
             for (fila = 0; fila < matriztablero.Length; fila++)
             {
                 for (columna = 0; columna < matriztablero[fila].Length; columna++)
@@ -24925,935 +25242,46 @@ namespace ProyectoEntregable2
                     guardfila = guardarseparaciones[0];
                     guardcolu = guardarseparaciones[1];
                     guardestado = guardarseparaciones[2];
-                    if (identificadorGlobal == "negro" && colorpaso == "")
+                    if (identificadorGlobal == "negro")
                     {
-                        if (guardestado == "blanco")
+                        if (guardestado != "rojo")
                         {
-                            salir1 = true;
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                            while (columnabuscar < 8)
-                            {
-                                columnabuscar++;
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                if (guardestadoderecha == "azul" && guardestadoizquierda == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (columnabuscar >= 0)
-                            {
-                                columnabuscar = columnabuscar - 1;
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                if (guardestadoizquierda == "azul" && guardestadoderecha == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8)
-                            {
-                                filabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                if (guardestadoabajo == "azul" && guardestadoarriba == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar >= 0)
-                            {
-                                filabuscar++;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar < 8)
-                            {
-                                filabuscar++;
-                                columnabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar < 8)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar++;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir1 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
+                            validacionazul = true;
+                        }
+                        if (guardestado == "rojo")
+                        {
+                            validacionazul = false;
+                            return;
                         }
                     }
-                    if (identificadorGlobal == "blanco" && colorpaso == "")
+                    if (identificadorGlobal == "blanco")
                     {
-                        if (guardestado == "negro")
+                        if (guardestado != "azul")
                         {
-                            salir2 = true;
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                            while (columnabuscar < 8)
-                            {
-                                columnabuscar++;
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                if (guardestadoderecha == "rojo" && guardestadoizquierda == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (columnabuscar >= 0)
-                            {
-                                columnabuscar = columnabuscar - 1;
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                if (guardestadoizquierda == "rojo" && guardestadoderecha == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8)
-                            {
-                                filabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                if (guardestadoabajo == "rojo" && guardestadoarriba == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar >= 0)
-                            {
-                                filabuscar++;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar < 8)
-                            {
-                                filabuscar++;
-                                columnabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar < 8)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar++;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir2 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
+                            validacionroja = true;
+                        }
+                        if (guardestado == "azul")
+                        {
+                            validacionroja = false;
+                            return;
                         }
                     }
-                    if (identificadorGlobal == "negro" && colorpaso == "negro")
-                    {
-                        if (guardestado == "negro")
-                        {
-                            salir3 = true;
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                            while (columnabuscar < 8)
-                            {
-                                columnabuscar++;
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                if (guardestadoderecha == "rojo" && guardestadoizquierda == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
 
-                            while (columnabuscar >= 0)
-                            {
-                                columnabuscar = columnabuscar - 1;
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                if (guardestadoizquierda == "rojo" && guardestadoderecha == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8)
-                            {
-                                filabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                if (guardestadoabajo == "rojo" && guardestadoarriba == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar >= 0)
-                            {
-                                filabuscar++;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar < 8)
-                            {
-                                filabuscar++;
-                                columnabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar < 8)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar++;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "rojo" && guardestadoabajo == "blanco")
-                                {
-                                    salir3 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                        }
-                    }
-                    if (identificadorGlobal == "blanco" && colorpaso == "blanco")
-                    {
-                        if (guardestado == "blanco")
-                        {
-                            salir4 = true;
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                            while (columnabuscar < 8)
-                            {
-                                columnabuscar++;
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar - 1].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                if (guardestadoderecha == "azul" && guardestadoizquierda == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (columnabuscar >= 0)
-                            {
-                                columnabuscar = columnabuscar - 1;
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoizquierda = matriztablero[fila][columnabuscar].ToString();
-                                guardarseparacionesizquierda = guardarcontenidoizquierda.Split(',');
-                                guardfilaizquierda = guardarseparacionesizquierda[0];
-                                guardcoluizquierda = guardarseparacionesizquierda[1];
-                                guardestadoizquierda = guardarseparacionesizquierda[2];
-                                guardarcontenidoderecha = matriztablero[fila][columnabuscar + 1].ToString();
-                                guardarseparacionesderecha = guardarcontenidoderecha.Split(',');
-                                guardfiladerecha = guardarseparacionesderecha[0];
-                                guardcoluderecha = guardarseparacionesderecha[1];
-                                guardestadoderecha = guardarseparacionesderecha[2];
-                                if (guardestadoizquierda == "azul" && guardestadoderecha == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8)
-                            {
-                                filabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoabajo = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                guardarcontenidoarriba = matriztablero[filabuscar - 1][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                if (guardestadoabajo == "azul" && guardestadoarriba == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columna].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columna].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar >= 0)
-                            {
-                                filabuscar++;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar < 8 || columnabuscar < 8)
-                            {
-                                filabuscar++;
-                                columnabuscar++;
-                                if (filabuscar == 8)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar - 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar < 8)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar++;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar == 8)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar - 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-
-                            while (filabuscar >= 0 || columnabuscar >= 0)
-                            {
-                                filabuscar = filabuscar - 1;
-                                columnabuscar = columnabuscar - 1;
-                                if (filabuscar < 0)
-                                {
-                                    break;
-                                }
-                                if (columnabuscar < 0)
-                                {
-                                    break;
-                                }
-                                guardarcontenidoarriba = matriztablero[filabuscar][columnabuscar].ToString();
-                                guardarseparacionesarriba = guardarcontenidoarriba.Split(',');
-                                guardfilaarriba = guardarseparacionesarriba[0];
-                                guardcoluarriba = guardarseparacionesarriba[1];
-                                guardestadoarriba = guardarseparacionesarriba[2];
-                                guardarcontenidoabajo = matriztablero[filabuscar + 1][columnabuscar + 1].ToString();
-                                guardarseparacionesabajo = guardarcontenidoabajo.Split(',');
-                                guardfilaabajo = guardarseparacionesabajo[0];
-                                guardcoluabajo = guardarseparacionesabajo[1];
-                                guardestadoabajo = guardarseparacionesabajo[2];
-                                if (guardestadoarriba == "azul" && guardestadoabajo == "negro")
-                                {
-                                    salir4 = false;
-                                }
-                            }
-                            columnabuscar = columna;
-                            filabuscar = fila;
-                        }
-                    }
                 }
             }
-            if(salir1 = true)
-            {
-                identificadorGlobal = "blanco";
-            }
-            if (salir1 = true)
+            if(validacionazul == true)
             {
                 identificadorGlobal = "negro";
+                Label1.Text = identificadorGlobal;
+                validarMovimiento();
+                return;
             }
-            if (salir1 = true)
+            if (validacionroja == true)
             {
                 identificadorGlobal = "blanco";
-            }
-            if (salir1 = true)
-            {
-                identificadorGlobal = "negro";
+                Label1.Text = identificadorGlobal;
+                validarMovimiento();
+                return;
             }
         }
 
@@ -25883,11 +25311,11 @@ namespace ProyectoEntregable2
             matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B1_Click(object sender, ImageClickEventArgs e)
@@ -25916,11 +25344,11 @@ namespace ProyectoEntregable2
             matriztablero[0][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C1_Click(object sender, ImageClickEventArgs e)
@@ -25949,11 +25377,12 @@ namespace ProyectoEntregable2
             matriztablero[0][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 2;
             CambioFicha(i, j);
+
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D1_Click(object sender, ImageClickEventArgs e)
@@ -25982,11 +25411,11 @@ namespace ProyectoEntregable2
             matriztablero[0][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E1_Click(object sender, ImageClickEventArgs e)
@@ -26015,11 +25444,11 @@ namespace ProyectoEntregable2
             matriztablero[0][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F1_Click(object sender, ImageClickEventArgs e)
@@ -26048,11 +25477,11 @@ namespace ProyectoEntregable2
             matriztablero[0][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G1_Click(object sender, ImageClickEventArgs e)
@@ -26081,11 +25510,11 @@ namespace ProyectoEntregable2
             matriztablero[0][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H1_Click(object sender, ImageClickEventArgs e)
@@ -26114,11 +25543,11 @@ namespace ProyectoEntregable2
             matriztablero[0][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 0;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A2_Click(object sender, ImageClickEventArgs e)
@@ -26147,11 +25576,11 @@ namespace ProyectoEntregable2
             matriztablero[1][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B2_Click(object sender, ImageClickEventArgs e)
@@ -26180,11 +25609,11 @@ namespace ProyectoEntregable2
             matriztablero[1][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C2_Click(object sender, ImageClickEventArgs e)
@@ -26213,11 +25642,11 @@ namespace ProyectoEntregable2
             matriztablero[1][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D2_Click(object sender, ImageClickEventArgs e)
@@ -26246,11 +25675,11 @@ namespace ProyectoEntregable2
             matriztablero[1][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E2_Click(object sender, ImageClickEventArgs e)
@@ -26279,11 +25708,11 @@ namespace ProyectoEntregable2
             matriztablero[1][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F2_Click(object sender, ImageClickEventArgs e)
@@ -26312,11 +25741,11 @@ namespace ProyectoEntregable2
             matriztablero[1][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G2_Click(object sender, ImageClickEventArgs e)
@@ -26345,11 +25774,11 @@ namespace ProyectoEntregable2
             matriztablero[1][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H2_Click(object sender, ImageClickEventArgs e)
@@ -26378,11 +25807,11 @@ namespace ProyectoEntregable2
             matriztablero[1][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 1;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A3_Click(object sender, ImageClickEventArgs e)
@@ -26411,11 +25840,11 @@ namespace ProyectoEntregable2
             matriztablero[2][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B3_Click(object sender, ImageClickEventArgs e)
@@ -26444,11 +25873,11 @@ namespace ProyectoEntregable2
             matriztablero[2][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C3_Click(object sender, ImageClickEventArgs e)
@@ -26477,11 +25906,11 @@ namespace ProyectoEntregable2
             matriztablero[2][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D3_Click(object sender, ImageClickEventArgs e)
@@ -26510,11 +25939,11 @@ namespace ProyectoEntregable2
             matriztablero[2][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E3_Click(object sender, ImageClickEventArgs e)
@@ -26543,11 +25972,11 @@ namespace ProyectoEntregable2
             matriztablero[2][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F3_Click(object sender, ImageClickEventArgs e)
@@ -26576,11 +26005,11 @@ namespace ProyectoEntregable2
             matriztablero[2][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G3_Click(object sender, ImageClickEventArgs e)
@@ -26609,11 +26038,11 @@ namespace ProyectoEntregable2
             matriztablero[2][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H3_Click(object sender, ImageClickEventArgs e)
@@ -26642,11 +26071,11 @@ namespace ProyectoEntregable2
             matriztablero[2][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 2;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A4_Click(object sender, ImageClickEventArgs e)
@@ -26675,11 +26104,11 @@ namespace ProyectoEntregable2
             matriztablero[3][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B4_Click(object sender, ImageClickEventArgs e)
@@ -26708,11 +26137,11 @@ namespace ProyectoEntregable2
             matriztablero[3][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C4_Click(object sender, ImageClickEventArgs e)
@@ -26741,11 +26170,11 @@ namespace ProyectoEntregable2
             matriztablero[3][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D4_Click(object sender, ImageClickEventArgs e)
@@ -26773,12 +26202,13 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB4;
             matriztablero[3][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            partidaPersonalizada();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E4_Click(object sender, ImageClickEventArgs e)
@@ -26806,12 +26236,13 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE4;
             matriztablero[3][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            partidaPersonalizada();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F4_Click(object sender, ImageClickEventArgs e)
@@ -26840,11 +26271,11 @@ namespace ProyectoEntregable2
             matriztablero[3][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G4_Click(object sender, ImageClickEventArgs e)
@@ -26873,11 +26304,11 @@ namespace ProyectoEntregable2
             matriztablero[3][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H4_Click(object sender, ImageClickEventArgs e)
@@ -26906,11 +26337,11 @@ namespace ProyectoEntregable2
             matriztablero[3][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 3;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A5_Click(object sender, ImageClickEventArgs e)
@@ -26939,11 +26370,11 @@ namespace ProyectoEntregable2
             matriztablero[4][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B5_Click(object sender, ImageClickEventArgs e)
@@ -26972,11 +26403,11 @@ namespace ProyectoEntregable2
             matriztablero[4][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C5_Click(object sender, ImageClickEventArgs e)
@@ -27005,11 +26436,11 @@ namespace ProyectoEntregable2
             matriztablero[4][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D5_Click(object sender, ImageClickEventArgs e)
@@ -27037,12 +26468,13 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD5;
             matriztablero[4][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            partidaPersonalizada();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E5_Click(object sender, ImageClickEventArgs e)
@@ -27070,12 +26502,13 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE5;
             matriztablero[4][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
+            partidaPersonalizada();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F5_Click(object sender, ImageClickEventArgs e)
@@ -27104,11 +26537,11 @@ namespace ProyectoEntregable2
             matriztablero[4][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G5_Click(object sender, ImageClickEventArgs e)
@@ -27137,11 +26570,11 @@ namespace ProyectoEntregable2
             matriztablero[4][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H5_Click(object sender, ImageClickEventArgs e)
@@ -27170,11 +26603,11 @@ namespace ProyectoEntregable2
             matriztablero[4][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 4;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A6_Click(object sender, ImageClickEventArgs e)
@@ -27203,11 +26636,11 @@ namespace ProyectoEntregable2
             matriztablero[5][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B6_Click(object sender, ImageClickEventArgs e)
@@ -27236,11 +26669,11 @@ namespace ProyectoEntregable2
             matriztablero[5][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C6_Click(object sender, ImageClickEventArgs e)
@@ -27269,11 +26702,11 @@ namespace ProyectoEntregable2
             matriztablero[5][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D6_Click(object sender, ImageClickEventArgs e)
@@ -27302,11 +26735,11 @@ namespace ProyectoEntregable2
             matriztablero[5][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E6_Click(object sender, ImageClickEventArgs e)
@@ -27335,11 +26768,11 @@ namespace ProyectoEntregable2
             matriztablero[5][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2]; ;
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F6_Click(object sender, ImageClickEventArgs e)
@@ -27368,11 +26801,11 @@ namespace ProyectoEntregable2
             matriztablero[5][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G6_Click(object sender, ImageClickEventArgs e)
@@ -27401,11 +26834,11 @@ namespace ProyectoEntregable2
             matriztablero[5][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H6_Click(object sender, ImageClickEventArgs e)
@@ -27434,11 +26867,11 @@ namespace ProyectoEntregable2
             matriztablero[5][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 5;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A7_Click(object sender, ImageClickEventArgs e)
@@ -27467,11 +26900,11 @@ namespace ProyectoEntregable2
             matriztablero[6][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B7_Click(object sender, ImageClickEventArgs e)
@@ -27500,11 +26933,11 @@ namespace ProyectoEntregable2
             matriztablero[6][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C7_Click(object sender, ImageClickEventArgs e)
@@ -27533,11 +26966,11 @@ namespace ProyectoEntregable2
             matriztablero[6][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D7_Click(object sender, ImageClickEventArgs e)
@@ -27566,11 +26999,11 @@ namespace ProyectoEntregable2
             matriztablero[6][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E7_Click(object sender, ImageClickEventArgs e)
@@ -27599,11 +27032,11 @@ namespace ProyectoEntregable2
             matriztablero[6][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F7_Click(object sender, ImageClickEventArgs e)
@@ -27632,11 +27065,11 @@ namespace ProyectoEntregable2
             matriztablero[6][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G7_Click(object sender, ImageClickEventArgs e)
@@ -27665,11 +27098,11 @@ namespace ProyectoEntregable2
             matriztablero[6][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H7_Click(object sender, ImageClickEventArgs e)
@@ -27698,11 +27131,11 @@ namespace ProyectoEntregable2
             matriztablero[6][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 6;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void A8_Click(object sender, ImageClickEventArgs e)
@@ -27731,11 +27164,11 @@ namespace ProyectoEntregable2
             matriztablero[7][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 0;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void B8_Click(object sender, ImageClickEventArgs e)
@@ -27764,11 +27197,11 @@ namespace ProyectoEntregable2
             matriztablero[7][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 1;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void C8_Click(object sender, ImageClickEventArgs e)
@@ -27797,11 +27230,11 @@ namespace ProyectoEntregable2
             matriztablero[7][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 2;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void D8_Click(object sender, ImageClickEventArgs e)
@@ -27830,11 +27263,11 @@ namespace ProyectoEntregable2
             matriztablero[7][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 3;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void E8_Click(object sender, ImageClickEventArgs e)
@@ -27863,11 +27296,11 @@ namespace ProyectoEntregable2
             matriztablero[7][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 4;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void F8_Click(object sender, ImageClickEventArgs e)
@@ -27896,11 +27329,11 @@ namespace ProyectoEntregable2
             matriztablero[7][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 5;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void G8_Click(object sender, ImageClickEventArgs e)
@@ -27929,11 +27362,11 @@ namespace ProyectoEntregable2
             matriztablero[7][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 6;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void H8_Click(object sender, ImageClickEventArgs e)
@@ -27962,11 +27395,11 @@ namespace ProyectoEntregable2
             matriztablero[7][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             validarMovimiento();
-            cerrarPartida();
             int i = 7;
             int j = 7;
             CambioFicha(i, j);
             Actualizar();
+            cerrarPartida();
         }
 
         protected void Button3_Click(object sender, EventArgs e)

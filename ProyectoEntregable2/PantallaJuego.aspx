@@ -202,10 +202,10 @@
             <asp:ImageButton ID="C4" runat="server" Width="80px" Height="80px"  BackColor="#66FF99" ImageUrl="fondotransparente.png" OnClick="C4_Click" />
                                 </td>
                                 <td>
-            <asp:ImageButton ID="D4" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="Blanca.png" OnClick="D4_Click" />
+            <asp:ImageButton ID="D4" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="fondotransparente.png" OnClick="D4_Click" />
                                 </td>
                                 <td>
-            <asp:ImageButton ID="E4" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="negra.png" OnClick="E4_Click" />
+            <asp:ImageButton ID="E4" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="fondotransparente.png" OnClick="E4_Click" />
                                 </td>
                                 <td>
             <asp:ImageButton ID="F4" runat="server" Width="80px" Height="80px"  BackColor="#66FF99" ImageUrl="fondotransparente.png" OnClick="F4_Click" />
@@ -234,10 +234,10 @@
             <asp:ImageButton ID="C5" runat="server" Width="80px" Height="80px"  BackColor="#66FF99" ImageUrl="fondotransparente.png" OnClick="C5_Click" />
                                 </td>
                                 <td>
-            <asp:ImageButton ID="D5" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="negra.png" OnClick="D5_Click" />
+            <asp:ImageButton ID="D5" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="fondotransparente.png" OnClick="D5_Click" />
                                 </td>
                                 <td>
-            <asp:ImageButton ID="E5" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="Blanca.png" OnClick="E5_Click" />
+            <asp:ImageButton ID="E5" runat="server" Width="80px" Height="80px" BackColor="#66FF99" Text="." ImageUrl="fondotransparente.png" OnClick="E5_Click" />
                                 </td>
                                 <td>
             <asp:ImageButton ID="F5" runat="server" Width="80px" Height="80px"  BackColor="#66FF99" ImageUrl="fondotransparente.png" OnClick="F5_Click" />

@@ -14,6 +14,7 @@ namespace ProyectoEntregable2
         public static string carruta = "";
         public static string nombre2 = "";
         public static string colorglobal = "";
+        public static bool partidaPersonalizada = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -55,8 +56,21 @@ namespace ProyectoEntregable2
         {
             colorglobal = TextBox2.Text;
             nombre2 = TextBox1.Text;
+            if (RadioButton1.Checked == true)
+            {
+                partidaPersonalizada = true;
+            }
+            if (RadioButton2.Checked == true)
+            {
+                partidaPersonalizada = false;
+            }
             Panel1.Visible = false;
             Response.Redirect("PantallaJuego.aspx");
+        }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
