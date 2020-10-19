@@ -114,6 +114,7 @@ namespace ProyectoEntregable2
         static bool entradaPersonalizada = false;
         static bool validacionroja = false;
         static bool segundopermiso = false;
+        static bool primerapermiso = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (identificadorGlobal == "")
@@ -2085,10 +2086,18 @@ namespace ProyectoEntregable2
                             contenidotablero[1] = columnaD;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
                             contenidotablero[0] = fila5;
-                            contenidotablero[1] = columnaD; contenidotablero[0] = fila5;
-                            contenidotablero[1] = columnaD;
+                            contenidotablero[1] = columnaE;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
                         if (guardestado == "blanco")
                         {
@@ -2102,9 +2111,18 @@ namespace ProyectoEntregable2
                             contenidotablero[1] = columnaD;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
                             contenidotablero[0] = fila5;
-                            contenidotablero[1] = columnaD;
+                            contenidotablero[1] = columnaE;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
 
                         guardarcontenido = matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)].ToString();
@@ -2127,6 +2145,15 @@ namespace ProyectoEntregable2
                             contenidotablero[1] = columnaE;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
                         if (guardestado == "blanco")
                         {
@@ -2143,6 +2170,15 @@ namespace ProyectoEntregable2
                             contenidotablero[1] = columnaE;
                             matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
 
                         guardarcontenido = matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1].ToString();
@@ -2152,17 +2188,53 @@ namespace ProyectoEntregable2
                         guardestado = guardarseparaciones[2];
                         if (guardestado == "negro")
                         {
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            identificadorE4 = "negro";
+                            identificadorD4 = "blanco";
+                            identificadorE5 = "blanco";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
                         if (guardestado == "blanco")
                         {
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            identificadorE4 = "blanco";
+                            identificadorD4 = "negro";
+                            identificadorE5 = "negro";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
 
                         guardarcontenido = matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2)].ToString();
@@ -2172,26 +2244,53 @@ namespace ProyectoEntregable2
                         guardestado = guardarseparaciones[2];
                         if (guardestado == "negro")
                         {
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                            identificadorE4 = "blanco";
+                            identificadorD4 = "negro";
+                            identificadorD5 = "blanco";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
                             salir2 = true;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
                         if (guardestado == "blanco")
                         {
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                            identificadorE4 = "negro";
+                            identificadorD4 = "blanco";
+                            identificadorD5 = "negro";
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD4;
+                            contenidotablero[0] = fila4;
+                            contenidotablero[1] = columnaE;
+                            matriztablero[(matriztablero.Length / 2) - 1][(matriztablero[i].Length / 2)] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorE4;
+                            contenidotablero[0] = fila5;
+                            contenidotablero[1] = columnaD;
+                            matriztablero[(matriztablero.Length / 2)][(matriztablero[i].Length / 2) - 1] = contenidotablero[0] + "," + contenidotablero[1] + "," + identificadorD5;
                             salir2 = true;
-                        }
-                        priemraEntrada = true;
-                        D4.Enabled = false;
-                        D5.Enabled = false;
-                        E4.Enabled = false;
-                        E5.Enabled = false;
-                        if (salir2 == true)
-                        {
-                            break;
+                            priemraEntrada = true;
+                            D4.Enabled = false;
+                            D5.Enabled = false;
+                            E4.Enabled = false;
+                            E5.Enabled = false;
+                            if (salir2 == true)
+                            {
+                                break;
+                            }
                         }
                     }
                     
@@ -26198,15 +26297,19 @@ namespace ProyectoEntregable2
             TextBox1.Text = contadornegro.ToString();
             TextBox2.Text = contadorblanco.ToString();
             contenidotablero[0] = fila4;
-            contenidotablero[1] = columnaB;
-            contenidotablero[2] = identificadorB4;
+            contenidotablero[1] = columnaD;
+            contenidotablero[2] = identificadorD4;
             matriztablero[3][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             partidaPersonalizada();
             validarMovimiento();
             int i = 3;
             int j = 3;
-            CambioFicha(i, j);
+            if (primerapermiso == true)
+            {
+                CambioFicha(i, j);
+            }
+            primerapermiso = false;
             Actualizar();
             cerrarPartida();
         }
@@ -26240,7 +26343,11 @@ namespace ProyectoEntregable2
             validarMovimiento();
             int i = 3;
             int j = 4;
-            CambioFicha(i, j);
+            if (primerapermiso == true)
+            {
+                CambioFicha(i, j);
+            }
+            primerapermiso = false;
             Actualizar();
             cerrarPartida();
         }
@@ -26472,7 +26579,11 @@ namespace ProyectoEntregable2
             validarMovimiento();
             int i = 4;
             int j = 3;
-            CambioFicha(i, j);
+            if (primerapermiso == true)
+            {
+                CambioFicha(i, j);
+            }
+            primerapermiso = false;
             Actualizar();
             cerrarPartida();
         }
@@ -26506,7 +26617,11 @@ namespace ProyectoEntregable2
             validarMovimiento();
             int i = 4;
             int j = 4;
-            CambioFicha(i, j);
+            if (primerapermiso == true)
+            {
+                CambioFicha(i, j);
+            }
+            primerapermiso = false;
             Actualizar();
             cerrarPartida();
         }
@@ -27876,7 +27991,6 @@ namespace ProyectoEntregable2
 
         protected void Button376_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PaginaPrincipal.aspx");
             identificadorA1 = "";
             identificadorB1 = "";
             identificadorC1 = "";
@@ -27904,16 +28018,16 @@ namespace ProyectoEntregable2
             identificadorA4 = "";
             identificadorB4 = "";
             identificadorC4 = "";
-            identificadorD4 = "blanco";
-            identificadorE4 = "negro";
+            identificadorD4 = "";
+            identificadorE4 = "";
             identificadorF4 = "";
             identificadorG4 = "";
             identificadorH4 = "";
             identificadorA5 = "";
             identificadorB5 = "";
             identificadorC5 = "";
-            identificadorD5 = "negro";
-            identificadorE5 = "blanco";
+            identificadorD5 = "";
+            identificadorE5 = "";
             identificadorF5 = "";
             identificadorG5 = "";
             identificadorH5 = "";
@@ -27941,6 +28055,7 @@ namespace ProyectoEntregable2
             identificadorF8 = "";
             identificadorG8 = "";
             identificadorH8 = "";
+            Response.Redirect("PaginaPrincipal.aspx");
         }
 
 
