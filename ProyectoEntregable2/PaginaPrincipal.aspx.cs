@@ -15,6 +15,7 @@ namespace ProyectoEntregable2
         public static string nombre2 = "";
         public static string colorglobal = "";
         public static bool partidaPersonalizada = false;
+        public static bool ModalidadInversa = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,7 +33,8 @@ namespace ProyectoEntregable2
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PantallaJuego.aspx");
+            Panel2.Visible = true;
+            
         }
 
         protected void Button6_Click(object sender, EventArgs e)
@@ -64,13 +66,40 @@ namespace ProyectoEntregable2
             {
                 partidaPersonalizada = false;
             }
+            if (RadioButton3.Checked == true)
+            {
+                ModalidadInversa = false;
+            }
+            if (RadioButton4.Checked == true)
+            {
+                ModalidadInversa = true;
+            }
             Panel1.Visible = false;
             Response.Redirect("PantallaJuego.aspx");
         }
-
-        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        
+        protected void Button20_Click1(object sender, EventArgs e)
         {
-
+            colorglobal = TextBox3.Text;
+            nombre2 = "Maquina";
+            if (RadioButton5.Checked == true)
+            {
+                partidaPersonalizada = true;
+            }
+            if (RadioButton6.Checked == true)
+            {
+                partidaPersonalizada = false;
+            }
+            if (RadioButton7.Checked == true)
+            {
+                ModalidadInversa = false;
+            }
+            if (RadioButton8.Checked == true)
+            {
+                ModalidadInversa = true;
+            }
+            Panel2.Visible = false;
+            Response.Redirect("PantallaJuego2.aspx");
         }
     }
 }

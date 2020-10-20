@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using System.Xml;
+using System.Timers;
 
 namespace ProyectoEntregable2
 {
@@ -115,6 +116,10 @@ namespace ProyectoEntregable2
         static bool validacionroja = false;
         static bool segundopermiso = false;
         static bool primerapermiso = false;
+        static int cronometro;
+        static int cronometroMinutos;
+        static int cronometro2;
+        static int cronometroMinutos2;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (identificadorGlobal == "")
@@ -1935,11 +1940,15 @@ namespace ProyectoEntregable2
                             {
                                 identificadorGlobal = "negro";
                                 Label1.Text = "negro";
+                                TimerBlanco.Enabled = false;
+                                TimerNegro.Enabled = true;
                             }
                             if (xmlNode.ChildNodes[0].InnerText.ToString() == "blanco")
                             {
                                 identificadorGlobal = "blanco";
                                 Label1.Text = "blanco";
+                                TimerBlanco.Enabled = true;
+                                TimerNegro.Enabled = false;
                             }
                         }
                         }
@@ -1965,8 +1974,44 @@ namespace ProyectoEntregable2
             validarMovimiento();
             colorpaso = "";
             Actualizar();
-            SinTiroValido();
             cerrarPartida();
+            if (!IsPostBack)
+            {
+                cronometro = 0;
+                cronometro2 = 0;
+            }
+            if (identificadorGlobal == "negro")
+            {
+                TimerBlanco.Enabled = false;
+                TimerNegro.Enabled = true;
+            }
+            if (identificadorGlobal == "blanco")
+            {
+                TimerBlanco.Enabled = true;
+                TimerNegro.Enabled = false;
+            }
+        }
+        
+        protected void timerTestBlanco_tick(object sen, EventArgs e)
+        {
+            litMsg.Text = "Tiempo: " + cronometroMinutos+ ":" + cronometro.ToString();
+            if (cronometro == 60)
+            {
+                cronometro = 0;
+                cronometroMinutos = cronometroMinutos + 1;
+            }
+            cronometro = cronometro +1;
+        }
+
+        protected void timerTestNegro_tick(object sen, EventArgs e)
+        {
+            litMsg2.Text = "Tiempo: "+cronometroMinutos2 + ":" + cronometro2.ToString();
+            if (cronometro2 == 60)
+            {
+                cronometro2 = 0;
+                cronometroMinutos2 = cronometroMinutos2 + 1;
+            }
+            cronometro2 = cronometro2 + 1;
         }
 
         protected void partidaPersonalizada()
@@ -19683,6 +19728,7 @@ namespace ProyectoEntregable2
             string guardcolu = "";
             int contadormandar = 0;
             string guardestado = "";
+            string cronometromandar = "";
             contadorGlobal = contadorblanco + contadornegro;
             int tamaniotablero = 0;
             int contando = 1;
@@ -21525,7 +21571,7 @@ namespace ProyectoEntregable2
                 }
             }
             
-            if(validacionroja == true)
+            if(validacionroja == true && PaginaPrincipal.ModalidadInversa == false)
             {
                 if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
                 {
@@ -21665,6 +21711,7 @@ namespace ProyectoEntregable2
                         {
                             contadorEmpates = contadorEmpates - 1;
                         }
+
                     }
                     if (contadorblanco == contadornegro)
                     {
@@ -21732,7 +21779,9 @@ namespace ProyectoEntregable2
                         {
                             contadorVictorias = contadorVictorias - 1;
                         }
+                        cronometromandar = (cronometro2.ToString() + ":" + cronometroMinutos2.ToString());
                     }
+                    cronometromandar = (cronometro2.ToString() + ":" + cronometroMinutos2.ToString());
                 }
                 if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
                 {
@@ -21940,6 +21989,7 @@ namespace ProyectoEntregable2
                             contadorVictorias = contadorVictorias - 1;
                         }
                     }
+                    cronometromandar = (cronometro.ToString() + ":" + cronometroMinutos.ToString());
                 }
                 if (PaginaPrincipal.colorglobal == "negro")
                 {
@@ -21950,18 +22000,20 @@ namespace ProyectoEntregable2
                     contadormandar = contadorblanco;
                 }
                 /*If para validar si el dato de victoria viene vacio*/
-                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tipoPartida) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tipoPartida)";
+                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tiempo, @tipoPartida, @modalidad)";
                 SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
                 mandando.Parameters.AddWithValue("@movimientosRealizados", contadormandar);
                 mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                 mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
                 mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
                 mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
                 mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.Parameters.AddWithValue("@modalidad", "Normal");
                 mandando.ExecuteNonQuery();
                 Response.Redirect("PaginaPrincipal.aspx");
             }
-            if (validacionazul == true)
+            if (validacionazul == true && PaginaPrincipal.ModalidadInversa == false)
             {
                 if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
                 {
@@ -22169,6 +22221,7 @@ namespace ProyectoEntregable2
                             contadorVictorias = contadorVictorias - 1;
                         }
                     }
+                    cronometromandar = (cronometro2.ToString() + ":" + cronometroMinutos2.ToString());
                 }
                 if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
                 {
@@ -22376,6 +22429,7 @@ namespace ProyectoEntregable2
                             contadorVictorias = contadorVictorias - 1;
                         }
                     }
+                    cronometromandar = (cronometro.ToString() + ":" + cronometroMinutos.ToString());
                 }
                 if (PaginaPrincipal.colorglobal == "negro")
                 {
@@ -22386,19 +22440,901 @@ namespace ProyectoEntregable2
                     contadormandar = contadorblanco;
                 }
                 /*If para validar si el dato de victoria viene vacio*/
-                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tipoPartida) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tipoPartida)";
+                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tiempo, @tipoPartida, @modalidad)";
                 SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
                 mandando.Parameters.AddWithValue("@movimientosRealizados", contadormandar);
                 mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                 mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
                 mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
                 mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
                 mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.Parameters.AddWithValue("@modalidad", "Normal");
+                mandando.ExecuteNonQuery();
+                Response.Redirect("PaginaPrincipal.aspx");
+            }
+            if (validacionroja == true && PaginaPrincipal.ModalidadInversa == true)
+            {
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    bool salida3 = false;
+                    if ((contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if ((contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if (contadorblanco == contadornegro)
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                    }
+                    cronometromandar = (cronometro2.ToString() + ":" + cronometroMinutos2.ToString());
+                }
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    bool salida3 = false;
+                    if ((contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if ((contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if (contadorblanco == contadornegro)
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                    }
+                    cronometromandar = (cronometro.ToString() + ":" + cronometroMinutos.ToString());
+                }
+                if (PaginaPrincipal.colorglobal == "negro")
+                {
+                    contadormandar = contadornegro;
+                }
+                else if (PaginaPrincipal.colorglobal == "blanco")
+                {
+                    contadormandar = contadorblanco;
+                }
+                /*If para validar si el dato de victoria viene vacio*/
+                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tiempo, @tipoPartida, @modalidad)";
+                SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                mandando.Parameters.AddWithValue("@movimientosRealizados", contadormandar);
+                mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
+                mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.Parameters.AddWithValue("@modalidad", "RetoInverso");
+                mandando.ExecuteNonQuery();
+                Response.Redirect("PaginaPrincipal.aspx");
+            }
+            if (validacionazul == true && PaginaPrincipal.ModalidadInversa == true)
+            {
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    bool salida3 = false;
+                    if ((contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if ((contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if (contadorblanco == contadornegro)
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                    }
+                    cronometromandar = (cronometro2.ToString() + ":" + cronometroMinutos2.ToString());
+                }
+                if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                {
+                    bool salida = false;
+                    bool salida2 = false;
+                    bool salida3 = false;
+                    if ((contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if ((contadorblanco > contadornegro && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text) || (contadornegro > contadorblanco && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text))
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                        if (contadorEmpates != 0)
+                        {
+                            contadorEmpates = contadorEmpates - 1;
+                        }
+                    }
+                    if (contadorblanco == contadornegro)
+                    {
+                        while (salida == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = true;
+                            }
+                        }
+                        while (salida2 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = true;
+                            }
+                        }
+                        while (salida3 == false)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = true;
+                            }
+
+                        }
+                        if (contadorDerrotas != 0)
+                        {
+                            contadorDerrotas = contadorDerrotas - 1;
+                        }
+                        if (contadorVictorias != 0)
+                        {
+                            contadorVictorias = contadorVictorias - 1;
+                        }
+                    }
+                    cronometromandar = (cronometro.ToString() + ":" + cronometroMinutos.ToString());
+                }
+                if (PaginaPrincipal.colorglobal == "negro")
+                {
+                    contadormandar = contadornegro;
+                }
+                else if (PaginaPrincipal.colorglobal == "blanco")
+                {
+                    contadormandar = contadorblanco;
+                }
+                /*If para validar si el dato de victoria viene vacio*/
+                String mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, victorias, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @victorias, @empates, @tiempo, @tipoPartida, @modalidad)";
+                SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                mandando.Parameters.AddWithValue("@movimientosRealizados", contadormandar);
+                mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
+                mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                mandando.Parameters.AddWithValue("@tipoPartida", "Multijugador");
+                mandando.Parameters.AddWithValue("@modalidad", "RetoInverso");
                 mandando.ExecuteNonQuery();
                 Response.Redirect("PaginaPrincipal.aspx");
             }
         }
-
+        
         protected void CambioFicha(int fila, int columna)
         {
 
@@ -25409,10 +26345,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA1;
             matriztablero[0][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25442,10 +26379,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB1;
             matriztablero[0][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25475,11 +26413,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC1;
             matriztablero[0][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 2;
             CambioFicha(i, j);
-
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25509,10 +26447,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD1;
             matriztablero[0][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25542,10 +26481,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE1;
             matriztablero[0][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25575,10 +26515,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF1;
             matriztablero[0][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25608,10 +26549,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG1;
             matriztablero[0][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25641,10 +26583,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH1;
             matriztablero[0][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 0;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25674,10 +26617,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA2;
             matriztablero[1][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25707,10 +26651,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB2;
             matriztablero[1][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25740,10 +26685,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC2;
             matriztablero[1][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25773,10 +26719,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD2;
             matriztablero[1][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25806,10 +26753,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE2;
             matriztablero[1][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25839,10 +26787,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF2;
             matriztablero[1][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25872,10 +26821,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG2;
             matriztablero[1][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25905,10 +26855,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH2;
             matriztablero[1][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 1;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25938,10 +26889,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA3;
             matriztablero[2][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -25971,10 +26923,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB3;
             matriztablero[2][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26004,10 +26957,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC3;
             matriztablero[2][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26037,10 +26991,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD3;
             matriztablero[2][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26070,10 +27025,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE3;
             matriztablero[2][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26103,10 +27059,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF3;
             matriztablero[2][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26136,10 +27093,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG3;
             matriztablero[2][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26169,10 +27127,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH3;
             matriztablero[2][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 2;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26202,10 +27161,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA4;
             matriztablero[3][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26235,10 +27195,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB4;
             matriztablero[3][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26268,10 +27229,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC4;
             matriztablero[3][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26302,13 +27264,14 @@ namespace ProyectoEntregable2
             matriztablero[3][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             partidaPersonalizada();
-            validarMovimiento();
             int i = 3;
             int j = 3;
             if (primerapermiso == true)
             {
                 CambioFicha(i, j);
             }
+            validarMovimiento();
+            SinTiroValido();
             primerapermiso = false;
             Actualizar();
             cerrarPartida();
@@ -26340,13 +27303,14 @@ namespace ProyectoEntregable2
             matriztablero[3][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             partidaPersonalizada();
-            validarMovimiento();
             int i = 3;
             int j = 4;
             if (primerapermiso == true)
             {
                 CambioFicha(i, j);
             }
+            validarMovimiento();
+            SinTiroValido();
             primerapermiso = false;
             Actualizar();
             cerrarPartida();
@@ -26377,10 +27341,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF4;
             matriztablero[3][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26410,10 +27375,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG4;
             matriztablero[3][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26443,10 +27409,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH4;
             matriztablero[3][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 3;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26476,10 +27443,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA5;
             matriztablero[4][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26509,10 +27477,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB5;
             matriztablero[4][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26542,10 +27511,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC5;
             matriztablero[4][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26576,7 +27546,6 @@ namespace ProyectoEntregable2
             matriztablero[4][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             partidaPersonalizada();
-            validarMovimiento();
             int i = 4;
             int j = 3;
             if (primerapermiso == true)
@@ -26584,6 +27553,8 @@ namespace ProyectoEntregable2
                 CambioFicha(i, j);
             }
             primerapermiso = false;
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26614,7 +27585,6 @@ namespace ProyectoEntregable2
             matriztablero[4][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
             partidaPersonalizada();
-            validarMovimiento();
             int i = 4;
             int j = 4;
             if (primerapermiso == true)
@@ -26622,6 +27592,8 @@ namespace ProyectoEntregable2
                 CambioFicha(i, j);
             }
             primerapermiso = false;
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26651,10 +27623,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF5;
             matriztablero[4][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26684,10 +27657,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG5;
             matriztablero[4][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26717,10 +27691,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH5;
             matriztablero[4][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 4;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26750,10 +27725,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA6;
             matriztablero[5][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26783,10 +27759,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB6;
             matriztablero[5][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26816,10 +27793,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC6;
             matriztablero[5][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26849,10 +27827,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD6;
             matriztablero[5][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26882,10 +27861,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE6;
             matriztablero[5][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2]; ;
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26915,10 +27895,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF6;
             matriztablero[5][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26948,10 +27929,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG6;
             matriztablero[5][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -26981,10 +27963,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH6;
             matriztablero[5][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 5;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27014,10 +27997,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA7;
             matriztablero[6][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27047,10 +28031,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB7;
             matriztablero[6][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27080,10 +28065,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC7;
             matriztablero[6][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27113,10 +28099,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD7;
             matriztablero[6][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27146,10 +28133,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE7;
             matriztablero[6][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27179,10 +28167,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF7;
             matriztablero[6][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27212,10 +28201,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG7;
             matriztablero[6][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27245,10 +28235,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH7;
             matriztablero[6][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 6;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27278,10 +28269,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorA8;
             matriztablero[7][0] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 0;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27311,10 +28303,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorB8;
             matriztablero[7][1] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 1;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27344,10 +28337,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorC8;
             matriztablero[7][2] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 2;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27377,10 +28371,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorD8;
             matriztablero[7][3] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 3;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27410,10 +28405,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorE8;
             matriztablero[7][4] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 4;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27443,10 +28439,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorF8;
             matriztablero[7][5] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 5;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27476,10 +28473,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorG8;
             matriztablero[7][6] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 6;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
@@ -27509,10 +28507,11 @@ namespace ProyectoEntregable2
             contenidotablero[2] = identificadorH8;
             matriztablero[7][7] = contenidotablero[0] + "," + contenidotablero[1] + "," + contenidotablero[2];
             EsquemaTablero();
-            validarMovimiento();
             int i = 7;
             int j = 7;
             CambioFicha(i, j);
+            validarMovimiento();
+            SinTiroValido();
             Actualizar();
             cerrarPartida();
         }
