@@ -2025,7 +2025,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -2033,65 +2033,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -2100,65 +2116,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -2167,65 +2199,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -2234,65 +2282,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -2301,65 +2365,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -2368,65 +2448,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -2435,65 +2531,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -2502,70 +2614,86 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
+                            
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 2)
@@ -2579,7 +2707,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -2587,65 +2715,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -2654,65 +2798,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -2721,65 +2881,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -2788,65 +2964,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -2855,65 +3047,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -2922,65 +3130,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -2989,65 +3213,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -3056,70 +3296,84 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 3)
@@ -3133,7 +3387,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -3141,65 +3395,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -3208,65 +3478,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -3275,65 +3561,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -3342,65 +3644,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -3409,65 +3727,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -3476,65 +3810,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -3543,65 +3893,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -3610,70 +3976,85 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 4)
@@ -3687,7 +4068,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -3695,65 +4076,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -3762,65 +4159,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -3829,65 +4242,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -3896,65 +4325,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -3963,65 +4408,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -4030,65 +4491,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -4097,65 +4574,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -4164,70 +4657,84 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 5)
@@ -4241,7 +4748,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -4780,8 +5287,6 @@ namespace ProyectoEntregable2
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 6)
@@ -4795,7 +5300,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -4803,65 +5308,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -4870,65 +5391,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -4937,65 +5474,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -5004,65 +5557,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -5071,65 +5640,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -5138,65 +5723,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -5205,65 +5806,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -5272,70 +5889,84 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 7)
@@ -5349,7 +5980,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -5357,65 +5988,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -5424,65 +6071,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -5491,65 +6154,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -5558,65 +6237,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -5625,65 +6320,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -5692,65 +6403,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -5759,65 +6486,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -5826,70 +6569,84 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 8)
@@ -5903,7 +6660,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
+                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
                         {
                             if (filabuscar == 0)
                             {
@@ -5911,65 +6668,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
@@ -5978,65 +6751,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila2;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
@@ -6045,65 +6834,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila3;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -6112,65 +6917,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila4;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 4)
@@ -6179,65 +7000,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila5;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 5)
@@ -6246,65 +7083,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila6;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 6)
@@ -6313,65 +7166,81 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila7;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 7)
@@ -6380,70 +7249,84 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila8;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
+                                    identificadorGlobal = "negro";
+                                    Label1.Text = "negro";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 9)
@@ -6465,7 +7348,7 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
                             if (filabuscar == 0)
                             {
@@ -6473,199 +7356,247 @@ namespace ProyectoEntregable2
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
                                     contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 1)
                             {
                                 if (columnabuscar == 0)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
-                                    contenidotablero[0] = fila2;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 2)
                             {
                                 if (columnabuscar == 0)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 1)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 2)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 3)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 4)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 5)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 6)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                                 if (columnabuscar == 7)
                                 {
-                                    contenidotablero[0] = fila3;
+                                    contenidotablero[0] = fila1;
                                     contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
+                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                    identificadorGlobal = "blanco";
+                                    Label1.Text = "blanco";
+                                    contadormaquina = contadormaquina + 1;
+                                    return;
                                 }
                             }
                             if (filabuscar == 3)
@@ -7004,8 +7935,7 @@ namespace ProyectoEntregable2
                                 }
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 2)
@@ -7019,547 +7949,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 3)
@@ -7573,547 +8046,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 4)
@@ -8127,547 +8143,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 5)
@@ -8681,547 +8240,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 6)
@@ -9235,547 +8337,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                        
                     }
                 }
                 if (contadormaquina == 7)
@@ -9789,547 +8434,90 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
+                       
                     }
                 }
                 if (contadormaquina == 8)
@@ -10343,547 +8531,89 @@ namespace ProyectoEntregable2
                         guardfiladerecha = guardarseparacionesderecha[0];
                         guardcoluderecha = guardarseparacionesderecha[1];
                         guardestadoderecha = guardarseparacionesderecha[2];
-                        if (guardestadoderecha == "" || guardestadoderecha == "azul")
+                        if (guardestadoderecha == "" || guardestadoderecha == "rojo")
                         {
-                            if (filabuscar == 0)
+                            if (columnabuscar == 0)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila1;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaA;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 1)
+                            if (columnabuscar == 1)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila2;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaB;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 2)
+                            if (columnabuscar == 2)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila3;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaC;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 3)
+                            if (columnabuscar == 3)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
-                                    identificadorGlobal = "blanco";
-                                    Label1.Text = "blanco";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila4;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaD;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 4)
+                            if (columnabuscar == 4)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila5;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaE;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 5)
+                            if (columnabuscar == 5)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila6;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaF;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 6)
+                            if (columnabuscar == 6)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila7;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaG;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
-                            if (filabuscar == 7)
+                            if (columnabuscar == 7)
                             {
-                                if (columnabuscar == 0)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaA;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 1)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaB;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 2)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaC;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 3)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaD;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 4)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaE;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 5)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaF;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 6)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaG;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
-                                if (columnabuscar == 7)
-                                {
-                                    contenidotablero[0] = fila8;
-                                    contenidotablero[1] = columnaH;
-                                    matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "blanco";
-                                    identificadorGlobal = "negro";
-                                    Label1.Text = "negro";
-                                }
+                                contenidotablero[0] = fila1;
+                                contenidotablero[1] = columnaH;
+                                matriztablero[filabuscar][columnabuscar] = contenidotablero[0] + "," + contenidotablero[1] + "," + "negro";
+                                identificadorGlobal = "blanco";
+                                Label1.Text = "blanco";
+                                contadormaquina = contadormaquina + 1;
+                                return;
                             }
                         }
-                        contadormaquina++;
-                        break;
                     }
                 }
                 if (contadormaquina == 9)
