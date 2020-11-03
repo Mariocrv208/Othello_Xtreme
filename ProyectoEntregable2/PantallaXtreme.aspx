@@ -47,10 +47,10 @@
           <p>Mueven:
               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
           </p>
-          <p>Contador Blanco:</p>
+          <p>Contador Jug1:</p>
           <asp:Panel ID="Panel1" runat="server" Width="219px">
               <asp:ScriptManager ID="blanco" runat="server"></asp:ScriptManager>
-              <asp:Timer ID="TimerBlanco" runat="server" Interval ="1000" OnTick="timerTestBlanco_tick"></asp:Timer>
+              <asp:Timer ID="TimerBlanco" runat="server" Interval ="1000" OnTick="timerTestBlanco_tick" Enabled="False"></asp:Timer>
 
               <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional"><ContentTemplate>
                       <asp:Literal ID="litMsg" runat="server"></asp:Literal>
@@ -61,10 +61,10 @@
               </asp:UpdatePanel>  
           </asp:Panel>
           <p>
-              Contador Negro:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Contador Jug2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <asp:Panel ID="Panel2" runat="server" Width="222px">
-              <asp:Timer ID="TimerNegro" runat="server" Interval ="1000" OnTick="timerTestNegro_tick"></asp:Timer>
+              <asp:Timer ID="TimerNegro" runat="server" Interval ="1000" OnTick="timerTestNegro_tick" Enabled="False"></asp:Timer>
               <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional"><ContentTemplate>
                       <asp:Literal ID="litMsg2" runat="server"></asp:Literal>
                   </ContentTemplate>
@@ -74,9 +74,9 @@
               </asp:UpdatePanel>
           </asp:Panel>
 &nbsp;<br />
-          <asp:Table ID="Table1" runat="server" Height="114px" Width="274px">
-          </asp:Table>
           <br />
+          <asp:Table ID="Table1" runat="server">
+          </asp:Table>
           <br />
           <br />
             Datos  <br />
