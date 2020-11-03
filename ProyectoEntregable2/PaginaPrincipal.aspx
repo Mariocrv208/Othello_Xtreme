@@ -110,8 +110,139 @@
               <br />
               <br />
               <br />
-              <asp:Button ID="Continuar" runat="server" BackColor="#CC0066" Height="38px" OnClick="Button11_Click" Text="Continuar" Width="329px" />
+
+              <asp:Button ID="Continuar" runat="server"  BackColor="#CC0066" Height="38px" OnClick="Button11_Click" Text="Continuar" Width="329px" />
           </asp:Panel>
+          <br />
+
+                <asp:Button ID="PartidaXtreme" class="btn-info" runat="server" BackColor="#CC0066" Height="63px" Text="Partida Xtreme" Width="470px" OnClick="PartidaXtreme_Click"></asp:Button>
+          <br />
+          <asp:Panel ID="Panel3" runat="server" Height="856px" Visible="False">
+              Desea Cargar un partida?<br />
+              <br />
+              <asp:Button ID="Button21" runat="server" BackColor="#CC0066" Text="Si" OnClick="Button21_Click1" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:Button ID="Button22" runat="server" BackColor="#CC0066" Text="No" OnClick="Button22_Click" />
+              <br />
+              <br />
+              <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+              <br />
+              <br />
+              <asp:TextBox ID="TextBox4" runat="server" Visible="False"></asp:TextBox>
+              <br />
+              <br />
+              <asp:Label ID="Label2" runat="server" Text="Tipo Partida" Visible="False"></asp:Label>
+              <br />
+              <br />
+              <asp:RadioButton ID="RadioButton9" runat="server" GroupName="TipoXtreme" Text="Partida Personalizada" Visible="False" />
+              &nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton10" runat="server" GroupName="TipoXtreme" Text="Partida Normal" Visible="False" />
+              <br />
+              <br />
+              <asp:Label ID="Label3" runat="server" Text="Modalidad" Visible="False"></asp:Label>
+              <br />
+              <br />
+              <asp:RadioButton ID="RadioButton11" runat="server" GroupName="ModalidadXtreme" Text="Reto Inverso" Visible="False" />
+              &nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton12" runat="server" GroupName="ModalidadXtreme" Text="Modo Normal" Visible="False" />
+              <br />
+              <br />
+              <asp:Label ID="Label9" runat="server" Text="Dimensiones Tablero" Visible="False"></asp:Label>
+              <br />
+              <br />
+&nbsp;
+              <asp:Label ID="Label7" runat="server" Text="Filas" Visible="False"></asp:Label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:Label ID="Label8" runat="server" Text="Columnas" Visible="False"></asp:Label>
+              <br />
+              <br />
+              <asp:DropDownList ID="DropDownList1" runat="server" Visible="False">
+                  <asp:ListItem Value="6"></asp:ListItem>
+                  <asp:ListItem Value="8"></asp:ListItem>
+                  <asp:ListItem Value="10"></asp:ListItem>
+                  <asp:ListItem Value="12"></asp:ListItem>
+                  <asp:ListItem Value="14"></asp:ListItem>
+                  <asp:ListItem Value="16"></asp:ListItem>
+                  <asp:ListItem Value="18"></asp:ListItem>
+                  <asp:ListItem Value="20"></asp:ListItem>
+              </asp:DropDownList>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:DropDownList ID="DropDownList2" runat="server" Visible="False">
+                  <asp:ListItem Value="6"></asp:ListItem>
+                  <asp:ListItem Value="8"></asp:ListItem>
+                  <asp:ListItem Value="10"></asp:ListItem>
+                  <asp:ListItem Value="12"></asp:ListItem>
+                  <asp:ListItem Value="14"></asp:ListItem>
+                  <asp:ListItem Value="16"></asp:ListItem>
+                  <asp:ListItem Value="18"></asp:ListItem>
+                  <asp:ListItem Value="20"></asp:ListItem>
+              </asp:DropDownList>
+              <br />
+              <br />
+              <asp:Label ID="Label4" runat="server" Text="Seleccion de colores" Visible="False"></asp:Label>
+              <br />
+              <br />
+              <asp:Label ID="Label5" runat="server" Text="Jugador1" Visible="False"></asp:Label>
+              &nbsp;&nbsp;&nbsp;
+              <asp:Label ID="Label6" runat="server" Text="Jugador2" Visible="False"></asp:Label>
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton13" runat="server" GroupName="Rojo" Text="Rojo" Visible="False" />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton14" runat="server" GroupName="Rojo" Text="Rojo" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              <asp:RadioButton ID="RadioButton15" runat="server" GroupName="Amarillo" Text="Amarillo" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton16" runat="server" GroupName="Amarillo" Text="Amarillo" Visible="False" />
+              &nbsp;&nbsp;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton17" runat="server" GroupName="Azul" Text="Azul" Visible="False" />
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton18" runat="server" GroupName="Azul" Text="Azul" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              &nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton19" runat="server" GroupName="Anaranjado" Text="Anaranjado" Visible="False" />
+&nbsp;
+              <asp:RadioButton ID="RadioButton20" runat="server" GroupName="Anaranjado" Text="Anaranjado" Visible="False" />
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:RadioButton ID="RadioButton21" runat="server" GroupName="Verde" Text="Verde" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton22" runat="server" GroupName="Verde" Text="Verde" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton23" runat="server" GroupName="Violeta" Text="Violeta" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton24" runat="server" GroupName="Violeta" Text="Violeta" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:RadioButton ID="RadioButton25" runat="server" GroupName="Blanco" Text="Blanco" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton26" runat="server" GroupName="Blanco" Text="Blanco" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              <asp:RadioButton ID="RadioButton27" runat="server" GroupName="Negro" Text="Negro" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton28" runat="server" GroupName="Negro" Text="Negro" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              &nbsp;<asp:RadioButton ID="RadioButton29" runat="server" GroupName="Celeste" Text="Celeste" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton30" runat="server" GroupName="Celeste" Text="Celeste" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              <asp:RadioButton ID="RadioButton31" runat="server" GroupName="Gris" Text="Gris" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              <asp:RadioButton ID="RadioButton32" runat="server" GroupName="Gris" Text="Gris" Visible="False" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br />
+              <br />
+              <asp:Button ID="Button23" runat="server" BackColor="#CC0066" Text="Continuar" Visible="False" OnClick="Button23_Click" />
+              <br />
+              <br />
+          </asp:Panel>
+          <br />
+          <br />
+          <br />
           <br />
             <asp:Button ID="Button6" runat="server" Text="Torneo" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button6_Click" />
             <br />
@@ -125,6 +256,8 @@
               <div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
+
+
               <br />
               <br />
               <br />
@@ -132,8 +265,7 @@
               <br />
           </div>
       </center>
-    
-        
+          
     </form>
     <div id="end">
         <b/>
