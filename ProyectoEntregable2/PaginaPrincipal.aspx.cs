@@ -31,8 +31,9 @@ namespace ProyectoEntregable2
         public static bool gris = false;
         public static string[] colores1;
         public static string[] colores2;
-        List<string> Colores1 = new List<string>();
-        List<string> Colores2 = new List<string>();
+        public static bool validacionCarga = false;
+        public static List<string> Colores1 = new List<string>();
+        public static List<string> Colores2 = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -140,6 +141,7 @@ namespace ProyectoEntregable2
             TextBox4.Visible = true;
             Label1.Visible = true;
             Label1.Text = "Ingrese El nombre del archivo con su extension";
+            validacionCarga = true;
             Label2.Visible = false;
             Label3.Visible = false;
             Label4.Visible = false;
@@ -178,6 +180,7 @@ namespace ProyectoEntregable2
 
         protected void Button22_Click(object sender, EventArgs e)
         {
+            validacionCarga = false;
             TextBox4.Visible = true;
             DropDownList1.Visible = true;
             DropDownList2.Visible = true;
