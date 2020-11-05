@@ -1959,7 +1959,7 @@ namespace ProyectoEntregable2
             if (PaginaPrincipal.carruta != "")
             {
                 PaginaPrincipal.carruta = "";
-            };
+            }
             if (PaginaPrincipal.colorglobal == "blanco")
             {
                 TextBox4.Text = ProyectoEntregable2.Login.UsuarioLogeado;
