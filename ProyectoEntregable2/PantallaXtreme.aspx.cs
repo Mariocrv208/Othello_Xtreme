@@ -16,6 +16,7 @@ namespace ProyectoEntregable2
         conect conectar = new conect();
         static bool validacionColor1 = false;
         static bool paso = false;
+        static bool validacionTerminar = false;
         static bool validacionColor2 = false;
         static bool personlisto = false;
         static string colorGlobal = "";
@@ -27,8 +28,6 @@ namespace ProyectoEntregable2
         static int contadorJug2 = 0;
         static int actualfila = 0;
         static int actualcolu = 0;
-        ImageButton buscar;
-        Button[,] orilla;
         ImageButton[,] boton;
         static int filaT = 0;
         static int columnaT = 0;
@@ -38,8 +37,10 @@ namespace ProyectoEntregable2
         static int cronometro2;
         static int cronometroMinutos2;
         static string literal = "";
+        static bool validacion = false;
+        static bool YaEntro = false;
         protected void Page_Load(object sender, EventArgs e)
-        {
+            {
             if (PaginaPrincipal.carruta == "")
             {
                 Tablero();
@@ -50,27 +51,59 @@ namespace ProyectoEntregable2
                 validarTiros();
                 PaginaPrincipal.carruta = "";
             }
-            TextBox3.Text = ProyectoEntregable2.Login.UsuarioLogeado;
-            TextBox4.Text = PaginaPrincipal.nombre2;
-            if (colorGlobal == "")
+            if (validacion == false && YaEntro == false)
             {
-                colorSiguiente();
+                TextBox3.Text = ProyectoEntregable2.Login.UsuarioLogeado;
+                TextBox4.Text = PaginaPrincipal.nombre2;
+                if (colorGlobal == "")
+                {
+                    colorSiguiente();
+                }
+                TextBox1.Text = contadorJug1.ToString();
+                TextBox2.Text = contadorJug2.ToString();
+                if (PaginaPrincipal.partidaPersonalizada == true && personlisto == false)
+                {
+                    AperPersonalizada();
+                }
+                if ((PaginaPrincipal.partidaPersonalizada == false) && personlisto == false)
+                {
+                    AperPersonalizada();
+                }
+                if (personlisto == true && paso == false)
+                {
+                    validarTiros();
+                    paso = true;
+                }
+                YaEntro = true;
             }
-            TextBox1.Text = contadorJug1.ToString();
-            TextBox2.Text = contadorJug2.ToString();
-            if (PaginaPrincipal.partidaPersonalizada == true && personlisto == false)
+            if (validacion == true)
             {
-                AperPersonalizada();
-            }
-            if ((PaginaPrincipal.partidaPersonalizada == false) && personlisto == false)
-            {
-                AperPersonalizada();
-            }
-            if (personlisto == true && paso == false)
-            {
-                validarTiros();
-                paso = true;
-            }
+                validacionColor1 = false;
+                paso = false;
+                validacionTerminar = false;
+                validacionColor2 = false;
+                personlisto = false;
+                colorGlobal = "";
+                ultimo1 = "";
+                ultimo2 = "";
+                filallevar = 0;
+                columnallevar = 0;
+                contadorJug1 = 0;
+                contadorJug2 = 0;
+                actualfila = 0;
+                actualcolu = 0;
+                filaT = 0;
+                columnaT = 0;
+                idUsuarioCargado = "";
+                cronometro = 0;
+                cronometroMinutos = 0;
+                cronometro2 = 0;
+                cronometroMinutos2 = 0;
+                literal = "";
+                validacion = false;
+                YaEntro = false;
+                return;
+            }            
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -114,13 +147,11 @@ namespace ProyectoEntregable2
             }
             if (PaginaPrincipal.validacionCarga == true)
             {
-                filaT = actualfila;
-                columnaT = actualcolu;
                 filaT = actualfila + 2;
                 columnaT = actualcolu + 2;
             }
             boton = new ImageButton[filaT, columnaT];
-            orilla = new Button[filaT, columnaT];
+            Button[,] orilla = new Button[filaT, columnaT];
             for (int i = 0; i < filaT; i++)
             {
                 TableRow row = new TableRow();
@@ -377,19 +408,7 @@ namespace ProyectoEntregable2
 
         protected void ButtonGeneral_Click(object sender, ImageClickEventArgs e)
         {
-            if (PaginaPrincipal.validacionCarga == false)
-            {
-                filaT = Int32.Parse(PaginaPrincipal.filasT) + 2;
-                columnaT = Int32.Parse(PaginaPrincipal.columnasT) + 2;
-            }
-            if (PaginaPrincipal.validacionCarga == true)
-            {
-                filaT = actualfila;
-                columnaT = actualcolu;
-                filaT = actualfila + 2;
-                columnaT = actualcolu + 2;
-            }
-            buscar = (ImageButton)sender;
+            ImageButton buscar = (ImageButton)sender;
             char[] delimiterChars = { 'F', 'C', ' ' };
             string posicionbuscar = "";
             string parsearID = buscar.ID;
@@ -463,6 +482,7 @@ namespace ProyectoEntregable2
             if (personlisto == true)
             {
                 validarTiros();
+                pasarTurno();
             }
             TerminarPartida();
             
@@ -471,18 +491,6 @@ namespace ProyectoEntregable2
 
         protected void voltearFicha()
         {
-            if (PaginaPrincipal.validacionCarga == false)
-            {
-                filaT = Int32.Parse(PaginaPrincipal.filasT) + 2;
-                columnaT = Int32.Parse(PaginaPrincipal.columnasT) + 2;
-            }
-            if (PaginaPrincipal.validacionCarga == true)
-            {
-                filaT = actualfila;
-                columnaT = actualcolu;
-                filaT = actualfila + 2;
-                columnaT = actualcolu + 2;
-            }
             int columnabuscar = 0;
             int filabuscar = 0;
             columnabuscar = columnallevar;
@@ -2025,18 +2033,6 @@ namespace ProyectoEntregable2
         {
             contadorJug1 = 0;
             contadorJug2 = 0;
-            if (PaginaPrincipal.validacionCarga == false)
-            {
-                filaT = Int32.Parse(PaginaPrincipal.filasT) + 2;
-                columnaT = Int32.Parse(PaginaPrincipal.columnasT) + 2;
-            }
-            if (PaginaPrincipal.validacionCarga == true)
-            {
-                filaT = actualfila;
-                columnaT = actualcolu;
-                filaT = actualfila + 2;
-                columnaT = actualcolu + 2;
-            }
             for (int i = 1; i < (filaT - 1); i++)
             {
                 for (int j = 1; j < (columnaT - 1); j++)
@@ -2278,16 +2274,6 @@ namespace ProyectoEntregable2
             bool colorjug1 = false;
             bool colorjug2 = false;
             bool validacioncambiar = false;
-            if (PaginaPrincipal.validacionCarga == false)
-            {
-                filaT = Int32.Parse(PaginaPrincipal.filasT) + 2;
-                columnaT = Int32.Parse(PaginaPrincipal.columnasT) + 2;
-            }
-            if (PaginaPrincipal.validacionCarga == true)
-            {
-                filaT = actualfila + 2;
-                columnaT = actualcolu + 2;
-            }
             bool jug1 = false;
             bool jug2 = false;
             for (int i = 0; i < PaginaPrincipal.colores1.Length; i++)
@@ -3256,16 +3242,8 @@ namespace ProyectoEntregable2
 
         protected void pasarTurno()
         {
-            if (PaginaPrincipal.validacionCarga == false)
-            {
-                filaT = Int32.Parse(PaginaPrincipal.filasT) + 2;
-                columnaT = Int32.Parse(PaginaPrincipal.columnasT) + 2;
-            }
-            if (PaginaPrincipal.validacionCarga == true)
-            {
-                filaT = actualfila + 2;
-                columnaT = actualcolu + 2;
-            }
+            bool validacionDentro = false;
+            bool validacion = false;
             bool jug1 = false;
             bool jug2 = false;
             for (int i = 0; i < PaginaPrincipal.colores1.Length; i++)
@@ -3284,17 +3262,42 @@ namespace ProyectoEntregable2
             }
             if (jug1 == true)
             {
-                for (int i = 0; i < (filaT - 1); i++)
+                for (int i = 1; i < (filaT - 1); i++)
                 {
-                    for (int j = 0; j < (columnaT - 1); j++)
+                    for (int j = 1; j < (columnaT - 1); j++)
                     {
-
+                        if (boton[i, j].ImageUrl == "posiblejug1.png")
+                        {
+                            validacion = true;
+                        }
                     }
                 }
             }
             if (jug2 == true)
             {
-
+                for (int i = 1; i < (filaT - 1); i++)
+                {
+                    for (int j = 1; j < (columnaT - 1); j++)
+                    {
+                        if (boton[i, j].ImageUrl == "posiblejug2.png")
+                        {
+                            validacion = true;
+                        }
+                    }
+                }
+            }
+            if (validacion == false && validacionDentro == false)
+            {
+                validacionDentro = true;
+                colorSiguiente();
+                validarTiros();
+                pasarTurno();
+                if (validacionDentro == true)
+                {
+                    /*Terminar Partida*/
+                    validacionTerminar = true;
+                    TerminarPartida();
+                }
             }
         }
 
@@ -3362,7 +3365,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida = true;
+                                    salida = false;
                                 }
                             }
                             while (salida2 == true)
@@ -3381,7 +3384,7 @@ namespace ProyectoEntregable2
 
                                 else if (!validacion2.Read())
                                 {
-                                    salida2 = true;
+                                    salida2 = false;
                                 }
                             }
                             while (salida3 == true)
@@ -3399,7 +3402,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida3 = true;
+                                    salida3 = false;
                                 }
 
                             }
@@ -3452,7 +3455,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida = true;
+                                    salida = false;
                                 }
                             }
                             while (salida2 == true)
@@ -3471,7 +3474,7 @@ namespace ProyectoEntregable2
 
                                 else if (!validacion2.Read())
                                 {
-                                    salida2 = true;
+                                    salida2 = false;
                                 }
                             }
                             while (salida3 == true)
@@ -3489,7 +3492,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida3 = true;
+                                    salida3 = false;
                                 }
 
                             }
@@ -3547,7 +3550,7 @@ namespace ProyectoEntregable2
                             }
                             else if (!validacion2.Read())
                             {
-                                salida = true;
+                                salida = false;
                             }
                         }
                         while (salida2 == true)
@@ -3566,7 +3569,7 @@ namespace ProyectoEntregable2
 
                             else if (!validacion2.Read())
                             {
-                                salida2 = true;
+                                salida2 = false;
                             }
                         }
                         while (salida3 == true)
@@ -3584,7 +3587,7 @@ namespace ProyectoEntregable2
                             }
                             else if (!validacion2.Read())
                             {
-                                salida3 = true;
+                                salida3 = false;
                             }
 
                         }
@@ -3601,7 +3604,280 @@ namespace ProyectoEntregable2
                     }
                 }
                 /*Tablero No lleno*/
+                if (validacionTerminar == true)
+                {
+                    string cronometromandar = "";
+                    if ((contadorJug1 > contadorJug2 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text && PaginaPrincipal.ModalidadInversa == false) || (contadorJug2 > contadorJug1 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text && PaginaPrincipal.ModalidadInversa == false))
+                    {
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                            {
+                                cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                            }
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                            {
+                                cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                            }
+                            int contadorVictorias = 0;
+                            int contadorDerrotas = 0;
+                            int contadorEmpates = 0;
+                            validacionRegresar = true;
+                            bool salida = true;
+                            bool salida2 = false;
+                            bool salida3 = false;
+                            while (salida == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorVictorias = contadorVictorias + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida = false;
+                                }
+                            }
+                            while (salida2 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorDerrotas = contadorDerrotas + 1;
+                                }
 
+                                else if (!validacion2.Read())
+                                {
+                                    salida2 = false;
+                                }
+                            }
+                            while (salida3 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorEmpates = contadorEmpates + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida3 = false;
+                                }
+
+                            }
+                            /*Envio Datos*/
+                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
+                            SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                            mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                            mandando.Parameters.AddWithValue("@modalidad", "Normal");
+                            mandando.ExecuteNonQuery();
+
+                        }
+                    }
+                    if ((contadorJug1 < contadorJug2 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text && PaginaPrincipal.ModalidadInversa == false) || (contadorJug2 < contadorJug1 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text && PaginaPrincipal.ModalidadInversa == false))
+                    {
+
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                            {
+                                cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                            }
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                            {
+                                cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                            }
+                            int contadorVictorias = 0;
+                            int contadorDerrotas = 0;
+                            int contadorEmpates = 0;
+                            validacionRegresar = true;
+                            bool salida = false;
+                            bool salida2 = true;
+                            bool salida3 = false;
+                            while (salida == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorVictorias = contadorVictorias + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida = false;
+                                }
+                            }
+                            while (salida2 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorDerrotas = contadorDerrotas + 1;
+                                }
+
+                                else if (!validacion2.Read())
+                                {
+                                    salida2 = false;
+                                }
+                            }
+                            while (salida3 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorEmpates = contadorEmpates + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida3 = false;
+                                }
+
+                            }
+                            /*Envio Datos*/
+                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
+                            SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                            mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                            mandando.Parameters.AddWithValue("@modalidad", "Normal");
+                            mandando.ExecuteNonQuery();
+
+                        }
+                    }
+                    if (contadorJug1 == contadorJug2)
+                    {
+                        string modalidad = "";
+                        if (PaginaPrincipal.ModalidadInversa == true)
+                        {
+                            modalidad = "Inversa";
+                        }
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            modalidad = "Normal";
+                        }
+                        if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                        {
+                            cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                        }
+                        if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                        {
+                            cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                        }
+                        int contadorVictorias = 0;
+                        int contadorDerrotas = 0;
+                        int contadorEmpates = 0;
+                        validacionRegresar = true;
+                        bool salida = false;
+                        bool salida2 = false;
+                        bool salida3 = true;
+                        while (salida == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = false;
+                            }
+                        }
+                        while (salida2 == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = false;
+                            }
+                        }
+                        while (salida3 == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = false;
+                            }
+
+                        }
+                        /*Envio Datos*/
+                        string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
+                        SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                        mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                        mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                        mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                        mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                        mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                        mandando.Parameters.AddWithValue("@modalidad", modalidad);
+                        mandando.ExecuteNonQuery();
+                    }
+                }
             }
             if (PaginaPrincipal.ModalidadInversa == false)
             {
@@ -3662,7 +3938,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida = true;
+                                    salida = false;
                                 }
                             }
                             while (salida2 == true)
@@ -3681,7 +3957,7 @@ namespace ProyectoEntregable2
 
                                 else if (!validacion2.Read())
                                 {
-                                    salida2 = true;
+                                    salida2 = false;
                                 }
                             }
                             while (salida3 == true)
@@ -3699,7 +3975,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida3 = true;
+                                    salida3 = false;
                                 }
 
                             }
@@ -3751,7 +4027,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida = true;
+                                    salida = false;
                                 }
                             }
                             while (salida2 == true)
@@ -3770,7 +4046,7 @@ namespace ProyectoEntregable2
 
                                 else if (!validacion2.Read())
                                 {
-                                    salida2 = true;
+                                    salida2 = false;
                                 }
                             }
                             while (salida3 == true)
@@ -3788,7 +4064,7 @@ namespace ProyectoEntregable2
                                 }
                                 else if (!validacion2.Read())
                                 {
-                                    salida3 = true;
+                                    salida3 = false;
                                 }
 
                             }
@@ -3846,7 +4122,7 @@ namespace ProyectoEntregable2
                             }
                             else if (!validacion2.Read())
                             {
-                                salida = true;
+                                salida = false;
                             }
                         }
                         while (salida2 == true)
@@ -3865,7 +4141,7 @@ namespace ProyectoEntregable2
 
                             else if (!validacion2.Read())
                             {
-                                salida2 = true;
+                                salida2 = false;
                             }
                         }
                         while (salida3 == true)
@@ -3883,7 +4159,7 @@ namespace ProyectoEntregable2
                             }
                             else if (!validacion2.Read())
                             {
-                                salida3 = true;
+                                salida3 = false;
                             }
 
                         }
@@ -3900,10 +4176,284 @@ namespace ProyectoEntregable2
                     }
                 }
                 /*Tablero No lleno*/
+                if (validacionTerminar == true)
+                {
+                    string cronometromandar = "";
+                    if ((contadorJug1 > contadorJug2 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text && PaginaPrincipal.ModalidadInversa == false) || (contadorJug2 > contadorJug1 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text && PaginaPrincipal.ModalidadInversa == false))
+                    {
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                            {
+                                cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                            }
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                            {
+                                cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                            }
+                            int contadorVictorias = 0;
+                            int contadorDerrotas = 0;
+                            int contadorEmpates = 0;
+                            validacionRegresar = true;
+                            bool salida = true;
+                            bool salida2 = false;
+                            bool salida3 = false;
+                            while (salida == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorVictorias = contadorVictorias + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida = false;
+                                }
+                            }
+                            while (salida2 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorDerrotas = contadorDerrotas + 1;
+                                }
 
+                                else if (!validacion2.Read())
+                                {
+                                    salida2 = false;
+                                }
+                            }
+                            while (salida3 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorEmpates = contadorEmpates + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida3 = false;
+                                }
+
+                            }
+                            /*Envio Datos*/
+                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
+                            SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                            mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                            mandando.Parameters.AddWithValue("@modalidad", "Normal");
+                            mandando.ExecuteNonQuery();
+
+                        }
+                    }
+                    if ((contadorJug1 < contadorJug2 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text && PaginaPrincipal.ModalidadInversa == false) || (contadorJug2 < contadorJug1 && ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text && PaginaPrincipal.ModalidadInversa == false))
+                    {
+
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                            {
+                                cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                            }
+                            if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                            {
+                                cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                            }
+                            int contadorVictorias = 0;
+                            int contadorDerrotas = 0;
+                            int contadorEmpates = 0;
+                            validacionRegresar = true;
+                            bool salida = false;
+                            bool salida2 = true;
+                            bool salida3 = false;
+                            while (salida == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorVictorias = contadorVictorias + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida = false;
+                                }
+                            }
+                            while (salida2 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorDerrotas = contadorDerrotas + 1;
+                                }
+
+                                else if (!validacion2.Read())
+                                {
+                                    salida2 = false;
+                                }
+                            }
+                            while (salida3 == true)
+                            {
+                                /*validar datos antes de mandarlos*/
+                                String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                                SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                                traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                                traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                                traendo2.ExecuteNonQuery();
+                                SqlDataReader validacion2 = traendo2.ExecuteReader();
+                                if (validacion2.Read())
+                                {
+                                    contadorEmpates = contadorEmpates + 1;
+                                }
+                                else if (!validacion2.Read())
+                                {
+                                    salida3 = false;
+                                }
+
+                            }
+                            /*Envio Datos*/
+                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
+                            SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                            mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                            mandando.Parameters.AddWithValue("@modalidad", "Normal");
+                            mandando.ExecuteNonQuery();
+
+                        }
+                    }
+                    if (contadorJug1 == contadorJug2)
+                    {
+                        string modalidad = "";
+                        if (PaginaPrincipal.ModalidadInversa == true)
+                        {
+                            modalidad = "Inversa";
+                        }
+                        if (PaginaPrincipal.ModalidadInversa == false)
+                        {
+                            modalidad = "Normal";
+                        }
+                        if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox3.Text)
+                        {
+                            cronometromandar = cronometroMinutos.ToString() + ":" + cronometro.ToString();
+                        }
+                        if (ProyectoEntregable2.Login.UsuarioLogeado == TextBox4.Text)
+                        {
+                            cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
+                        }
+                        int contadorVictorias = 0;
+                        int contadorDerrotas = 0;
+                        int contadorEmpates = 0;
+                        validacionRegresar = true;
+                        bool salida = false;
+                        bool salida2 = false;
+                        bool salida3 = true;
+                        while (salida == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT victorias, nicknameJugador FROM PartidaMultijugador WHERE victorias=@victorias AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@victorias", contadorVictorias);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorVictorias = contadorVictorias + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida = false;
+                            }
+                        }
+                        while (salida2 == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT derrotas, nicknameJugador FROM PartidaMultijugador WHERE derrotas=@derrotas AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@derrotas", contadorDerrotas);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorDerrotas = contadorDerrotas + 1;
+                            }
+
+                            else if (!validacion2.Read())
+                            {
+                                salida2 = false;
+                            }
+                        }
+                        while (salida3 == true)
+                        {
+                            /*validar datos antes de mandarlos*/
+                            String traer2 = "SELECT empates, nicknameJugador FROM PartidaMultijugador WHERE empates=@empates AND nicknameJugador=@nicknameJugador";
+                            SqlCommand traendo2 = new SqlCommand(traer2, conectar.Leer());
+                            traendo2.Parameters.AddWithValue("@empates", contadorEmpates);
+                            traendo2.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                            traendo2.ExecuteNonQuery();
+                            SqlDataReader validacion2 = traendo2.ExecuteReader();
+                            if (validacion2.Read())
+                            {
+                                contadorEmpates = contadorEmpates + 1;
+                            }
+                            else if (!validacion2.Read())
+                            {
+                                salida3 = false;
+                            }
+
+                        }
+                        /*Envio Datos*/
+                        string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
+                        SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
+                        mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                        mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
+                        mandando.Parameters.AddWithValue("@empates", contadorEmpates);
+                        mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
+                        mandando.Parameters.AddWithValue("@tipoPartida", "Xtreme");
+                        mandando.Parameters.AddWithValue("@modalidad", modalidad);
+                        mandando.ExecuteNonQuery();
+                    }
+                }
             }
             if (validacionRegresar == true)
             {
+                validacion = true;
                 Response.Redirect("PaginaPrincipal.aspx");
             }
         }

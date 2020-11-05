@@ -37,7 +37,17 @@ namespace ProyectoEntregable2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            validacionCarga = false;
+            Colores1.Clear();
+            Colores2.Clear();
+            carruta = "";
+            nombre2 = "";
+            colorglobal = "";
+            partidaPersonalizada = false;
+            ModalidadInversa = false;
+            botonSi = false;
+            filasT = "";
+            columnasT = "";
         }
 
         protected void Button7_Click(object sender, EventArgs e)
