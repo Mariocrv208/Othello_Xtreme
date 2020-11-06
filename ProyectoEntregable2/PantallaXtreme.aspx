@@ -47,7 +47,7 @@
           <p>Mueven:
               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
           </p>
-          <p>Contador Jug1:</p>
+           <p>Contador Jug1:</p>
           <asp:Panel ID="Panel1" runat="server" Width="219px">
               <asp:ScriptManager ID="blanco" runat="server"></asp:ScriptManager>
               <asp:Timer ID="TimerBlanco" runat="server" Interval ="1000" OnTick="timerTestBlanco_tick" Enabled="False"></asp:Timer>
@@ -73,6 +73,7 @@
                   </Triggers>
               </asp:UpdatePanel>
           </asp:Panel>
+          
 &nbsp;<br />
           <br />
           <asp:Table ID="Table1" runat="server">
@@ -106,8 +107,6 @@
           <br />
           <br />
             <br />
-          <br />
-            <asp:Button ID="Button3" runat="server" Height="65px" Text="Guardar Partida" Width="234px" BackColor="#CC0066" OnClick="Button3_Click" />
           <br />
           <br />
           <asp:Button ID="Button376" runat="server" BackColor="#CC0066" Height="72px" OnClick="Button376_Click" Text="Regresar a menu" Width="236px" />

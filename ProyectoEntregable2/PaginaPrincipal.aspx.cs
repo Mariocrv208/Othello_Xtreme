@@ -21,6 +21,7 @@ namespace ProyectoEntregable2
         public static string columnasT = "";
         public static bool rojo = false;
         public static bool amarillo = false;
+        public static bool maquina = false;
         public static bool azul = false;
         public static bool anaranjado = false;
         public static bool verde = false;
@@ -46,8 +47,6 @@ namespace ProyectoEntregable2
             partidaPersonalizada = false;
             ModalidadInversa = false;
             botonSi = false;
-            filasT = "";
-            columnasT = "";
         }
 
         protected void Button7_Click(object sender, EventArgs e)
@@ -87,21 +86,19 @@ namespace ProyectoEntregable2
         {
             colorglobal = TextBox2.Text;
             nombre2 = TextBox1.Text;
-            if (RadioButton1.Checked == true)
+            if (colorglobal == "negro")
             {
-                partidaPersonalizada = true;
+                Colores1.Add("negro");
+                colores1 = Colores1.ToArray();
+                Colores2.Add("blanco");
+                colores2 = Colores2.ToArray();
             }
-            if (RadioButton2.Checked == true)
+            if (colorglobal == "blanco")
             {
-                partidaPersonalizada = false;
-            }
-            if (RadioButton3.Checked == true)
-            {
-                ModalidadInversa = false;
-            }
-            if (RadioButton4.Checked == true)
-            {
-                ModalidadInversa = true;
+                Colores1.Add("blanco");
+                colores1 = Colores1.ToArray();
+                Colores2.Add("negro");
+                colores2 = Colores2.ToArray();
             }
             Panel1.Visible = false;
             Response.Redirect("PantallaJuego.aspx");
@@ -111,21 +108,20 @@ namespace ProyectoEntregable2
         {
             colorglobal = TextBox3.Text;
             nombre2 = "Maquina";
-            if (RadioButton5.Checked == true)
+            maquina = true;
+            if (colorglobal == "negro")
             {
-                partidaPersonalizada = true;
+                Colores1.Add("negro");
+                colores1 = Colores1.ToArray();
+                Colores2.Add("blanco");
+                colores2 = Colores2.ToArray();
             }
-            if (RadioButton6.Checked == true)
+            if (colorglobal == "blanco")
             {
-                partidaPersonalizada = false;
-            }
-            if (RadioButton7.Checked == true)
-            {
-                ModalidadInversa = false;
-            }
-            if (RadioButton8.Checked == true)
-            {
-                ModalidadInversa = true;
+                Colores1.Add("blanco");
+                colores1 = Colores1.ToArray();
+                Colores2.Add("negro");
+                colores2 = Colores2.ToArray();
             }
             Panel2.Visible = false;
             Response.Redirect("PantallaJuego2.aspx");
@@ -381,6 +377,14 @@ namespace ProyectoEntregable2
                     gris = false;
                     Colores2.Add("gris");
                     colores2 = Colores2.ToArray();
+                }
+                if (RadioButton33.Checked == true)
+                {
+                    maquina = false;
+                }
+                if (RadioButton34.Checked == true)
+                {
+                    maquina = true;
                 }
                 filasT = DropDownList1.Text;
                 columnasT = DropDownList2.Text;
