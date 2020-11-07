@@ -225,7 +225,7 @@
             <asp:Button ID="Button6" runat="server" Text="Torneo" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button6_Click" />
             <br />
           <br />
-            <asp:Button ID="Button7" runat="server" Text="Reportes" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button7_Click" />
+            <asp:Button ID="Button7" runat="server" Text="Perfil" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button7_Click" />
             <br />
           <br />
             <asp:Button ID="Button9" runat="server" Text="Salir" Width="470px" Height="63px" BackColor="#CC0066" OnClick="Button9_Click" />

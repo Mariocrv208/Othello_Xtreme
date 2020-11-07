@@ -1,4 +1,15 @@
-<tablero>
+<partida>
+    <filas>8</filas>
+    <columnas>8</columnas>
+    <Jugador1>
+        <color>blanco</color>
+	<color>rojo</color>  
+    </Jugador1>
+    <Jugador2>
+	    <color>negro</color>
+    </Jugador2>
+    <Modalidad>Inversa</Modalidad>
+    <tablero>
 	<ficha>
 		<color>negro</color>
 		<columna>C</columna>
@@ -53,3 +64,4 @@
 		<color>negro</color>
 	</siguienteTiro>
 </tablero>
+</partida>

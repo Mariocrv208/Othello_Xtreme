@@ -2266,132 +2266,93 @@ namespace ProyectoEntregable2
 
         protected void CargarArchivo()
         {
-            string rutaAbrir = "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\Proyecto1\\ProyectoEntregable2\\XMLArchivos\\" + PaginaPrincipal.carruta +".xml";
             if (PaginaPrincipal.carruta != "")
             {
+                PaginaPrincipal.Colores1.Add("negro");
+                PaginaPrincipal.colores1 = PaginaPrincipal.Colores1.ToArray();
+                PaginaPrincipal.Colores2.Add("blanco");
+                PaginaPrincipal.colores2 = PaginaPrincipal.Colores2.ToArray();
+                Tablero();
                 XmlDocument leer = new XmlDocument();
-                leer.Load(rutaAbrir);
+                leer.Load(PaginaPrincipal.carruta);
                 foreach (XmlNode xmlNode in leer.DocumentElement.ChildNodes[0].ParentNode)
                 {
-                    Tablero();
                     int colman = 0;
                     int filman = 0;
                     string colormandar = "";
                     string columnamandar = "";
                     string filamandar = "";
-                    foreach (XmlNode xmlNodeItem in xmlNode.ChildNodes)
+                    if (xmlNode.Name == "ficha")
                     {
-                        if (xmlNodeItem.Name == "ficha")
+                        colormandar = xmlNode.ChildNodes[0].InnerText + ".png";
+                        columnamandar = xmlNode.ChildNodes[1].InnerText;
+                        filamandar = xmlNode.ChildNodes[2].InnerText;
+                        if (columnamandar == "A")
                         {
-                            colormandar = xmlNodeItem.ChildNodes[0].InnerText + ".png";
-                            columnamandar = xmlNodeItem.ChildNodes[1].InnerText;
-                            filamandar = xmlNodeItem.ChildNodes[2].InnerText;
-                            if (columnamandar == "A")
-                            {
-                                colman = 1;
-                            }
-                            if (columnamandar == "B")
-                            {
-                                colman = 2;
-                            }
-                            if (columnamandar == "C")
-                            {
-                                colman = 3;
-                            }
-                            if (columnamandar == "D")
-                            {
-                                colman = 4;
-                            }
-                            if (columnamandar == "E")
-                            {
-                                colman = 5;
-                            }
-                            if (columnamandar == "F")
-                            {
-                                colman = 6;
-                            }
-                            if (columnamandar == "G")
-                            {
-                                colman = 7;
-                            }
-                            if (columnamandar == "H")
-                            {
-                                colman = 8;
-                            }
-                            if (columnamandar == "I")
-                            {
-                                colman = 9;
-                            }
-                            if (columnamandar == "J")
-                            {
-                                colman = 10;
-                            }
-                            if (columnamandar == "K")
-                            {
-                                colman = 11;
-                            }
-                            if (columnamandar == "L")
-                            {
-                                colman = 12;
-                            }
-                            if (columnamandar == "M")
-                            {
-                                colman = 13;
-                            }
-                            if (columnamandar == "N")
-                            {
-                                colman = 14;
-                            }
-                            if (columnamandar == "O")
-                            {
-                                colman = 15;
-                            }
-                            if (columnamandar == "P")
-                            {
-                                colman = 16;
-                            }
-                            if (columnamandar == "Q")
-                            {
-                                colman = 17;
-                            }
-                            if (columnamandar == "R")
-                            {
-                                colman = 18;
-                            }
-                            if (columnamandar == "S")
-                            {
-                                colman = 19;
-                            }
-                            if (columnamandar == "T")
-                            {
-                                colman = 20;
-                            }
-                            filman = Int32.Parse(filamandar);
-                            string guardarId = boton[filman, colman].ID;
-                            boton[filman, colman].ImageUrl = colormandar;
+                            colman = 1;
                         }
-                        if (xmlNodeItem.Name == "siguienteTiro")
+                        if (columnamandar == "B")
                         {
-                            colorGlobal = xmlNodeItem.FirstChild.InnerText;
-                            for (int k = 0; k < PaginaPrincipal.colores1.Length; k++)
+                            colman = 2;
+                        }
+                        if (columnamandar == "C")
+                        {
+                            colman = 3;
+                        }
+                        if (columnamandar == "D")
+                        {
+                            colman = 4;
+                        }
+                        if (columnamandar == "E")
+                        {
+                            colman = 5;
+                        }
+                        if (columnamandar == "F")
+                        {
+                            colman = 6;
+                        }
+                        if (columnamandar == "G")
+                        {
+                            colman = 7;
+                        }
+                        if (columnamandar == "H")
+                        {
+                            colman = 8;
+                        }
+                        filman = Int32.Parse(filamandar);
+                        if ((filman < 9 && filman > 0) || (colman < 9 && colman > 0))
+                        {
+                            if (boton[filman, colman].ImageUrl == "fondotransparente.png")
                             {
-                                if (colorGlobal == PaginaPrincipal.colores1[k])
-                                {
-                                    TimerBlanco.Enabled = true;
-                                    TimerNegro.Enabled = false;
-                                    ultimo1 = colorGlobal;
-                                    validacionColor1 = true;
-                                }
+                                boton[filman, colman].ImageUrl = colormandar;
                             }
-                            for (int k = 0; k < PaginaPrincipal.colores2.Length; k++)
+                        }
+                    }
+                    if (xmlNode.Name == "siguienteTiro")
+                    {
+                        colorGlobal = xmlNode.FirstChild.InnerText;
+                        for (int k = 0; k < PaginaPrincipal.colores1.Length; k++)
+                        {
+                            if (colorGlobal == PaginaPrincipal.colores1[k])
                             {
-                                if (colorGlobal == PaginaPrincipal.colores2[k])
-                                {
-                                    TimerBlanco.Enabled = false;
-                                    TimerNegro.Enabled = true;
-                                    ultimo2 = colorGlobal;
-                                    validacionColor2 = true;
-                                }
+                                TimerBlanco.Enabled = true;
+                                TimerNegro.Enabled = false;
+                                valcro2 = false;
+                                valcr1 = true;
+                                ultimo1 = colorGlobal;
+                                validacionColor1 = true;
+                            }
+                        }
+                        for (int k = 0; k < PaginaPrincipal.colores2.Length; k++)
+                        {
+                            if (colorGlobal == PaginaPrincipal.colores2[k])
+                            {
+                                TimerBlanco.Enabled = false;
+                                TimerNegro.Enabled = true;
+                                valcro2 = true;
+                                valcr1 = false;
+                                ultimo2 = colorGlobal;
+                                validacionColor2 = true;
                             }
                         }
                     }
@@ -2473,22 +2434,19 @@ namespace ProyectoEntregable2
                                     }
                                     for (int n = 0; n < PaginaPrincipal.colores1.Length; n++)
                                     {
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl == "fondotransparente.png") || (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[n]+".png"))
+                                        if ((boton[filabuscar, columnabuscar].ImageUrl == "fondotransparente.png") || (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[n] + ".png"))
                                         {
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    der = true;
-                                                    filaLimiteder = filabuscar;
-                                                    columnaLimiteder = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                der = true;
+                                                filaLimiteder = filabuscar;
+                                                columnaLimiteder = columnabuscar;
                                             }
                                         }
                                     }
@@ -2519,17 +2477,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    iz = true;
-                                                    filaLimiteiz = filabuscar;
-                                                    columnaLimiteiz = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                iz = true;
+                                                filaLimiteiz = filabuscar;
+                                                columnaLimiteiz = columnabuscar;
                                             }
                                         }
                                     }
@@ -2560,17 +2515,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    arr = true;
-                                                    filaLimitearr = filabuscar;
-                                                    columnaLimitearr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                arr = true;
+                                                filaLimitearr = filabuscar;
+                                                columnaLimitearr = columnabuscar;
                                             }
                                         }
                                     }
@@ -2601,17 +2553,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    aba = true;
-                                                    filaLimiteaba = filabuscar;
-                                                    columnaLimiteaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                aba = true;
+                                                filaLimiteaba = filabuscar;
+                                                columnaLimiteaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -2642,17 +2591,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    derarr = true;
-                                                    filaLimitederarr = filabuscar;
-                                                    columnaLimitederarr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                derarr = true;
+                                                filaLimitederarr = filabuscar;
+                                                columnaLimitederarr = columnabuscar;
                                             }
                                         }
                                     }
@@ -2684,17 +2630,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    izarr = true;
-                                                    filaLimiteizarr = filabuscar;
-                                                    columnaLimiteizarr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                izarr = true;
+                                                filaLimiteizarr = filabuscar;
+                                                columnaLimiteizarr = columnabuscar;
                                             }
                                         }
                                     }
@@ -2726,17 +2669,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    izaba = true;
-                                                    filaLimiteizaba = filabuscar;
-                                                    columnaLimiteiziaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                izaba = true;
+                                                filaLimiteizaba = filabuscar;
+                                                columnaLimiteiziaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -2768,17 +2708,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != PaginaPrincipal.colores1[n] + ".png"))
+                                        for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores2.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores2[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    deraba = true;
-                                                    filaLimitederaba = filabuscar;
-                                                    columnaLimitederaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                deraba = true;
+                                                filaLimitederaba = filabuscar;
+                                                columnaLimitederaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -2817,22 +2754,19 @@ namespace ProyectoEntregable2
                                     }
                                     for (int n = 0; n < PaginaPrincipal.colores2.Length; n++)
                                     {
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl == "fondotransparente.png") || (boton[filabuscar, columnabuscar].ImageUrl == (PaginaPrincipal.colores2[n]+".png")))
+                                        if ((boton[filabuscar, columnabuscar].ImageUrl == "fondotransparente.png") || (boton[filabuscar, columnabuscar].ImageUrl == (PaginaPrincipal.colores2[n] + ".png")))
                                         {
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    der = true;
-                                                    filaLimiteder = filabuscar;
-                                                    columnaLimiteder = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                der = true;
+                                                filaLimiteder = filabuscar;
+                                                columnaLimiteder = columnabuscar;
                                             }
                                         }
                                     }
@@ -2863,17 +2797,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    iz = true;
-                                                    filaLimiteiz = filabuscar;
-                                                    columnaLimiteiz = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                iz = true;
+                                                filaLimiteiz = filabuscar;
+                                                columnaLimiteiz = columnabuscar;
                                             }
                                         }
                                     }
@@ -2904,17 +2835,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    arr = true;
-                                                    filaLimitearr = filabuscar;
-                                                    columnaLimitearr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                arr = true;
+                                                filaLimitearr = filabuscar;
+                                                columnaLimitearr = columnabuscar;
                                             }
                                         }
                                     }
@@ -2945,17 +2873,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    aba = true;
-                                                    filaLimiteaba = filabuscar;
-                                                    columnaLimiteaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                aba = true;
+                                                filaLimiteaba = filabuscar;
+                                                columnaLimiteaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -2986,17 +2911,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    derarr = true;
-                                                    filaLimitederarr = filabuscar;
-                                                    columnaLimitederarr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                derarr = true;
+                                                filaLimitederarr = filabuscar;
+                                                columnaLimitederarr = columnabuscar;
                                             }
                                         }
                                     }
@@ -3028,17 +2950,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    izarr = true;
-                                                    filaLimiteizarr = filabuscar;
-                                                    columnaLimiteizarr = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                izarr = true;
+                                                filaLimiteizarr = filabuscar;
+                                                columnaLimiteizarr = columnabuscar;
                                             }
                                         }
                                     }
@@ -3070,17 +2989,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    izaba = true;
-                                                    filaLimiteizaba = filabuscar;
-                                                    columnaLimiteiziaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                izaba = true;
+                                                filaLimiteizaba = filabuscar;
+                                                columnaLimiteiziaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -3112,17 +3028,14 @@ namespace ProyectoEntregable2
                                             validacion1 = true;
                                             break;
                                         }
-                                        if ((boton[filabuscar, columnabuscar].ImageUrl != "fondotransparente.png") && (boton[filabuscar, columnabuscar].ImageUrl != (PaginaPrincipal.colores2[n] + ".png")))
+                                        for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
                                         {
-                                            for (int m = 0; m < PaginaPrincipal.colores1.Length; m++)
+                                            if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
                                             {
-                                                if (boton[filabuscar, columnabuscar].ImageUrl == PaginaPrincipal.colores1[m] + ".png")
-                                                {
-                                                    validacioncambiar = true;
-                                                    deraba = true;
-                                                    filaLimitederaba = filabuscar;
-                                                    columnaLimitederaba = columnabuscar;
-                                                }
+                                                validacioncambiar = true;
+                                                deraba = true;
+                                                filaLimitederaba = filabuscar;
+                                                columnaLimitederaba = columnabuscar;
                                             }
                                         }
                                     }
@@ -3135,7 +3048,7 @@ namespace ProyectoEntregable2
                                 }
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -3289,7 +3202,7 @@ namespace ProyectoEntregable2
                             boton[i, j].ImageUrl = "fondotransparente.png";
                         }
                     }
-                }   
+                }
             }
             if (jug2 == true)
             {
@@ -4140,9 +4053,9 @@ namespace ProyectoEntregable2
 
                             }
                             /*Envio Datos*/
-                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
+                            string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
                             SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                             mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                             mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
                             mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
@@ -4229,9 +4142,9 @@ namespace ProyectoEntregable2
 
                             }
                             /*Envio Datos*/
-                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
+                            string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
                             SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                             mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                             mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
                             mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
@@ -4324,9 +4237,9 @@ namespace ProyectoEntregable2
 
                         }
                         /*Envio Datos*/
-                        string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
+                        string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
                         SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                        mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                        mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                         mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                         mandando.Parameters.AddWithValue("@empates", contadorEmpates);
                         mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
@@ -4415,9 +4328,9 @@ namespace ProyectoEntregable2
 
                             }
                             /*Envio Datos*/
-                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
+                            string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, victorias, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @victorias, @tiempo, @tipoPartida, @modalidad)";
                             SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                             mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                             mandando.Parameters.AddWithValue("@victorias", contadorVictorias);
                             mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
@@ -4504,9 +4417,9 @@ namespace ProyectoEntregable2
 
                             }
                             /*Envio Datos*/
-                            string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
+                            string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, derrotas, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @derrotas, @tiempo, @tipoPartida, @modalidad)";
                             SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                            mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                            mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                             mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                             mandando.Parameters.AddWithValue("@derrotas", contadorDerrotas);
                             mandando.Parameters.AddWithValue("@tiempo", cronometromandar);
@@ -4599,9 +4512,9 @@ namespace ProyectoEntregable2
 
                         }
                         /*Envio Datos*/
-                        string mandar = "INSERT INTO PartidaMultijugador (movimientosRealizados, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@movimientosRealizados, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
+                        string mandar = "INSERT INTO PartidaMultijugador (fichas, nicknameJugador, empates, tiempo, tipoPartida, modalidad) VALUES (@fichas, @nicknameJugador, @empates, @tiempo, @tipoPartida, @modalidad)";
                         SqlCommand mandando = new SqlCommand(mandar, conectar.Leer());
-                        mandando.Parameters.AddWithValue("@movimientosRealizados", contadorJug1);
+                        mandando.Parameters.AddWithValue("@fichas", contadorJug1);
                         mandando.Parameters.AddWithValue("@nicknameJugador", ProyectoEntregable2.Login.UsuarioLogeado);
                         mandando.Parameters.AddWithValue("@empates", contadorEmpates);
                         mandando.Parameters.AddWithValue("@tiempo", cronometromandar);

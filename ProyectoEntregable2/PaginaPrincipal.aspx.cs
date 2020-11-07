@@ -38,20 +38,13 @@ namespace ProyectoEntregable2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            validacionCarga = false;
             Colores1.Clear();
             Colores2.Clear();
-            carruta = "";
-            nombre2 = "";
-            colorglobal = "";
-            partidaPersonalizada = false;
-            ModalidadInversa = false;
-            botonSi = false;
         }
 
         protected void Button7_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Reportes.aspx");
+            Response.Redirect("Perfil.aspx");
         }
 
         protected void Button9_Click(object sender, EventArgs e)
@@ -146,7 +139,7 @@ namespace ProyectoEntregable2
         {
             TextBox4.Visible = true;
             Label1.Visible = true;
-            Label1.Text = "Ingrese El nombre del archivo con su extension";
+            Label1.Text = "Ingrese El nombre del archivo";
             validacionCarga = true;
             Label2.Visible = false;
             Label3.Visible = false;

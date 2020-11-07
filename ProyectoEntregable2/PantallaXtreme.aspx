@@ -48,31 +48,29 @@
               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
           </p>
            <p>Contador Jug1:</p>
-          <asp:Panel ID="Panel1" runat="server" Width="219px">
               <asp:ScriptManager ID="blanco" runat="server"></asp:ScriptManager>
-              <asp:Timer ID="TimerBlanco" runat="server" Interval ="1000" OnTick="timerTestBlanco_tick" Enabled="False"></asp:Timer>
+              <asp:Timer ID="TimerBlanco" runat="server" Interval ="1000" OnTick="timerTestBlanco_tick"></asp:Timer>
 
-              <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional"><ContentTemplate>
-                      <asp:Literal ID="litMsg" runat="server"></asp:Literal>
-                  </ContentTemplate>
+              <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                   <Triggers>
                        <asp:AsyncPostBackTrigger ControlID="TimerBlanco" EventName="tick" />
                   </Triggers>
+                  <ContentTemplate>
+                      <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                  </ContentTemplate>
               </asp:UpdatePanel>  
-          </asp:Panel>
           <p>
               Contador Jug2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
-          <asp:Panel ID="Panel2" runat="server" Width="222px">
               <asp:Timer ID="TimerNegro" runat="server" Interval ="1000" OnTick="timerTestNegro_tick" Enabled="False"></asp:Timer>
-              <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional"><ContentTemplate>
-                      <asp:Literal ID="litMsg2" runat="server"></asp:Literal>
-                  </ContentTemplate>
+              <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                   <Triggers>
                        <asp:AsyncPostBackTrigger ControlID="TimerNegro" EventName="tick" />
                   </Triggers>
+                  <ContentTemplate>
+                      <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                  </ContentTemplate>
               </asp:UpdatePanel>
-          </asp:Panel>
           
 &nbsp;<br />
           <br />
