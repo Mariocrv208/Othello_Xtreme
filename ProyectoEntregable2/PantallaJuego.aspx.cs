@@ -3989,9 +3989,9 @@ namespace ProyectoEntregable2
                             {
                                 cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                             }
-                            int contadorVictorias = 0;
-                            int contadorDerrotas = 0;
-                            int contadorEmpates = 0;
+                            int contadorVictorias = 1;
+                            int contadorDerrotas = 1;
+                            int contadorEmpates = 1;
                             validacionRegresar = true;
                             bool salida = true;
                             bool salida2 = false;
@@ -4078,9 +4078,9 @@ namespace ProyectoEntregable2
                             {
                                 cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                             }
-                            int contadorVictorias = 0;
-                            int contadorDerrotas = 0;
-                            int contadorEmpates = 0;
+                            int contadorVictorias = 1;
+                            int contadorDerrotas = 1;
+                            int contadorEmpates = 1;
                             validacionRegresar = true;
                             bool salida = false;
                             bool salida2 = true;
@@ -4173,9 +4173,9 @@ namespace ProyectoEntregable2
                         {
                             cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                         }
-                        int contadorVictorias = 0;
-                        int contadorDerrotas = 0;
-                        int contadorEmpates = 0;
+                        int contadorVictorias = 1;
+                        int contadorDerrotas = 1;
+                        int contadorEmpates = 1;
                         validacionRegresar = true;
                         bool salida = false;
                         bool salida2 = false;
@@ -4264,9 +4264,9 @@ namespace ProyectoEntregable2
                             {
                                 cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                             }
-                            int contadorVictorias = 0;
-                            int contadorDerrotas = 0;
-                            int contadorEmpates = 0;
+                            int contadorVictorias = 1;
+                            int contadorDerrotas = 1;
+                            int contadorEmpates = 1;
                             validacionRegresar = true;
                             bool salida = true;
                             bool salida2 = false;
@@ -4353,9 +4353,9 @@ namespace ProyectoEntregable2
                             {
                                 cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                             }
-                            int contadorVictorias = 0;
-                            int contadorDerrotas = 0;
-                            int contadorEmpates = 0;
+                            int contadorVictorias = 1;
+                            int contadorDerrotas = 1;
+                            int contadorEmpates = 1;
                             validacionRegresar = true;
                             bool salida = false;
                             bool salida2 = true;
@@ -4448,9 +4448,9 @@ namespace ProyectoEntregable2
                         {
                             cronometromandar = cronometroMinutos2.ToString() + ":" + cronometro2.ToString();
                         }
-                        int contadorVictorias = 0;
-                        int contadorDerrotas = 0;
-                        int contadorEmpates = 0;
+                        int contadorVictorias = 1;
+                        int contadorDerrotas = 1;
+                        int contadorEmpates = 1;
                         validacionRegresar = true;
                         bool salida = false;
                         bool salida2 = false;
